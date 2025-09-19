@@ -74,7 +74,7 @@
             <div class="section-title text-center wow fadeInUp">
                 <span>Top Category</span>
                 <h2>
-                    Browse Our Top  Categories
+                    Browse Our Top Categories
                 </h2>
             </div>
 
@@ -440,12 +440,13 @@
                     <div class="section-title about-title">
                         <span>About Us</span>
                         <h2>
-                            Learn and Grow your Skills <br> From Edutec
+                            Learn and Grow your Skills <br> From Binary Solutions
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod ex tempor
-                            incididunt labore dolore magna aliquaenim minim veniam quis nostrud exercitation
-                            ullamco laboris.
+                            Binary Solutions delivers innovative digital tools and custom solutions, including AI
+                            content checkers, report generators, and formatting tools. We are committed to providing
+                            efficient, reliable, and user-friendly solutions that enhance productivity and simplify
+                            workflows.
                         </p>
                     </div>
 
@@ -1224,7 +1225,7 @@
                                 <div class="review-item">
                                     <div class="rev-image">
                                         <div class="rim-inner">
-                                            <img src="assets/img/review/1.jpg" alt="image">
+                                            <img src="assets/img/review/testimonial-1.jpg" alt="image">
                                             <span>
                                                 <svg fill="none" viewBox="0 0 22 23">
                                                     <path fill="#FFA722"
@@ -1235,8 +1236,8 @@
                                     </div>
 
                                     <div class="rev-content">
-                                        <h4>Masum Billah</h4>
-                                        <span>Computer Science Student</span>
+                                        <h4>Oliver Harris</h4>
+                                        <span>Computer Science Professor</span>
                                         <p style="text-align: justify">
                                             I received custom solutions within hours they were exactly what I
                                             needed.This platform really helped me improve my grades and save time.
@@ -1256,7 +1257,7 @@
                                 <div class="review-item">
                                     <div class="rev-image">
                                         <div class="rim-inner">
-                                            <img src="assets/img/review/2.png" alt="image">
+                                            <img src="assets/img/review/testimonial-2.jpg" alt="image">
                                             <span>
                                                 <svg fill="none" viewBox="0 0 22 23">
                                                     <path fill="#FFA722"
@@ -1267,8 +1268,8 @@
                                     </div>
 
                                     <div class="rev-content">
-                                        <h4>Monaym Billah</h4>
-                                        <span>Teacher</span>
+                                        <h4>Daniel Clarke</h4>
+                                        <span>Software Engineer</span>
                                         <p>
                                             The tutorials were easy to follow and every lesson felt clear from the
                                             start. I finally gained the confidence to complete tasks without getting
@@ -1289,7 +1290,7 @@
                                 <div class="review-item">
                                     <div class="rev-image">
                                         <div class="rim-inner">
-                                            <img src="assets/img/review/3.png" alt="image">
+                                            <img src="assets/img/review/testimonial-4.jpg" alt="image">
                                             <span>
                                                 <svg fill="none" viewBox="0 0 22 23">
                                                     <path fill="#FFA722"
@@ -1300,8 +1301,8 @@
                                     </div>
 
                                     <div class="rev-content">
-                                        <h4>Motasim Billah</h4>
-                                        <span>Developer @ Themesvila</span>
+                                        <h4>Henry Mitchell</h4>
+                                        <span>Data Scientist</span>
                                         <p>
                                             The formatting tool was simple to apply and every option felt smooth right
                                             from the start. I finally gained the confidence to present work without
@@ -1322,7 +1323,7 @@
                                 <div class="review-item">
                                     <div class="rev-image">
                                         <div class="rim-inner">
-                                            <img src="assets/img/review/1.jpg" alt="image">
+                                            <img src="assets/img/review/testimonial-3.jpg" alt="image">
                                             <span>
                                                 <svg fill="none" viewBox="0 0 22 23">
                                                     <path fill="#FFA722"
@@ -1333,8 +1334,8 @@
                                     </div>
 
                                     <div class="rev-content">
-                                        <h4>Ekram Hossain</h4>
-                                        <span>Ceo @ Themesvila</span>
+                                        <h4>Thomas Bennett</h4>
+                                        <span>Professor</span>
                                         <p>
                                             The solution store was simple to use and every resource felt perfectly
                                             organized from the start. I finally found the confidence to solve problems
@@ -1375,7 +1376,7 @@
                 <div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
                     <div class="instructor">
                         <div class="ins-img">
-                            <img src="assets/img/instructors/1.png" alt="img">
+                            <img src="assets/img/instructors/teacher-1.jpg" alt="img">
                             <div class="social_wraper">
                                 <span class="social-share-icon"><i class='bx bxs-share-alt'></i></span>
                                 <ul class="ins-social">
@@ -1405,7 +1406,7 @@
                 <div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
                     <div class="instructor">
                         <div class="ins-img">
-                            <img src="assets/img/instructors/2.png" alt="img">
+                            <img src="assets/img/instructors/teacher-2.jpg" alt="img">
                             <div class="social_wraper">
                                 <span class="social-share-icon"><i class='bx bxs-share-alt'></i></span>
                                 <ul class="ins-social">
@@ -1434,7 +1435,7 @@
                 <div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
                     <div class="instructor">
                         <div class="ins-img">
-                            <img src="assets/img/instructors/3.png" alt="img">
+                            <img src="assets/img/instructors/teacher-3.jpg" alt="img">
                             <div class="social_wraper">
                                 <span class="social-share-icon"><i class='bx bxs-share-alt'></i></span>
                                 <ul class="ins-social">
@@ -1446,7 +1447,7 @@
                         </div>
                         <div class="ins-content">
                             <h4><a href="#">Ronald Richards</a></h4>
-                            <span class="designation">WordPress Developer</span>
+                            <span class="designation">Full Stack Developer</span>
                             <div class="ins-meta">
                                 <span>
                                     <i class="fa-solid fa-file-circle-check"></i> 106 Courses
@@ -1463,7 +1464,7 @@
                 <div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
                     <div class="instructor">
                         <div class="ins-img">
-                            <img src="assets/img/instructors/4.png" alt="img">
+                            <img src="assets/img/instructors/teacher-4.jpg" alt="img">
                             <div class="social_wraper">
                                 <span class="social-share-icon"><i class='bx bxs-share-alt'></i></span>
                                 <ul class="ins-social">
@@ -1603,7 +1604,7 @@
                             the world
                         </p>
                         <a href="#" class="white-btn">Become A Teacher</a>
-                        <img src="assets/img/cta/instructor.png" class="cta-img" alt="img">
+                        <img src="assets/img/cta/teacher-logo.png" class="cta-img" alt="img">
                     </div>
                 </div><!-- End Col -->
 
@@ -1617,7 +1618,7 @@
                             the world
                         </p>
                         <a href="{{ route('login') }}" class="white-btn">Become A Student</a>
-                        <img src="assets/img/cta/cta.png" class="cta-img" alt="img">
+                        <img src="assets/img/cta/student-logo.png" class="cta-img" alt="img">
                     </div>
                 </div><!-- End Col -->
             </div>
