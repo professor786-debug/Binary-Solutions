@@ -74,7 +74,7 @@
             <div class="section-title text-center wow fadeInUp">
                 <span>Top Category</span>
                 <h2>
-                    Browse Our Top and bottom Categories
+                    Browse Our Top bottom and bottom Categories
                 </h2>
             </div>
 
