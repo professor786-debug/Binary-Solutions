@@ -138,3 +138,6 @@ Route::get('/test-email', function () {
     Mail::to('your@email.com')->send(new VerifyStudentMail($token));
     return 'Email sent!';
 });
+Route::get('/solution_store', function () {
+    return view('solution_store');
+})->name('solution_store');

@@ -1,5 +1,5 @@
   <!-- Start Header -->
-  <header id="navigation" class="header1 position-absolute z-1">
+  <header id="navigation" class="header1 position-absolute z-2">
       <div class="container-fluid py-3 px-0">
           <div class="main-header">
               <div class="header-left d-flex justify-content-start">
@@ -19,7 +19,7 @@
                           <li class="menu-item-has-children">
                               <a href="#">Services</a>
                               <ul class="sub-menu">
-                                  <li><a href="">Solution Store</a></li>
+                                  <li><a href="{{ route('solution_store') }}">Solution Store</a></li>
                                   <li><a href="">Custom Solutions</a></li>
                                   <li><a href="{{ route('category_detail') }}">Online Assignment</a></li>
                               </ul>
