@@ -141,3 +141,6 @@ Route::get('/test-email', function () {
 Route::get('/solution_store', function () {
     return view('solution_store');
 })->name('solution_store');
+Route::get('/about_us', function () {
+    return view('about_us');
+})->name('about_us');

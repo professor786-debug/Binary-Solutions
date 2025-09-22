@@ -25,7 +25,7 @@
                               </ul>
                           </li>
 
-                          <li class="menu-item-has-children">
+                          {{-- <li class="menu-item-has-children">
                               <a href="#">Subjects</a>
                               <ul class="sub-menu">
                                   <li><a href="about.html">About</a></li>
@@ -40,14 +40,14 @@
                                   <li><a href="register.html">Register</a></li>
                                   <li><a href="404.html">404</a></li>
                               </ul>
-                          </li>
+                          </li> --}}
 
                           {{-- <li>
                                     <a href="{{ route('blogs') }}">Blog</a>
                                     </li> --}}
 
                           <li>
-                              <a href="{{ route('custom_Solution') }}">Solution</a>
+                              <a href="{{ route('about_us') }}">About Us</a>
                           </li>
 
                           <li>

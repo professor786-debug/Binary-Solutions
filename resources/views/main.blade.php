@@ -547,7 +547,8 @@
                             <h4>Lifetime Access</h4>
                         </div>
                     </div>
-                    <a href="#" class="bg-btn">Explore More <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="{{ route('about_us') }}" class="bg-btn">Explore More <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
                 </div><!-- End Col -->
             </div>
         </div>
