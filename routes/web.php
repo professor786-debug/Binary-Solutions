@@ -144,3 +144,8 @@ Route::get('/solution_store', function () {
 Route::get('/about_us', function () {
     return view('about_us');
 })->name('about_us');
+
+
+use App\Http\Controllers\ContactController;
+
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
