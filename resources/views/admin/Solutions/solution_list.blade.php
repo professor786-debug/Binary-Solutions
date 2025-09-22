@@ -19,10 +19,22 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/img/favicon.ico') }}" />
+    <style>
+        .butns-seting {
+            width: 20% !important;
+        }
+
+        @media(max-width:726px) and (min-width:576px) {
+            .butns-seting {
+                display: flex;
+                gap: 5px
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="loader"></div>
+    {{-- <div class="loader"></div> --}}
     <div id="app">
         <div class="main-wrapper main-wrapper-1">
             <div class="navbar-bg"></div>
@@ -70,7 +82,7 @@
                                                                 </span>
                                                             </td>
 
-                                                            <td>
+                                                            <td class="butns-seting">
                                                                 <a href="{{ route('solutions.edit', $solution->id) }}"
                                                                     class="btn btn-sm btn-primary">Edit</a>
                                                                 <form

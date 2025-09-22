@@ -22,6 +22,7 @@
                                   <li><a href="{{ route('solution_store') }}">Solution Store</a></li>
                                   <li><a href="">Custom Solutions</a></li>
                                   <li><a href="{{ route('category_detail') }}">Online Assignment</a></li>
+                                  <li><a href="{{ route('checkout') }}">Checkout</a></li>
                               </ul>
                           </li>
 
@@ -51,11 +52,12 @@
                           </li>
 
                           <li>
-                              <a href="{{ route('contact_us') }}">Contact</a>
-                          </li>
-                          <li>
                               <a href="{{ route('packages') }}">Pricing</a>
                           </li>
+                          <li>
+                              <a href="{{ route('contact_us') }}">Contact</a>
+                          </li>
+
                           @unless (Auth::guard('student')->check())
                               <li>
                                   <a href="{{ route('login') }}">Login</a>

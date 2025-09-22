@@ -475,7 +475,6 @@
                             </div>
                             <h4>Flexible Course Plan</h4>
                         </div>
-
                         <div class="about-item g-col-6">
                             <div class="abicon">
                                 <svg fill="none" viewBox="0 0 45 45">
@@ -496,7 +495,6 @@
                                         clip-rule="evenodd" opacity=".906" />
                                 </svg>
                             </div>
-
                             <h4>Expert Mentors</h4>
                         </div>
 
@@ -685,7 +683,6 @@
                                         5.0 / 28 Rating
                                     </span>
                                 </div>
-
                                 <div class="cmeta">
                                     <span>
                                         <svg fill="none" viewBox="0 0 20 20">
@@ -697,7 +694,6 @@
                                         </svg>
                                         25 Lessons
                                     </span>
-
                                     <span class="cmtime">
                                         <svg fill="none" viewBox="0 0 20 20">
                                             <path stroke="#FFA722" stroke-linecap="round" stroke-linejoin="round"
@@ -711,10 +707,8 @@
                                         8 Hours
                                     </span>
                                 </div>
-
                             </div>
                         </div>
-
                         <div class="course-hover align-self-center">
                             <div class="chover_content">
                                 <div class="ccategory">

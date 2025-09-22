@@ -55,7 +55,7 @@
   </style>
 	<body>
 
-	<div id="loader"></div>
+	{{-- <div id="loader"></div> --}}
 
     <div class="fix-area">
         <div class="offcanvas__info">
@@ -73,16 +73,16 @@
                             </button>
                         </div>
                     </div>
-                    <div class="mobile-menu fix mb-3"></div>                   
+                    <div class="mobile-menu fix mb-3"></div>
                 </div>
             </div>
         </div>
     </div>
-	
+
     <div class="offcanvas__overlay"></div>
-	
+
        @include('header')
-			
+
         <!-- Start Main Banner -->
 		<section class="home-banner position-relative" style="background-image: url('{{ asset('assets/img/bg/course-bg.jpg') }}');">
 			<div class="container">
@@ -93,7 +93,7 @@
 							<a href="#">Home</a> <i class='bx bx-chevrons-right'></i> Checkout
 						</p>
 					</div>
-				</div>				
+				</div>
 			</div>
 
             <section class="shop section-padding py-5">
@@ -168,10 +168,10 @@
                                 <div class="card-header mb-3">
                                     <i class="bi bi-cart3"></i><br>Total Summary
                                 </div>
-                                
+
                                 <ul class="list-group mb-4">
                                     <li class="list-group-item d-flex justify-content-between">
-                                        Base Price 
+                                        Base Price
                                         <span id="base-price">
                                             @if($solution)
                                                 ${{ number_format($discountedPrice, 2) }}
@@ -181,11 +181,11 @@
                                         </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
-                                        Add-ons 
+                                        Add-ons
                                         <span id="addon-total">$0.00</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between fw-bold border-top">
-                                        Total 
+                                        Total
                                         <span id="grand-total">
                                             @if($solution)
                                                 ${{ number_format($discountedPrice, 2) }}
@@ -243,10 +243,10 @@
                     </div>
                 </div>
             </section>
-			
+
 			<img src="{{ asset('assets/img/shapes/hsmile.svg') }}" alt="img" class="blshape">
 			<img src="{{ asset('assets/img/shapes/hstart.svg') }}" alt="img" class="brshape">
-			<div class="bbig_shape"></div>		
+			<div class="bbig_shape"></div>
 		</section>
 		<!-- End Main Banner -->
         <!-- End Checkout -->
