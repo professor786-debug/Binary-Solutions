@@ -134,7 +134,8 @@
                             <h2>Feel Free to write</h2>
                         </div>
 
-                        <form id="contact-form" method="post" action="contact.php">
+                        <form id="contact-form" method="post" action="{{ route('contact.send') }}">
+                            @csrf
                             <div class="row">
                                 <div class="col-xl-6">
                                     <input type="text" name="name" placeholder="Enter Name" class="form-control">
@@ -160,6 +161,22 @@
                                 <div class="col-12">
                                     <button type="submit" class="bg-btn">Send Message</button>
                                 </div>
+                                @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul class="mb-0">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
                             </div>
                         </form>
                         <p class="form-message mt-4 text-center"></p>
