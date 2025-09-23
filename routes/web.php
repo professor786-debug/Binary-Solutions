@@ -94,9 +94,9 @@ Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/register', [MainController::class, 'register'])->name('register');
 Route::post('/student/register', [MainController::class, 'student_register'])->name('student.register');
 
-// Route::middleware(['student.url'])->group(function () {
-    Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
-    Route::get('/package-checkout', [MainController::class, 'package_checkout'])->name('package_checkout');
+//  Route::middleware(['student.url'])->group(function () {
+//     Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
+//     Route::get('/package-checkout', [MainController::class, 'package_checkout'])->name('package_checkout');
 // });
 
 Route::get('/check-login', [MainController::class, 'checkLogin'])->name('check.login');
@@ -149,3 +149,4 @@ Route::get('/about_us', function () {
 use App\Http\Controllers\ContactController;
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+
