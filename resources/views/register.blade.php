@@ -261,6 +261,24 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="full_name">Full Name<span>*</span></label>
+                                <input type="text" name="full_name" class="form-control"
+                                    value="{{ old('full_name') }}">
+                                @error('full_name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact_no">Contact No<span>*</span></label>
+                                <input type="text" name="contact_no" class="form-control"
+                                    value="{{ old('contact_no') }}">
+                                @error('contact_no')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control"
                                     value="{{ old('email') }}">
@@ -272,13 +290,14 @@
                             <div class="form-group">
                                 <label for="password">Password<span>*</span></label>
                                 <input type="password" name="password" class="form-control">
-                                @error('password')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
+                                @if ($errors->has('password'))
+                                    <small class="text-danger">{{ $errors->first('password') }}</small>
+                                @endif
                             </div>
 
                             <button type="submit" class="bg-btn">Register</button>
                         </form>
+
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
                     </div>
                 </div><!--- END COL -->

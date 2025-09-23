@@ -20,19 +20,23 @@ use Stripe\Charge;
 
 class MainController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('main');
     }
 
-    public function blog(){
+    public function blog()
+    {
         return view('blog');
     }
 
-    public function contact_us(){
+    public function contact_us()
+    {
         return view('contact_us');
     }
 
-    public function category_detail(){
+    public function category_detail()
+    {
         return view('category_detail');
     }
 
@@ -53,36 +57,59 @@ class MainController extends Controller
         return view('chat', compact('query', 'results'));
     }
 
-    public function login(){
+    public function login()
+    {
         return view('login');
     }
 
-    public function register(){
+    public function register()
+    {
         return view('register');
     }
 
     public function student_register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email|unique:students',
-            'password' => 'required|min:6',
-        ]);
+        $rules = [
+            'name'       => 'required|string|unique:students,name',
+            'full_name'  => 'required|string|max:255',
+            'contact_no' => 'required|string|max:20',
+            'email'      => 'required|email|unique:students,email',
+            'password'   => [
+                'required',
+                'string',
+                'min:6',
+                // Must contain at least one letter, one number, and one special character
+                'regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]).{6,}$/'
+            ],
+        ];
+
+        $messages = [
+            'name.unique'       => 'This username is already taken.',
+            'email.unique'      => 'This email is already registered.',
+            'password.required' => 'Please enter a password.',
+            'password.min'      => 'Password must be at least :min characters long.',
+            'password.regex'    => 'Password must include at least one letter, one number, and one special character (e.g. !@#$%).',
+        ];
+
+        $validated = $request->validate($rules, $messages);
 
         $token = Str::random(64);
 
         $student = Student::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'name'               => $validated['name'],
+            'full_name'          => $validated['full_name'],
+            'contact_no'         => $validated['contact_no'],
+            'email'              => $validated['email'],
+            'password'           => bcrypt($validated['password']),
             'verification_token' => $token,
-            'is_verified' => false,
+            'is_verified'        => false,
         ]);
 
         Mail::to($student->email)->send(new VerifyStudentMail($token));
 
         return redirect()->back()->with('success', 'Please check your email to verify your account.');
     }
+
 
     public function verifyStudent($token)
     {
@@ -99,7 +126,7 @@ class MainController extends Controller
 
         return redirect('/login')->with('success', 'Email verified. You can now login.');
     }
-    
+
     public function checkLogin(Request $request)
     {
         if (!auth()->check()) {
@@ -111,7 +138,7 @@ class MainController extends Controller
         return redirect()->back()->with('success', 'You are logged in!');
     }
 
-    
+
     public function student_login(Request $request)
     {
         $request->validate([
@@ -181,10 +208,7 @@ class MainController extends Controller
         return redirect()->route('login')->with('success', 'Logged out successfully');
     }
 
-    public function student_dashboard()
-    {
-
-    }
+    public function student_dashboard() {}
 
     public function packages()
     {
@@ -298,116 +322,116 @@ class MainController extends Controller
         return response()->json(['success' => 'Thanks for subscribing!']);
     }
 
-        public function handleStripePayment(Request $request)
-        {
-            $request->validate([
-                'package_id' => 'required',
-                'stripeToken' => 'required|string',
+    public function handleStripePayment(Request $request)
+    {
+        $request->validate([
+            'package_id' => 'required',
+            'stripeToken' => 'required|string',
+        ]);
+
+        $student = Auth::guard('student')->user();
+        $package = SubscriptionPackage::find($request->package_id);
+
+        Stripe::setApiKey(config('services.stripe.secret'));
+
+        try {
+            $charge = Charge::create([
+                'amount' => intval($package->price * 100),
+                'currency' => 'usd',
+                'description' => "Subscription for package: {$package->name}",
+                'source' => $request->stripeToken,
             ]);
 
-            $student = Auth::guard('student')->user();
-            $package = SubscriptionPackage::find($request->package_id);
+            StudentSubscription::create([
+                'student_id' => $student->id,
+                'subscription_plan_id' => $package->id,
+                'amount' => $package->price,
+                'currency' => 'usd',
+                'start_date' => now(),
+                'end_date' => now()->addMonth(),
+                'stripe_charge_id' => $charge->id,
+            ]);
 
-            Stripe::setApiKey(config('services.stripe.secret'));
+            $student->subscription_id = $package->id;
+            $student->save();
 
-            try {
-                $charge = Charge::create([
-                    'amount' => intval($package->price * 100),
-                    'currency' => 'usd',
-                    'description' => "Subscription for package: {$package->name}",
-                    'source' => $request->stripeToken,
-                ]);
-
-                StudentSubscription::create([
-                    'student_id' => $student->id,
-                    'subscription_plan_id' => $package->id,
-                    'amount' => $package->price,
-                    'currency' => 'usd',
-                    'start_date' => now(),
-                    'end_date' => now()->addMonth(),
-                    'stripe_charge_id' => $charge->id,
-                ]);
-
-                $student->subscription_id = $package->id;
-                $student->save();
-
-                return redirect()->route('student.subscription')->with('success', 'Package purchased successfully!');
-            } catch (\Exception $e) {
-                return back()->withErrors(['error' => $e->getMessage()]);
-            }
+            return redirect()->route('student.subscription')->with('success', 'Package purchased successfully!');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
 
-        public function handleSolutionStripe(Request $request)
-        {
-            $request->validate([
-                'solution_id' => 'required|exists:solutions,id',
-                'stripeToken' => 'required|string',
-                'total_amount' => 'required|numeric',
-                'addons' => 'nullable|string',
-            ]);
+    public function handleSolutionStripe(Request $request)
+    {
+        $request->validate([
+            'solution_id' => 'required|exists:solutions,id',
+            'stripeToken' => 'required|string',
+            'total_amount' => 'required|numeric',
+            'addons' => 'nullable|string',
+        ]);
 
-            $solution = Solution::findOrFail($request->solution_id);
-            $student = Auth::guard('student')->user();
-            $package = $student->latestSubscription->package ?? null;
+        $solution = Solution::findOrFail($request->solution_id);
+        $student = Auth::guard('student')->user();
+        $package = $student->latestSubscription->package ?? null;
 
-            $basePrice = $solution->price;
-            $addonTotal = 0.00;
-            $addons = [];
+        $basePrice = $solution->price;
+        $addonTotal = 0.00;
+        $addons = [];
 
-            if ($request->filled('addons')) {
+        if ($request->filled('addons')) {
             $addons = explode(',', $request->addons);
             $addonTotal = $request->addon_total ?? 0.00;
-             }
+        }
 
-            $grandTotal = $request->total_amount;
+        $grandTotal = $request->total_amount;
 
-            Stripe::setApiKey(config('services.stripe.secret'));
+        Stripe::setApiKey(config('services.stripe.secret'));
 
-            try {
-                $charge = Charge::create([
-                    'amount' => intval($grandTotal * 100),
-                    'currency' => 'usd',
-                    'description' => "Purchase of solution: {$solution->title}",
-                    'source' => $request->stripeToken,
-                    'metadata' => [
-                        'student_id' => $student->id,
-                        'solution_id' => $solution->id,
-                        'package_id' => $package?->id,
-                    ],
-                ]);
-
-                Purchase::create([
+        try {
+            $charge = Charge::create([
+                'amount' => intval($grandTotal * 100),
+                'currency' => 'usd',
+                'description' => "Purchase of solution: {$solution->title}",
+                'source' => $request->stripeToken,
+                'metadata' => [
                     'student_id' => $student->id,
                     'solution_id' => $solution->id,
                     'package_id' => $package?->id,
-                    'base_price' => $basePrice,
-                    'addons' => json_encode($addons),
-                    'addon_total' => $addonTotal,
-                    'grand_total' => $grandTotal,
-                    'payment_status' => 'completed',
-                    'payment_method' => 'stripe',
-                    'stripe_charge_id' => $charge->id,
-                ]);
+                ],
+            ]);
 
-                return redirect()->route('student.solutions')->with('success', 'Solution purchased successfully!');
-            } catch (\Exception $e) {
-                return back()->withErrors(['error' => $e->getMessage()]);
-            }
+            Purchase::create([
+                'student_id' => $student->id,
+                'solution_id' => $solution->id,
+                'package_id' => $package?->id,
+                'base_price' => $basePrice,
+                'addons' => json_encode($addons),
+                'addon_total' => $addonTotal,
+                'grand_total' => $grandTotal,
+                'payment_status' => 'completed',
+                'payment_method' => 'stripe',
+                'stripe_charge_id' => $charge->id,
+            ]);
+
+            return redirect()->route('student.solutions')->with('success', 'Solution purchased successfully!');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function login_confirmation(Request $request)
+    {
+        if ($request->has('solution')) {
+            session(['url.intended' => route('solution.detail', ['solution_id' => $request->solution])]);
+            session(['from_solution_page' => true]);
         }
 
-        public function login_confirmation(Request $request)
-        {
-            if ($request->has('solution')) {
-                session(['url.intended' => route('solution.detail', ['solution_id' => $request->solution])]);
-                session(['from_solution_page' => true]);
-            }
+        return redirect()->route('login');
+    }
 
-            return redirect()->route('login');
-        }
+    public function custom_solution()
+    {
 
-        public function custom_solution(){
-
-            return view('custom_solution');
-
-        }
+        return view('custom_solution');
+    }
 }
