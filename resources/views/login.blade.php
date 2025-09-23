@@ -256,13 +256,13 @@
                     </div>
                 @endif
                 <div class="col-xl-6 mx-auto wow fadeIn">
-                    <div class="text-center mb-3">
+                    {{-- <div class="text-center mb-3">
                         <a href="{{ route('google.login') }}"
                             class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
                             <i class="fab fa-google mr-2"></i> Login with Google
                         </a>
                     </div>
-                    <hr class="my-4">
+                    <hr class="my-4"> --}}
 
                     <div class="login">
                         <h4 class="login_register_title">Already a Member? Sign In</h4>

@@ -55,13 +55,11 @@
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>
-                    Subscriptions</span></a>
-            <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('student_subscription.index') }}">Subscriptions</a></li>
-            </ul>
+            <a href="{{ route('refund.index') }}" class="nav-link"><i data-feather="book"></i><span>Refund</span></a>
+            {{-- <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('package.index') }}">Package List</a></li>
+            </ul> --}}
         </li>
-
         <li><a class="nav-link" href=""><i data-feather="mail"></i><span>
                     Pages</span></a>
         </li>

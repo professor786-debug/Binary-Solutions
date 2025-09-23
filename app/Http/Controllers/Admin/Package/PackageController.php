@@ -13,11 +13,11 @@ class PackageController extends Controller
         $packages = SubscriptionPackage::all();
         return view('admin.Packeges.packege_list', compact('packages'));
     }
- 
+
      public function create(){
          return view('admin.Packeges.add_packege');
      }
- 
+
     public function store(Request $request)
     {
         $request->validate([
@@ -91,4 +91,9 @@ class PackageController extends Controller
 
         return redirect()->route('student.index')->with('success', 'Student deleted successfully.');
     }
+    public function refund()
+{
+    return view('refund.refund');
+}
+
 }

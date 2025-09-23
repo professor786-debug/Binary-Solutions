@@ -79,6 +79,9 @@ Route::prefix('panel/admin/package')->group(function () {
     Route::get('/package/{id}/edit', [PackageController::class, 'edit'])->name('package.edit');
     Route::put('/package/{id}', [PackageController::class, 'update'])->name('package.update');
     Route::delete('/package/{id}', [PackageController::class, 'destroy'])->name('package.destroy');
+    Route::get('/refund', function () {
+        return view('refund.refund');
+    })->name('refund.index');
 });
 
 Route::prefix('panel/admin/student_subscription')->group(function () {
