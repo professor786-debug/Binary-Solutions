@@ -8,7 +8,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Student extends Authenticatable
 {
-    protected $fillable = ['name', 'email', 'password', 'verification_token', 'is_verified'];
+     protected $fillable = [
+        'name',
+        'full_name',
+        'contact_no',
+        'email',
+        'password',
+        'verification_token',
+        'is_verified'
+    ];
 
     protected $hidden = ['password', 'remember_token'];
 
@@ -31,9 +39,9 @@ class Student extends Authenticatable
 
     public function subscriptionPackage()
      {
-    
+
         return $this->hasOne(subscriptionPackage::class, 'id');
-     
+
      }
 
 }
