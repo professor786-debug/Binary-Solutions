@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\Package\PackageController;
 use App\Http\Controllers\Student\StudentAuthController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Admin\Subscription\SubscriptionController;
+use App\Http\Controllers\RefundController;
 use App\Mail\VerifyStudentMail;
 use App\Http\Controllers\Student\GoogleController;
 
@@ -27,13 +28,13 @@ use App\Http\Controllers\Student\GoogleController;
 */
 //admin routes
 Route::prefix('/panel/admin')->group(function () {
-Route::get('/', [AuthController::class, 'index'])->name('admin_login_form');
+    Route::get('/', [AuthController::class, 'index'])->name('admin_login_form');
 
-Route::post('/login', [AuthController::class, 'login'])->name('admin_login');
+    Route::post('/login', [AuthController::class, 'login'])->name('admin_login');
 
-Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('admin_dashboard');
+    Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('admin_dashboard');
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('admin_logout');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('admin_logout');
 });
 Route::prefix('panel/admin/solutions')->group(function () {
     Route::get('/create', [SolutionController::class, 'create'])->name('solutions.create');
@@ -79,12 +80,12 @@ Route::prefix('panel/admin/package')->group(function () {
     Route::get('/package/{id}/edit', [PackageController::class, 'edit'])->name('package.edit');
     Route::put('/package/{id}', [PackageController::class, 'update'])->name('package.update');
     Route::delete('/package/{id}', [PackageController::class, 'destroy'])->name('package.destroy');
-    Route::get('/refund', function () {
-        return view('refund.refund');
-    })->name('refund.index');
 });
 
+Route::prefix('panel/admin/refund')->group(function () {
 
+    Route::get('/requests', [RefundController::class, 'index'])->name('');
+});
 
 
 Route::prefix('panel/admin/student_subscription')->group(function () {
@@ -130,7 +131,7 @@ Route::post('/student/refund/create', [StudentAuthController::class, 'student_re
 Route::get('/student/custom/solution', [StudentAuthController::class, 'student_solution_req'])->name('student.customsolutions');
 Route::get('/student/custom/solution/{id}', [StudentAuthController::class, 'viewSolution'])
     ->name('student.solution.view');
-    Route::post('/student/solution/{id}/pay', [StudentAuthController::class, 'paySolution'])
+Route::post('/student/solution/{id}/pay', [StudentAuthController::class, 'paySolution'])
     ->name('student.solution.pay');
 
 
@@ -155,4 +156,3 @@ Route::get('/about_us', function () {
 use App\Http\Controllers\ContactController;
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
-

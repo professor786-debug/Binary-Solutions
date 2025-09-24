@@ -79,7 +79,7 @@ class MainController extends Controller
                 'string',
                 'min:6',
                 // Must contain at least one letter, one number, and one special character
-                'regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]).{6,}$/'
+                'regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@.$!%*#?&]).{6,}$/'
             ],
         ];
 
