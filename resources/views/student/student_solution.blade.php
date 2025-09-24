@@ -139,7 +139,7 @@
                                   </td>
 
                                   <td>${{ number_format($purchase->base_price, 2) }}</td>
-                                  
+
                                   <td>
                                       @php
                                           $addons = json_decode($purchase->addons, true);
@@ -169,21 +169,32 @@
                                       $addons = json_decode($purchase->addons, true) ?? [];
                                   @endphp
 
-                                  <td>
-                                      <a href="{{ asset($solution->source_code_path) }}" class="btn btn-sm btn-primary" download>Download Source Code</a>
+                                 <td>
+    <div class="d-flex flex-column">
+        <a href="{{ asset($solution->source_code_path) }}" class="btn btn-sm btn-primary mb-1" download>
+            Download Source Code
+        </a>
 
-                                      @if(in_array('video_demo', $addons) && $solution->video_demo_path)
-                                          <a href="{{ asset($solution->video_demo_path) }}" class="btn btn-sm btn-info mt-1" download>Video Demo</a>
-                                      @endif
+        @if(in_array('video_demo', $addons) && $solution->video_demo_path)
+            <a href="{{ asset($solution->video_demo_path) }}" class="btn btn-sm btn-info mb-1" download>
+                Video Demo
+            </a>
+        @endif
 
-                                      @if(in_array('walkthrough_pdf', $addons) && $solution->walkthrough_path)
-                                          <a href="{{ asset($solution->walkthrough_path) }}" class="btn btn-sm btn-secondary mt-1" download>Walkthrough</a>
-                                      @endif
+        @if(in_array('walkthrough_pdf', $addons) && $solution->walkthrough_path)
+            <a href="{{ asset($solution->walkthrough_path) }}" class="btn btn-sm btn-secondary mb-1" download>
+                Walkthrough
+            </a>
+        @endif
 
-                                      @if(in_array('report_path', $addons) && $solution->report_path)
-                                          <a href="{{ asset($solution->report_path) }}" class="btn btn-sm btn-dark mt-1" download>Final Report</a>
-                                      @endif
-                                  </td>
+        @if(in_array('report_path', $addons) && $solution->report_path)
+            <a href="{{ asset($solution->report_path) }}" class="btn btn-sm btn-dark" download>
+                Final Report
+            </a>
+        @endif
+    </div>
+</td>
+
                               </tr>
                           @empty
                               <tr>

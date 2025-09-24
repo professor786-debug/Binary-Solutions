@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>{{ $title ?? 'Binary Solutions - LMS' }}</title>	
+    <title>{{ $title ?? 'Binary Solutions - LMS' }}</title>
 
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}">
 
@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css" />
+
 
     @stack('extra-head') {{-- Allow injecting per-page styles if needed --}}
 </head>

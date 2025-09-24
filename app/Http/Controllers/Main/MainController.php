@@ -72,7 +72,7 @@ class MainController extends Controller
         $rules = [
             'name'       => 'required|string|unique:students,name',
             'full_name'  => 'required|string|max:255',
-            'contact_no' => 'required|string|max:20',
+            'contact_no' => 'required|string|regex:/^\+\d{7,15}$/',
             'email'      => 'required|email|unique:students,email',
             'password'   => [
                 'required',
