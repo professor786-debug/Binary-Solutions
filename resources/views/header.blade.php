@@ -57,12 +57,12 @@
                           <li>
                               <a href="{{ route('contact_us') }}">Contact</a>
                           </li>
-
-                          @unless (Auth::guard('student')->check())
+                          @unless (Auth::guard('student')->check() || Route::is('login') || Route::is('register'))
                               <li>
                                   <a href="{{ route('login') }}">Login</a>
                               </li>
                           @endunless
+
                       </ul>
                   </nav><!-- End Main Menu -->
               </div>
