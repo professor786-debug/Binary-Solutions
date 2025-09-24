@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <x-head />
+<style>
+    .main-banner {
+        padding: 49px 0;
+    }
+
+    .section-padding {
+        padding: 37px 0;
+    }
+</style>
 
 <body>
 

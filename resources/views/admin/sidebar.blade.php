@@ -55,7 +55,9 @@
             </ul>
         </li>
         <li class="dropdown">
-            <a href="{{ route('refund.index') }}" class="nav-link"><i data-feather="book"></i><span>Refund</span></a>
+            <a href="" class="nav-link">
+                <i data-feather="book"></i><span>Refund</span>
+            </a>
             {{-- <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('package.index') }}">Package List</a></li>
             </ul> --}}

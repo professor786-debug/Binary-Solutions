@@ -84,6 +84,9 @@ Route::prefix('panel/admin/package')->group(function () {
     })->name('refund.index');
 });
 
+
+
+
 Route::prefix('panel/admin/student_subscription')->group(function () {
     Route::get('/list', [SubscriptionController::class, 'index'])->name('student_subscription.index');
 });

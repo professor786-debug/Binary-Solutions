@@ -91,9 +91,5 @@ class PackageController extends Controller
 
         return redirect()->route('student.index')->with('success', 'Student deleted successfully.');
     }
-    public function refund()
-{
-    return view('refund.refund');
-}
 
 }
