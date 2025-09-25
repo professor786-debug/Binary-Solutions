@@ -9,38 +9,17 @@
     .section-padding {
         padding: 37px 0;
     }
+
+    .iti {
+        width: 100%;
+    }
+
+    .iti__placeholder {
+        color: #6c757d;
+    }
 </style>
 
 <body>
-
-    <!-- START PRELOADER -->
-    {{-- <div id="loader"></div> --}}
-    <!--  END PRELOADER -->
-
-    <!-- Offcanvas Area Start -->
-    <div class="fix-area">
-        <div class="offcanvas__info">
-            <div class="offcanvas__wrapper">
-                <div class="offcanvas__content">
-                    <div class="offcanvas__top d-flex justify-content-between align-items-center">
-                        <div class="offcanvas__logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo.svg" alt="edutec">
-                            </a>
-                        </div>
-                        <div class="offcanvas__close">
-                            <button>
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="mobile-menu fix mb-3"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="offcanvas__overlay"></div>
-
     <!-- Start Header -->
     @include('header')
     <!-- End Header -->
@@ -57,10 +36,6 @@
                 </div>
             </div>
         </div>
-
-        <img src="assets/img/shapes/hsmile.svg" class="blshape">
-        <img src="assets/img/shapes/hstart.svg" class="brshape">
-        <div class="bbig_shape"></div>
     </section>
     <!-- End Main Banner -->
 
@@ -68,41 +43,37 @@
     <section class="login_register section-padding">
         <div class="container">
             <div class="row">
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
                 <div class="col-xl-6 mx-auto wow fadeIn">
                     <div class="register">
                         <h4 class="login_register_title">Create a new account</h4>
-                        <div id="form-messages"></div>
-                        <form id="registerForm" method="POST">
+
+                        <!-- ✅ Messages will show here -->
+
+
+                        <form id="registerForm" action="{{ route('student.register') }}" method="POST">
                             @csrf
+
                             <div class="form-group">
                                 <label for="username">Username<span>*</span></label>
-                                <input type="text" name="name" class="form-control">
+                                <input type="text" name="name" class="form-control" value="{{ old('name') }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="full_name">Full Name<span>*</span></label>
-                                <input type="text" name="full_name" class="form-control">
+                                <input type="text" name="full_name" class="form-control" value="{{ old('full_name') }}">
                             </div>
 
-                            <div class="form-group">
-                                <label for="contact_no">Contact No<span>*</span></label>
-                                <input type="text" name="contact_no" class="form-control">
+                            <!-- Phone Field -->
+                            <div class="form-group mb-4">
+                                <label for="phone">Whatsapp No<span>*</span></label>
+                                <input type="tel" id="phone" name="contact_no" class="form-control"
+                                    value="{{ old('contact_no') }}">
+                                <small id="phone-error" class="text-danger"></small>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" name="email" class="form-control" value="{{ old('email') }}">
                             </div>
 
                             <div class="form-group">
@@ -112,9 +83,10 @@
 
                             <button type="submit" class="bg-btn">Register</button>
                         </form>
+                         <div id="form-messages"></div>
 
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
-                        <div class="text-center mb-3     mt-3">
+                        <div class="text-center mb-3 mt-3">
                             <a href="{{ route('google.login') }}"
                                 class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
                                 <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
@@ -127,12 +99,31 @@
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')
+
+    <!-- intl-tel-input scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- AJAX for Register -->
     <script>
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            initialCountry: "us", // ✅ default USA
+            preferredCountries: ["us", "pk", "gb", "in", "sa"],
+            separateDialCode: true,
+            placeholderNumberType: "MOBILE",
+            customPlaceholder: function() {
+                return "Enter Whatsapp number";
+            }
+        });
+
         $("#registerForm").on("submit", function(e) {
             e.preventDefault();
+
+            // ✅ Get full number with country code
+            let fullNumber = iti.getNumber();
+            $("#phone").val(fullNumber);
 
             $("#form-messages").html('<div class="alert alert-info">Processing...</div>');
 
@@ -153,7 +144,8 @@
                             '<div class="alert alert-success">' + response.message + '</div>'
                         );
 
-                        $("#registerForm")[0].reset(); // clear form
+                        $("#registerForm")[0].reset();
+                        iti.setCountry("us"); // reset to default USA
                     }
                 },
                 error: function(xhr) {
@@ -175,5 +167,4 @@
         });
     </script>
 </body>
-
 </html>
