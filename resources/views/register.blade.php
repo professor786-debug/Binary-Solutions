@@ -9,6 +9,14 @@
     .section-padding {
         padding: 37px 0;
     }
+
+    .iti {
+        width: 100%;
+    }
+
+    .iti__placeholder {
+        color: #6c757d;
+    }
 </style>
 
 <body>
@@ -102,16 +110,18 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group">
-                                <label for="contact_no">Contact No<span>*</span></label>
-                                <input type="text" name="contact_no" class="form-control"
+                            <!-- New Phone Field with Country Code -->
+                            <div class="form-group mb-4">
+                                <label for="phone">Whatsapp No<span>*</span></label>
+                                <input type="tel" id="phone" name="contact_no" class="form-control"
                                     value="{{ old('contact_no') }}">
                                 @error('contact_no')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
+                            <!-- End New Phone Field -->
 
-                            <div class="form-group">
+                            <div class="form-group ">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
                                 @error('email')
@@ -144,6 +154,26 @@
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')
+
+    <!-- intl-tel-input scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+
+    <script>
+        const input = document.querySelector("#phone");
+        if (input) {
+            window.intlTelInput(input, {
+                initialCountry: "us", // Default US
+                preferredCountries: ["us", "pk", "gb", "in", "sa"],
+                separateDialCode: true,
+                placeholderNumberType: "MOBILE",
+                customPlaceholder: function() {
+                    return "Enter whatsapp number";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
