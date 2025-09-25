@@ -100,6 +100,8 @@ Route::get('/chat', [MainController::class, 'chat'])->name('chat');
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/register', [MainController::class, 'register'])->name('register');
 Route::post('/student/register', [MainController::class, 'student_register'])->name('student.register');
+Route::post('/student/send-verification', [MainController::class, 'sendVerificationMail'])->name('student.sendVerification');
+
 
 //  Route::middleware(['student.url'])->group(function () {
 //     Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');

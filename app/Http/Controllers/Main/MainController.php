@@ -17,6 +17,9 @@ use Illuminate\Support\Str;
 use App\Mail\VerifyStudentMail;
 use Stripe\Stripe;
 use Stripe\Charge;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class MainController extends Controller
 {
@@ -68,46 +71,62 @@ class MainController extends Controller
     }
 
     public function student_register(Request $request)
+{
+    $messages = [
+        'name.unique'  => 'This username already exists. Please choose another.',
+        'email.unique' => 'This email is already registered.',
+        'contact_no.regex' => 'Contact number must be in international format, e.g. +923001234567.',
+        'password.regex'   => 'Password must contain at least 1 letter, 1 number, and 1 special character.'
+    ];
+
+    $validator = Validator::make($request->all(), [
+        'name'       => 'required|string|unique:students,name',
+        'full_name'  => 'required|string|max:255',
+        'contact_no' => 'required|string|regex:/^\+\d{7,15}$/',
+        'email'      => 'required|email|unique:students,email',
+        'password'   => 'required|string|min:6|regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@.$!%*#?&]).{6,}$/'
+    ], $messages);
+
+    if ($validator->fails()) {
+        return response()->json([
+            'success' => false,
+            'errors'  => $validator->errors()
+        ], 422);
+    }
+
+    $validated = $validator->validated();
+    $token = Str::random(64);
+
+    $student = Student::create([
+        'name'               => $validated['name'],
+        'full_name'          => $validated['full_name'],
+        'contact_no'         => $validated['contact_no'],
+        'email'              => $validated['email'],
+        'password'           => bcrypt($validated['password']),
+        'verification_token' => $token,
+        'is_verified'        => false,
+    ]);
+
+    return response()->json([
+        'success' => true,
+        'message' => 'Account created. Sending verification email...',
+        'email'   => $student->email,
+        'token'   => $token,
+    ]);
+}
+
+
+    public function sendVerificationMail(Request $request)
     {
-        $rules = [
-            'name'       => 'required|string|unique:students,name',
-            'full_name'  => 'required|string|max:255',
-            'contact_no' => 'required|string|regex:/^\+\d{7,15}$/',
-            'email'      => 'required|email|unique:students,email',
-            'password'   => [
-                'required',
-                'string',
-                'min:6',
-                // Must contain at least one letter, one number, and one special character
-                'regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@.$!%*#?&]).{6,}$/'
-            ],
-        ];
+        $email = $request->input('email');
+        $token = $request->input('token');
 
-        $messages = [
-            'name.unique'       => 'This username is already taken.',
-            'email.unique'      => 'This email is already registered.',
-            'password.required' => 'Please enter a password.',
-            'password.min'      => 'Password must be at least :min characters long.',
-            'password.regex'    => 'Password must include at least one letter, one number, and one special character (e.g. !@#$%).',
-        ];
+        Mail::to($email)->send(new VerifyStudentMail($token));
 
-        $validated = $request->validate($rules, $messages);
-
-        $token = Str::random(64);
-
-        $student = Student::create([
-            'name'               => $validated['name'],
-            'full_name'          => $validated['full_name'],
-            'contact_no'         => $validated['contact_no'],
-            'email'              => $validated['email'],
-            'password'           => bcrypt($validated['password']),
-            'verification_token' => $token,
-            'is_verified'        => false,
+        return response()->json([
+            'success' => true,
+            'message' => 'Verification email sent.'
         ]);
-
-        Mail::to($student->email)->send(new VerifyStudentMail($token));
-
-        return redirect()->back()->with('success', 'Please check your email to verify your account.');
     }
 
 

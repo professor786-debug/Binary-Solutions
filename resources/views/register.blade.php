@@ -82,49 +82,32 @@
                 <div class="col-xl-6 mx-auto wow fadeIn">
                     <div class="register">
                         <h4 class="login_register_title">Create a new account</h4>
-                        <form action="{{ route('student.register') }}" method="POST">
+                        <div id="form-messages"></div>
+                        <form id="registerForm" method="POST">
                             @csrf
-
                             <div class="form-group">
                                 <label for="username">Username<span>*</span></label>
-                                <input type="text" name="name" class="form-control" value="{{ old('name') }}">
-                                @error('name')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
+                                <input type="text" name="name" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="full_name">Full Name<span>*</span></label>
-                                <input type="text" name="full_name" class="form-control"
-                                    value="{{ old('full_name') }}">
-                                @error('full_name')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
+                                <input type="text" name="full_name" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="contact_no">Contact No<span>*</span></label>
-                                <input type="text" name="contact_no" class="form-control"
-                                    value="{{ old('contact_no') }}">
-                                @error('contact_no')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
+                                <input type="text" name="contact_no" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
-                                <input type="email" name="email" class="form-control" value="{{ old('email') }}">
-                                @error('email')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
+                                <input type="email" name="email" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="password">Password<span>*</span></label>
                                 <input type="password" name="password" class="form-control">
-                                @if ($errors->has('password'))
-                                    <small class="text-danger">{{ $errors->first('password') }}</small>
-                                @endif
                             </div>
 
                             <button type="submit" class="bg-btn">Register</button>
@@ -144,6 +127,53 @@
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- AJAX for Register -->
+    <script>
+        $("#registerForm").on("submit", function(e) {
+            e.preventDefault();
+
+            $("#form-messages").html('<div class="alert alert-info">Processing...</div>');
+
+            $.ajax({
+                url: "{{ route('student.register') }}",
+                type: "POST",
+                data: $(this).serialize(),
+                success: function(response) {
+                    if (response.success) {
+                        // Send verification email in background
+                        $.post("{{ route('student.sendVerification') }}", {
+                            email: response.email,
+                            token: response.token,
+                            _token: "{{ csrf_token() }}"
+                        });
+
+                        $("#form-messages").html(
+                            '<div class="alert alert-success">' + response.message + '</div>'
+                        );
+
+                        $("#registerForm")[0].reset(); // clear form
+                    }
+                },
+                error: function(xhr) {
+                    if (xhr.responseJSON && xhr.responseJSON.errors) {
+                        let errors = xhr.responseJSON.errors;
+                        let errorMessages = '<div class="alert alert-danger"><ul>';
+                        $.each(errors, function(key, value) {
+                            errorMessages += '<li>' + value[0] + '</li>';
+                        });
+                        errorMessages += '</ul></div>';
+                        $("#form-messages").html(errorMessages);
+                    } else {
+                        $("#form-messages").html(
+                            '<div class="alert alert-danger">Something went wrong. Please try again.</div>'
+                        );
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
