@@ -384,13 +384,6 @@
 
             </div>
 
-            <div class="text-center mt-5">
-                <p class="cbtn-wrap">
-                    <img src="assets/img/icons/course/bigarrow.svg" alt="img">
-                    We have more Courses in different Categories .
-                    <a href="#">Browse All <i class="fa-solid fa-arrow-right"></i></a>
-                </p>
-            </div>
         </div>
 
         <img src="assets/img/shapes/course/book.svg" class="cbook-shape" alt="img">
