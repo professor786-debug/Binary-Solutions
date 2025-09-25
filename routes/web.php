@@ -158,3 +158,9 @@ Route::get('/about_us', function () {
 use App\Http\Controllers\ContactController;
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+Route::get('/reset-password', function () {
+    return view('reset-password');
+})->name('reset.password');
+Route::get('/new-password', function () {
+    return view('new-password');
+})->name('new.password');

@@ -49,7 +49,6 @@
 
                         <!-- ✅ Messages will show here -->
 
-
                         <form id="registerForm" action="{{ route('student.register') }}" method="POST">
                             @csrf
 
@@ -60,7 +59,8 @@
 
                             <div class="form-group">
                                 <label for="full_name">Full Name<span>*</span></label>
-                                <input type="text" name="full_name" class="form-control" value="{{ old('full_name') }}">
+                                <input type="text" name="full_name" class="form-control"
+                                    value="{{ old('full_name') }}">
                             </div>
 
                             <!-- Phone Field -->
@@ -83,7 +83,7 @@
 
                             <button type="submit" class="bg-btn">Register</button>
                         </form>
-                         <div id="form-messages"></div>
+                        <div id="form-messages" class="mt-3"></div>
 
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
                         <div class="text-center mb-3 mt-3">
@@ -151,7 +151,7 @@
                 error: function(xhr) {
                     if (xhr.responseJSON && xhr.responseJSON.errors) {
                         let errors = xhr.responseJSON.errors;
-                        let errorMessages = '<div class="alert alert-danger"><ul>';
+                        let errorMessages = '<div class="alert text-danger"><ul>';
                         $.each(errors, function(key, value) {
                             errorMessages += '<li>' + value[0] + '</li>';
                         });
@@ -159,7 +159,7 @@
                         $("#form-messages").html(errorMessages);
                     } else {
                         $("#form-messages").html(
-                            '<div class="alert alert-danger">Something went wrong. Please try again.</div>'
+                            '<div class="alert text-danger">Something went wrong. Please try again.</div>'
                         );
                     }
                 }
@@ -167,4 +167,5 @@
         });
     </script>
 </body>
+
 </html>

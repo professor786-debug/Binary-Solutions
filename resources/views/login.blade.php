@@ -11,6 +11,16 @@
     .section-padding {
         padding: 37px 0;
     }
+
+    .custom-link {
+        text-decoration: none;
+        /* default: no underline */
+    }
+
+    .custom-link:hover {
+        text-decoration: underline;
+        /* hover par underline */
+    }
 </style>
 
 <body>
@@ -118,7 +128,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="contact-email">Password<span>*</span></label>
+                                <div class="d-flex justify-content-between">
+                                    <label for="contact-email">Password<span>*</span></label>
+                                    <a class="text-primary custom-link" href="{{ route('reset.password') }}">
+                                        Forgot Password?
+                                    </a>
+
+                                </div>
                                 <input type="password" placeholder="Enter Password" id="contact-email"
                                     class="form-control" name="password">
                                 @error('password')
@@ -126,12 +142,12 @@
                                 @enderror
                             </div>
 
-                            <div class="form-check mb-4">
+                            {{-- <div class="form-check mb-4">
                                 <input id="rpaword" class="form-check-input" type="checkbox" name="remember">
                                 <label class="form-check-label" for="rpaword">
                                     Remember Me
                                 </label>
-                            </div>
+                            </div> --}}
 
                             <div class="form-group col-lg-12">
                                 <button class="bg-btn" type="submit" name="submit">
