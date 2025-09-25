@@ -1,5 +1,3 @@
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
 <x-head />
@@ -103,19 +101,24 @@
 
     <div class="container">
         <div class="reset-card">
-            <h3 class="text-center">Set New Password</h3>
-            <p class="text-center">Enter your new password below</p>
+            <h4 class="text-center">Set New Password</h4>
 
-            <form>
+
+            <form id="newPasswordForm">
+                @csrf
+                <!-- Hidden values from reset link -->
+                <input type="hidden" name="email" value="{{ request('email') }}">
+                <input type="hidden" name="token" value="{{ request('token') }}">
+
                 <div class="mb-3">
-                    <label for="newPassword" class="form-label">New Password</label>
-                    <input type="password" class="form-control" id="newPassword" placeholder="Enter New Password"
-                        required>
+                    <label for="newPassword" class="form-label"></label>
+                    <input type="password" class="form-control" name="password" id="newPassword"
+                        placeholder="Enter New Password" required>
                 </div>
                 <div class="mb-3">
-                    <label for="confirmPassword" class="form-label">Confirm New Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm New Password"
-                        required>
+                    <label for="confirmPassword" class="form-label"></label>
+                    <input type="password" class="form-control" name="password_confirmation" id="confirmPassword"
+                        placeholder="Confirm New Password" required>
                 </div>
                 <div class="form-group col-lg-12">
                     <button class="bg-btn" type="submit" name="submit">
@@ -124,10 +127,50 @@
                 </div>
             </form>
 
+            <!-- Messages -->
+            <div id="newpass-messages" class="mt-3"></div>
         </div>
     </div>
 
     @include('main_footer')
+
+   <script>
+    $("#newPasswordForm").on("submit", function(e) {
+        e.preventDefault();
+
+        let $btn = $(this).find("button[type=submit]");
+        let originalBtnHtml = $btn.html();
+
+        // Disable button and show spinner
+        $btn.prop("disabled", true).html(
+            'Please wait... <i class="fa fa-spinner fa-spin"></i>'
+        );
+
+        $.ajax({
+            url: "{{ route('password.reset') }}", // backend route
+            type: "POST",
+            data: $(this).serialize(),
+            success: function(response) {
+                $("#newpass-messages").html(
+                    '<div class="alert alert-success">' + response.message +
+                    '<br><a href="{{ route("login") }}" class="text-primary">Click here to login again</a></div>'
+                );
+                $("#newPasswordForm")[0].reset();
+            },
+            error: function(xhr) {
+                let msg = xhr.responseJSON?.message || "Something went wrong";
+                $("#newpass-messages").html(
+                    '<div class="alert alert-danger">' + msg + '</div>'
+                );
+            },
+            complete: function() {
+                // Re-enable button with original text
+                $btn.prop("disabled", false).html(originalBtnHtml);
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>

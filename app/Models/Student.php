@@ -3,19 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Student extends Authenticatable
 {
-     protected $fillable = [
+    use HasFactory;
+
+    protected $fillable = [
         'name',
         'full_name',
         'contact_no',
         'email',
         'password',
         'verification_token',
-        'is_verified'
+        'is_verified',
+        'google_id',        // ✅ Added for Google OAuth
+         // ✅ Optional, for Google avatar
     ];
 
     protected $hidden = ['password', 'remember_token'];
@@ -38,10 +41,7 @@ class Student extends Authenticatable
     }
 
     public function subscriptionPackage()
-     {
-
+    {
         return $this->hasOne(subscriptionPackage::class, 'id');
-
-     }
-
+    }
 }

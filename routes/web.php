@@ -164,3 +164,8 @@ Route::get('/reset-password', function () {
 Route::get('/new-password', function () {
     return view('new-password');
 })->name('new.password');
+
+use App\Http\Controllers\Auth\PasswordResetController;
+
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.reset');
