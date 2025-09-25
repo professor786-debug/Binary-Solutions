@@ -9,6 +9,14 @@
     .section-padding {
         padding: 37px 0;
     }
+
+    .iti {
+        width: 100%;
+    }
+
+    .iti__placeholder {
+        color: #6c757d;
+    }
 </style>
 
 <body>
@@ -95,12 +103,24 @@
                                 <input type="text" name="full_name" class="form-control">
                             </div>
 
+<<<<<<< HEAD
                             <div class="form-group">
                                 <label for="contact_no">Contact No<span>*</span></label>
                                 <input type="text" name="contact_no" class="form-control">
+=======
+                            <!-- New Phone Field with Country Code -->
+                            <div class="form-group mb-4">
+                                <label for="phone">Whatsapp No<span>*</span></label>
+                                <input type="tel" id="phone" name="contact_no" class="form-control"
+                                    value="{{ old('contact_no') }}">
+                                @error('contact_no')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+>>>>>>> f733c3fdfe85aa2279fe5d7f9e44f4625401dc5b
                             </div>
+                            <!-- End New Phone Field -->
 
-                            <div class="form-group">
+                            <div class="form-group ">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control">
                             </div>
@@ -127,6 +147,7 @@
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')
+<<<<<<< HEAD
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- AJAX for Register -->
@@ -173,6 +194,27 @@
                 }
             });
         });
+=======
+
+    <!-- intl-tel-input scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+
+    <script>
+        const input = document.querySelector("#phone");
+        if (input) {
+            window.intlTelInput(input, {
+                initialCountry: "us", // Default US
+                preferredCountries: ["us", "pk", "gb", "in", "sa"],
+                separateDialCode: true,
+                placeholderNumberType: "MOBILE",
+                customPlaceholder: function() {
+                    return "Enter whatsapp number";
+                }
+            });
+        }
+>>>>>>> f733c3fdfe85aa2279fe5d7f9e44f4625401dc5b
     </script>
 </body>
 
