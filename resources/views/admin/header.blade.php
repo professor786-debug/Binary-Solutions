@@ -9,8 +9,8 @@
                 </a></li>
             <li>
                 <form class="form-inline mr-auto">
-                    @if (request()->is('panel/admin/dashboard'))
-                        {{-- Search bar hidden on dashboard --}}
+                    @if (request()->is('panel/admin/dashboard') || request()->is('panel/admin/edit'))
+                        {{-- Search bar hidden on dashboard and edit --}}
                     @else
                         <div class="search-element">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search"
@@ -20,6 +20,7 @@
                             </button>
                         </div>
                     @endif
+
                 </form>
             </li>
         </ul>

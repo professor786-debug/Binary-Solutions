@@ -33,7 +33,7 @@ Route::prefix('/panel/admin')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('admin_login');
 
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('admin_dashboard');
-
+    Route::get('/edit', [AuthController::class, 'edit'])->name('admin_edit');
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin_logout');
 });
 Route::prefix('panel/admin/solutions')->group(function () {
