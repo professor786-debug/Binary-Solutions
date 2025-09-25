@@ -37,6 +37,10 @@ class AuthController extends Controller
     {
         return view('admin.dashboard');
     }
+    public function edit()
+    {
+        return view('admin.admin-profile');
+    }
 
     public function logout(Request $request)
     {
