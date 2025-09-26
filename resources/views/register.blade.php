@@ -61,6 +61,11 @@
                             <div class="form-group">
                                 <label for="username">Username<span>*</span></label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
                                 @error('name')
                                     <small class="text-danger">
                                         {{ $message }}</small>
@@ -85,10 +90,19 @@
                             <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
                                 @error('email')
                                     <small class="text-danger">
                                         {{ $message }}</small>
                                 @enderror
+<<<<<<< HEAD
+=======
+
+>>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
                             </div>
 
                             <div class="form-group">
@@ -101,6 +115,7 @@
                         <div id="form-messages" class="mt-3"></div>
 
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
+<<<<<<< HEAD
                         <div class="text-center mb-3 mt-3">
 
                             <div class="text-center mb-3     mt-3">
@@ -110,6 +125,17 @@
                                     <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
                                 </a>
                             </div>
+=======
+
+                        <div class="text-center mb-3 mt-3">
+
+                        <div class="text-center mb-3     mt-3">
+
+                            <a href="{{ route('google.login') }}"
+                                class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
+                                <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
+                            </a>
+>>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
                         </div>
                     </div><!--- END COL -->
                 </div><!--- END ROW -->
