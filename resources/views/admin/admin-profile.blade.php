@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('admin/css/components.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/img/favicon.ico') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <style>
         .pagetitle {
             margin-top: 15px !important;
@@ -41,25 +43,6 @@
             margin-top: 15px;
         }
 
-        .nav-tabs .nav-item.show .nav-link,
-        .nav-tabs .nav-link.active {
-            border: none
-        }
-
-        .nav-link {
-            background-color: white
-        }
-
-        button {
-            font-weight: 600
-        }
-
-        /* .nav-link:focus,
-        .nav-link:active {
-            outline: none !important;
-            box-shadow: none !important;
-            border: none !important;
-        } */
         .nav-tabs .nav-link.active {
             color: #007bff !important;
             font-weight: 600;
@@ -76,6 +59,35 @@
 
         .nav-tabs .nav-link:hover {
             color: #007bff;
+        }
+
+        .nav-tabs .nav-link:focus,
+        .nav-tabs .nav-link:active {
+            outline: none !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+
+        .nav-tabs .nav-link:focus,
+        .nav-tabs .nav-link:active {
+            border-bottom: #007bff 2px solid !important;
+        }
+
+        .card-title {
+            color: #012970;
+            /* padding: 20px 0 15px 0; */
+            font-size: 18px;
+            /* font-weight: 500; */
+        }
+
+        .label {
+            font-weight: 600;
+            color: rgba(1, 41, 112, 0.6);
+        }
+
+        .col-form-label {
+            font-weight: 600;
+            color: rgba(1, 41, 112, 0.6);
         }
     </style>
 </head>
@@ -125,21 +137,21 @@
                                 <ul class="nav nav-tabs nav-tabs-bordered mb-3">
                                     <li>
                                         <button type="button" class="nav-link active" data-bs-toggle="tab"
-                                            data-bs-target="#profile-overview">Overview</button>
+                                            data-bs-target="#tab-overview">Overview</button>
                                     </li>
                                     <li>
                                         <button type="button" class="nav-link" data-bs-toggle="tab"
-                                            data-bs-target="#profile-edit">Edit Profile</button>
+                                            data-bs-target="#tab-edit-profile">Edit Profile</button>
                                     </li>
                                     <li>
                                         <button type="button" class="nav-link" data-bs-toggle="tab"
-                                            data-bs-target="#profile-change-password">Change Password</button>
+                                            data-bs-target="#tab-change-password">Change Password</button>
                                     </li>
                                 </ul>
 
                                 <div class="tab-content pt-2">
                                     <!-- Overview -->
-                                    <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                    <div class="tab-pane fade show active" id="tab-overview">
                                         <h5 class="card-title">About</h5>
                                         <p class="small fst-italic">
                                             Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus.
@@ -178,12 +190,28 @@
                                     </div>
 
                                     <!-- Edit Profile -->
-                                    <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                                    <div class="tab-pane fade" id="tab-edit-profile">
                                         <form>
+                                            <div class="row mb-3">
+                                                <label for="profileImage"
+                                                    class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile">
+                                                    <div class="pt-2">
+                                                        <a href="#" class="btn btn-primary btn-sm"
+                                                            title="Upload new profile image"><i
+                                                                class="bi bi-upload"></i></a>
+                                                        <a href="#" class="btn btn-danger btn-sm"
+                                                            title="Remove my profile image"><i
+                                                                class="bi bi-trash"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="mb-3 row">
                                                 <label class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                                                 <div class="col-md-8 col-lg-9">
-                                                    <input type="text" class="form-control" value="Kevin Anderson">
+                                                    <input type="text" class="form-control"
+                                                        value="Kevin Anderson">
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -233,7 +261,7 @@
                                     </div>
 
                                     <!-- Change Password -->
-                                    <div class="tab-pane fade pt-3" id="profile-change-password">
+                                    <div class="tab-pane fade" id="tab-change-password">
                                         <form>
                                             <div class="mb-3">
                                                 <label>Current Password</label>

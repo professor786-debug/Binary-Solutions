@@ -109,7 +109,7 @@ class MainController extends Controller
 
     return response()->json([
         'success' => true,
-        'message' => 'Account created. Sending verification email...',
+        'message' => 'Verification mail sent sucessfully. Please verify your email...',
         'email'   => $student->email,
         'token'   => $token,
     ]);

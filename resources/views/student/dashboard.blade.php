@@ -196,8 +196,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <!-- Solution Access Statistics -->
+                    {{-- <div class="row">
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-header">
@@ -222,7 +221,6 @@
                             </div>
                         </div>
 
-                        <!-- Subscription Activity Chart -->
                         <div class="col-md-8">
                             <div class="card card-chart">
                                 <div class="card-header">
@@ -244,60 +242,61 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="row">
-                        <!-- Subscription Activity Chart -->
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">My Purchases</h4>
-                                </div>
-                                <div class="card-body">
-                                    <table class="table">
-                                        <thead class="text-primary">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">My Purchases</h4>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead class="text-primary">
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Base Price</th>
+                                            <th>Add-on Total</th>
+                                            <th>Grand Total</th>
+                                            <th>Payment</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse($purchases as $purchase)
                                             <tr>
-                                                <th>Product</th>
-                                                <th>Base Price</th>
-                                                <th>Add-on Total</th>
-                                                <th>Grand Total</th>
-                                                <th>Payment</th>
-                                                <th>Status</th>
+                                                <td>
+                                                    @if ($purchase->package)
+                                                        Package: {{ $purchase->package->name }}
+                                                    @elseif($purchase->solution)
+                                                        Solution: {{ $purchase->solution->title }}
+                                                    @else
+                                                        N/A
+                                                    @endif
+                                                </td>
+                                                <td>${{ number_format($purchase->base_price, 2) }}</td>
+                                                <td>${{ number_format($purchase->addon_total, 2) }}</td>
+                                                <td>${{ number_format($purchase->grand_total, 2) }}</td>
+                                                <td>{{ ucfirst($purchase->payment_method) ?? 'N/A' }}</td>
+                                                <td>
+                                                    <span
+                                                        class="badge {{ $purchase->payment_status === 'completed' ? 'badge-success' : 'badge-warning' }}">
+                                                        {{ ucfirst($purchase->payment_status) }}
+                                                    </span>
+                                                </td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            @forelse($purchases as $purchase)
-                                                <tr>
-                                                    <td>
-                                                        @if ($purchase->package)
-                                                            Package: {{ $purchase->package->name }}
-                                                        @elseif($purchase->solution)
-                                                            Solution: {{ $purchase->solution->title }}
-                                                        @else
-                                                            N/A
-                                                        @endif
-                                                    </td>
-                                                    <td>${{ number_format($purchase->base_price, 2) }}</td>
-                                                    <td>${{ number_format($purchase->addon_total, 2) }}</td>
-                                                    <td>${{ number_format($purchase->grand_total, 2) }}</td>
-                                                    <td>{{ ucfirst($purchase->payment_method) ?? 'N/A' }}</td>
-                                                    <td>
-                                                        <span
-                                                            class="badge {{ $purchase->payment_status === 'completed' ? 'badge-success' : 'badge-warning' }}">
-                                                            {{ ucfirst($purchase->payment_status) }}
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            @empty
-                                                <tr>
-                                                    <td colspan="6" class="text-center">No purchases found.</td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        @empty
+                                            <tr>
+                                                <td colspan="6" class="text-center">No purchases found.</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <!-- Subscription Activity Chart -->
+
                     </div>
 
                 </div>

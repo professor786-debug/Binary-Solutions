@@ -44,6 +44,10 @@
     .bg-btn {
         width: 100%
     }
+
+    .form-control {
+        margin-bottom: 0px
+    }
 </style>
 
 <body>
@@ -103,7 +107,6 @@
         <div class="reset-card">
             <h4 class="text-center">Set New Password</h4>
 
-
             <form id="newPasswordForm">
                 @csrf
                 <!-- Hidden values from reset link -->
@@ -134,42 +137,42 @@
 
     @include('main_footer')
 
-   <script>
-    $("#newPasswordForm").on("submit", function(e) {
-        e.preventDefault();
+    <script>
+        $("#newPasswordForm").on("submit", function(e) {
+            e.preventDefault();
 
-        let $btn = $(this).find("button[type=submit]");
-        let originalBtnHtml = $btn.html();
+            let $btn = $(this).find("button[type=submit]");
+            let originalBtnHtml = $btn.html();
 
-        // Disable button and show spinner
-        $btn.prop("disabled", true).html(
-            'Please wait... <i class="fa fa-spinner fa-spin"></i>'
-        );
+            // Disable button and show spinner
+            $btn.prop("disabled", true).html(
+                'Please wait... <i class="fa fa-spinner fa-spin"></i>'
+            );
 
-        $.ajax({
-            url: "{{ route('password.reset') }}", // backend route
-            type: "POST",
-            data: $(this).serialize(),
-            success: function(response) {
-                $("#newpass-messages").html(
-                    '<div class="alert alert-success">' + response.message +
-                    '<br><a href="{{ route("login") }}" class="text-primary">Click here to login again</a></div>'
-                );
-                $("#newPasswordForm")[0].reset();
-            },
-            error: function(xhr) {
-                let msg = xhr.responseJSON?.message || "Something went wrong";
-                $("#newpass-messages").html(
-                    '<div class="alert alert-danger">' + msg + '</div>'
-                );
-            },
-            complete: function() {
-                // Re-enable button with original text
-                $btn.prop("disabled", false).html(originalBtnHtml);
-            }
+            $.ajax({
+                url: "{{ route('password.reset') }}", // backend route
+                type: "POST",
+                data: $(this).serialize(),
+                success: function(response) {
+                    $("#newpass-messages").html(
+                        '<div class="alert alert-success">' + response.message +
+                        '<br><a href="{{ route('login') }}" class="text-primary">Click here to login again</a></div>'
+                    );
+                    $("#newPasswordForm")[0].reset();
+                },
+                error: function(xhr) {
+                    let msg = xhr.responseJSON?.message || "Something went wrong";
+                    $("#newpass-messages").html(
+                        '<div class="alert alert-danger">' + msg + '</div>'
+                    );
+                },
+                complete: function() {
+                    // Re-enable button with original text
+                    $btn.prop("disabled", false).html(originalBtnHtml);
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 

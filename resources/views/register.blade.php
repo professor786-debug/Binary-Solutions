@@ -17,6 +17,12 @@
     .iti__placeholder {
         color: #6c757d;
     }
+
+    .alert-nw {
+        text-align: center;
+        color: green;
+        font-weight: 600;
+    }
 </style>
 
 <body>
@@ -55,12 +61,11 @@
                             <div class="form-group">
                                 <label for="username">Username<span>*</span></label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
-<<<<<<< Updated upstream
-=======
                                 @error('name')
-                                    <small class="text-danger">{{ $message }}</small>
+                                    <small class="text-danger">
+                                        {{ $message }}</small>
                                 @enderror
->>>>>>> Stashed changes
+
                             </div>
 
                             <div class="form-group">
@@ -80,12 +85,10 @@
                             <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
-<<<<<<< Updated upstream
-=======
                                 @error('email')
-                                    <small class="text-danger">{{ $message }}</small>
+                                    <small class="text-danger">
+                                        {{ $message }}</small>
                                 @enderror
->>>>>>> Stashed changes
                             </div>
 
                             <div class="form-group">
@@ -98,20 +101,19 @@
                         <div id="form-messages" class="mt-3"></div>
 
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
-<<<<<<< Updated upstream
                         <div class="text-center mb-3 mt-3">
-=======
-                        <div class="text-center mb-3     mt-3">
->>>>>>> Stashed changes
-                            <a href="{{ route('google.login') }}"
-                                class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
-                                <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
-                            </a>
+
+                            <div class="text-center mb-3     mt-3">
+
+                                <a href="{{ route('google.login') }}"
+                                    class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </div><!--- END COL -->
-            </div><!--- END ROW -->
-        </div><!--- END CONTAINER -->
+                    </div><!--- END COL -->
+                </div><!--- END ROW -->
+            </div><!--- END CONTAINER -->
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')
@@ -157,7 +159,7 @@
                         });
 
                         $("#form-messages").html(
-                            '<div class="alert alert-success">' + response.message + '</div>'
+                            '<div class="alert  alert-nw">' + response.message + '</div>'
                         );
 
                         $("#registerForm")[0].reset();

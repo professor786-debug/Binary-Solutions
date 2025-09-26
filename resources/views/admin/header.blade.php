@@ -32,9 +32,11 @@
                     class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
                 <div class="dropdown-title">Hello Admin</div>
-                <a href="#" class="dropdown-item has-icon"> <i class="far
-										fa-user"></i> Profile
-                </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+                <a href="{{ route('admin_edit') }}" class="dropdown-item has-icon">
+                    <i class="far fa-user"></i> Profile
+                </a>
+
+                <a href="#" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
                     Activities
                 </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                     Settings

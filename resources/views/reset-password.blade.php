@@ -107,13 +107,11 @@
     <!-- START LOGIN -->
     <div class="container mt-5">
         <div class="reset-card">
-            <h3 class="text-center">Reset Password</h3>
-            <p class="text-center">Enter your registered email to receive reset link</p>
+            <h3 class="text-center mb-5">Reset Password</h3>
 
             <form id="resetForm">
                 @csrf
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
                     <input type="email" class="form-control" name="email" placeholder="Enter Your Registered Email"
                         required>
                 </div>
@@ -128,7 +126,7 @@
             <div id="reset-messages" class="mt-3"></div>
 
             <div class="text-center mt-3">
-                <a href="{{ route("login") }}" class="text-primary" style="text-decoration:none;">Back to Login</a>
+                <a href="{{ route('login') }}" class="text-primary" style="text-decoration:none;">Back to Login</a>
             </div>
         </div>
     </div>
@@ -137,40 +135,40 @@
     @include('main_footer')
 
     <script>
-    $("#resetForm").on("submit", function(e) {
-        e.preventDefault();
+        $("#resetForm").on("submit", function(e) {
+            e.preventDefault();
 
-        let $btn = $(this).find("button[type=submit]");
-        let originalBtnHtml = $btn.html();
+            let $btn = $(this).find("button[type=submit]");
+            let originalBtnHtml = $btn.html();
 
-        // Disable button and show spinner
-        $btn.prop("disabled", true).html(
-            'Please wait... <i class="fa fa-spinner fa-spin"></i>'
-        );
+            // Disable button and show spinner
+            $btn.prop("disabled", true).html(
+                'Please wait... <i class="fa fa-spinner fa-spin"></i>'
+            );
 
-        $.ajax({
-            url: "{{ route('password.email') }}", // backend route
-            type: "POST",
-            data: $(this).serialize(),
-            success: function(response) {
-                $("#reset-messages").html(
-                    '<div class="alert alert-success">' + response.message + '</div>'
-                );
-                $("#resetForm")[0].reset();
-            },
-            error: function(xhr) {
-                let msg = xhr.responseJSON?.message || "Something went wrong";
-                $("#reset-messages").html(
-                    '<div class="alert alert-danger">' + msg + '</div>'
-                );
-            },
-            complete: function() {
-                // Re-enable button with original text
-                $btn.prop("disabled", false).html(originalBtnHtml);
-            }
+            $.ajax({
+                url: "{{ route('password.email') }}", // backend route
+                type: "POST",
+                data: $(this).serialize(),
+                success: function(response) {
+                    $("#reset-messages").html(
+                        '<div class="alert alert-success">' + response.message + '</div>'
+                    );
+                    $("#resetForm")[0].reset();
+                },
+                error: function(xhr) {
+                    let msg = xhr.responseJSON?.message || "Something went wrong";
+                    $("#reset-messages").html(
+                        '<div class="alert alert-danger">' + msg + '</div>'
+                    );
+                },
+                complete: function() {
+                    // Re-enable button with original text
+                    $btn.prop("disabled", false).html(originalBtnHtml);
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 
