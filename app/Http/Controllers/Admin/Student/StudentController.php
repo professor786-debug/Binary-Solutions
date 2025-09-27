@@ -9,15 +9,19 @@ use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
+    public function profile()
+    {
+        return view('student.student-profile');
+    }
     public function index() {
         $students = Student::all();
         return view('admin.Student.student_list', compact('students'));
     }
- 
+
      public function create(){
          return view('admin.Student.add_student');
      }
- 
+
     public function store(Request $request)
     {
         $request->validate([
@@ -76,4 +80,5 @@ class StudentController extends Controller
 
         return redirect()->route('student.index')->with('success', 'Student deleted successfully.');
     }
+
 }

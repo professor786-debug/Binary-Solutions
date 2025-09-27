@@ -61,11 +61,14 @@
                             <div class="form-group">
                                 <label for="username">Username<span>*</span></label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 
 
 >>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
+=======
+>>>>>>> Stashed changes
                                 @error('name')
                                     <small class="text-danger">
                                         {{ $message }}</small>
@@ -90,11 +93,14 @@
                             <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 
 
 >>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
+=======
+>>>>>>> Stashed changes
                                 @error('email')
                                     <small class="text-danger">
                                         {{ $message }}</small>
@@ -115,6 +121,7 @@
                         <div id="form-messages" class="mt-3"></div>
 
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                         <div class="text-center mb-3 mt-3">
 
@@ -131,15 +138,26 @@
 
                         <div class="text-center mb-3     mt-3">
 
+=======
+                        <div class="text-center mb-3     mt-3">
+>>>>>>> Stashed changes
                             <a href="{{ route('google.login') }}"
                                 class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
                                 <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
                             </a>
+<<<<<<< Updated upstream
 >>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
                         </div>
                     </div><!--- END COL -->
                 </div><!--- END ROW -->
             </div><!--- END CONTAINER -->
+=======
+                        </div>
+                    </div>
+                </div><!--- END COL -->
+            </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->
+>>>>>>> Stashed changes
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')

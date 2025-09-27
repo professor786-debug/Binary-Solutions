@@ -88,6 +88,12 @@
             font-weight: 600;
             color: rgba(1, 41, 112, 0.6);
         }
+
+        @media (max-width:1024px) {
+            .main-content {
+                padding-left: 0px !important;
+            }
+        }
     </style>
 </head>
 

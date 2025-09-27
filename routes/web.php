@@ -154,6 +154,7 @@ Route::get('/student/solutions', [StudentAuthController::class, 'student_solutio
 Route::get('/student/refund', [StudentAuthController::class, 'student_refund_show'])->name('student.refund.show');
 Route::post('/student/refund/create', [StudentAuthController::class, 'student_refund'])->name('refund-requests.store');
 Route::get('/student/custom/solution', [StudentAuthController::class, 'student_solution_req'])->name('student.customsolutions');
+Route::get('/student/profile', [StudentController::class, 'profile'])->name('student.profile');
 Route::get('/student/custom/solution/{id}', [StudentAuthController::class, 'viewSolution'])
     ->name('student.solution.view');
 Route::post('/student/solution/{id}/pay', [StudentAuthController::class, 'paySolution'])
