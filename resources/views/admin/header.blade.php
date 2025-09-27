@@ -27,9 +27,12 @@
     </div>
     <ul class="navbar-nav navbar-right">
         <li class="dropdown"><a href="#" data-toggle="dropdown"
-                class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image"
-                    src="{{ asset('admin/img/users/user.png') }}" class="user-img-radious-style"> <span
-                    class="d-sm-none d-lg-inline-block"></span></a>
+                class="nav-link dropdown-toggle nav-link-lg nav-link-user">   <img alt="image"
+        src="{{ Auth::user()->profile_image
+            ? asset('storage/' . Auth::user()->profile_image)
+            : asset('admin/img/users/user.png') }}"
+        class="user-img-radious-style">
+    <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
                 <div class="dropdown-title">Hello Admin</div>
                 <a href="{{ route('admin_edit') }}" class="dropdown-item has-icon">

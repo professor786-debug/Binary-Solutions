@@ -27,15 +27,38 @@ use App\Http\Controllers\Student\GoogleController;
 |
 */
 //admin routes
+// login page + login submit (no auth required)
 Route::prefix('/panel/admin')->group(function () {
     Route::get('/', [AuthController::class, 'index'])->name('admin_login_form');
-
     Route::post('/login', [AuthController::class, 'login'])->name('admin_login');
-
-    Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('admin_dashboard');
-    Route::get('/edit', [AuthController::class, 'edit'])->name('admin_edit');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('admin_logout');
 });
+
+// all other admin pages (must be logged in)
+use App\Http\Controllers\AdminController;
+
+
+Route::prefix('/panel/admin')
+    ->middleware('auth')
+    ->group(function () {
+        // Existing routes
+        Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('admin_dashboard');
+        Route::get('/edit', [AuthController::class, 'edit'])->name('admin_edit');
+        Route::post('/edit/update', [AuthController::class, 'updateProfile'])->name('admin_update');
+        Route::post('/edit/change-password', [AuthController::class, 'changePassword'])->name('admin_change_password');
+        Route::post('/logout', [AuthController::class, 'logout'])->name('admin_logout');
+
+        // Image routes
+        Route::post('/edit/update-image', [AuthController::class, 'updateProfileImage'])->name('admin_update_profile_image');
+        Route::delete('/edit/delete-image', [AuthController::class, 'deleteProfileImage'])->name('admin_delete_profile_image');
+
+        // ✅ New admin management routes
+        Route::get('/users/create', [AdminController::class, 'create'])->name('admin_create_user'); // show form
+        Route::post('/users/store', [AdminController::class, 'store'])->name('admin_store_user');   // save new admin
+    });
+
+
+
+
 Route::prefix('panel/admin/solutions')->group(function () {
     Route::get('/create', [SolutionController::class, 'create'])->name('solutions.create');
     Route::post('/store', [SolutionController::class, 'store'])->name('solutions.store');
@@ -169,3 +192,4 @@ use App\Http\Controllers\Auth\PasswordResetController;
 
 Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
 Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.reset');
+// Show create admin form
