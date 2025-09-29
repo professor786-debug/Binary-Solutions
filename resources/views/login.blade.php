@@ -11,8 +11,6 @@
     .section-padding {
         padding: 37px 0;
     }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
     .custom-link {
         text-decoration: none;
@@ -23,10 +21,6 @@
         text-decoration: underline;
         /* hover par underline */
     }
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 </style>
 
 <body>

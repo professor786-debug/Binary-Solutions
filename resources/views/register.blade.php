@@ -54,26 +54,15 @@
                         <h4 class="login_register_title">Create a new account</h4>
 
                         <!-- ✅ Messages will show here -->
-
                         <form id="registerForm" action="{{ route('student.register') }}" method="POST">
                             @csrf
 
                             <div class="form-group">
                                 <label for="username">Username<span>*</span></label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-
->>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
-=======
->>>>>>> Stashed changes
                                 @error('name')
-                                    <small class="text-danger">
-                                        {{ $message }}</small>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
-
                             </div>
 
                             <div class="form-group">
@@ -93,22 +82,9 @@
                             <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-
->>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
-=======
->>>>>>> Stashed changes
                                 @error('email')
-                                    <small class="text-danger">
-                                        {{ $message }}</small>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
-<<<<<<< HEAD
-=======
-
->>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
                             </div>
 
                             <div class="form-group">
@@ -118,46 +94,21 @@
 
                             <button type="submit" class="bg-btn">Register</button>
                         </form>
+
                         <div id="form-messages" class="mt-3"></div>
 
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-                        <div class="text-center mb-3 mt-3">
-
-                            <div class="text-center mb-3     mt-3">
-
-                                <a href="{{ route('google.login') }}"
-                                    class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
-                                    <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
-                                </a>
-                            </div>
-=======
 
                         <div class="text-center mb-3 mt-3">
-
-                        <div class="text-center mb-3     mt-3">
-
-=======
-                        <div class="text-center mb-3     mt-3">
->>>>>>> Stashed changes
                             <a href="{{ route('google.login') }}"
                                 class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
                                 <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
                             </a>
-<<<<<<< Updated upstream
->>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
-                        </div>
-                    </div><!--- END COL -->
-                </div><!--- END ROW -->
-            </div><!--- END CONTAINER -->
-=======
                         </div>
                     </div>
                 </div><!--- END COL -->
             </div><!--- END ROW -->
         </div><!--- END CONTAINER -->
->>>>>>> Stashed changes
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')
@@ -171,7 +122,7 @@
     <script>
         const input = document.querySelector("#phone");
         const iti = window.intlTelInput(input, {
-            initialCountry: "us", // ✅ default USA
+            initialCountry: "us",
             preferredCountries: ["us", "pk", "gb", "in", "sa"],
             separateDialCode: true,
             placeholderNumberType: "MOBILE",
@@ -183,7 +134,6 @@
         $("#registerForm").on("submit", function(e) {
             e.preventDefault();
 
-            // ✅ Get full number with country code
             let fullNumber = iti.getNumber();
             $("#phone").val(fullNumber);
 
@@ -195,7 +145,6 @@
                 data: $(this).serialize(),
                 success: function(response) {
                     if (response.success) {
-                        // Send verification email in background
                         $.post("{{ route('student.sendVerification') }}", {
                             email: response.email,
                             token: response.token,
@@ -203,11 +152,11 @@
                         });
 
                         $("#form-messages").html(
-                            '<div class="alert  alert-nw">' + response.message + '</div>'
+                            '<div class="alert alert-nw">' + response.message + '</div>'
                         );
 
                         $("#registerForm")[0].reset();
-                        iti.setCountry("us"); // reset to default USA
+                        iti.setCountry("us");
                     }
                 },
                 error: function(xhr) {
