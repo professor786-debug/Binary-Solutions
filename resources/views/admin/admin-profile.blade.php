@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
@@ -125,8 +124,8 @@
                         <!-- Left Profile Card -->
                         <div class="col-xl-4">
                             <div class="profile-card text-center">
-                                <img src="{{ $user->profile_image ? asset('storage/' . $user->profile_image) : asset('assets/img/profile-img.jpg') }}" alt="Profile" class="img-fluid"
-                                    width="150">
+                                <img src="{{ $user->profile_image ? asset('storage/' . $user->profile_image) : asset('assets/img/profile-img.jpg') }}"
+                                    alt="Profile" class="img-fluid" width="150">
                                 <h4 class="name">{{ $user->name }}</h4>
                                 <p>{{ $user->job ?? 'No Job Title' }}</p>
                                 <div class="social-links">
@@ -167,17 +166,6 @@
                                 {{-- Error Message --}}
 
                                 {{-- Validation Errors --}}
-                                @if ($errors->any())
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <ul class="mb-0">
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                    </div>
-                                @endif
-
 
                                 <div class="tab-content pt-2">
                                     <!-- Overview -->
@@ -222,41 +210,6 @@
 
                                     <!-- Edit Profile Tab -->
                                     <div class="tab-pane fade" id="tab-edit-profile">
-
-                                        {{-- Success Message --}}
-                                        @if (session('success'))
-                                            <div class="alert alert-success alert-dismissible fade show"
-                                                role="alert">
-                                                {{ session('success') }}
-                                                <button type="button" class="btn-close"
-                                                    data-bs-dismiss="alert"></button>
-                                            </div>
-                                        @endif
-
-                                        {{-- Error Message --}}
-                                        @if (session('error'))
-                                            <div class="alert alert-danger alert-dismissible fade show"
-                                                role="alert">
-                                                {{ session('error') }}
-                                                <button type="button" class="btn-close"
-                                                    data-bs-dismiss="alert"></button>
-                                            </div>
-                                        @endif
-
-                                        {{-- Validation Errors --}}
-                                        @if ($errors->any())
-                                            <div class="alert alert-danger alert-dismissible fade show"
-                                                role="alert">
-                                                <ul class="mb-0">
-                                                    @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                <button type="button" class="btn-close"
-                                                    data-bs-dismiss="alert"></button>
-                                            </div>
-                                        @endif
-
                                         <div class="row mb-3">
                                             <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                                 Image</label>
@@ -366,7 +319,6 @@
                                         </form>
 
                                     </div>
-
 
                                     <!-- Change Password -->
                                     <div class="tab-pane fade" id="tab-change-password">
