@@ -32,7 +32,7 @@ class PasswordResetController extends Controller
         // ✅ Send using Mailable
         Mail::to($request->email)->send(new ResetPasswordMail($link));
 
-        return response()->json(['success' => true, 'message' => 'Reset link sent to your email']);
+        return response()->json(['success' => true, 'message' => 'Reset link sent to your email..']);
     }
 
     public function resetPassword(Request $request)

@@ -152,14 +152,15 @@
                 data: $(this).serialize(),
                 success: function(response) {
                     $("#reset-messages").html(
-                        '<div class="alert alert-success">' + response.message + '</div>'
+                        '<div class="alert" style="color:green; text-align:center;">' + response
+                        .message + '</div>'
                     );
                     $("#resetForm")[0].reset();
                 },
                 error: function(xhr) {
                     let msg = xhr.responseJSON?.message || "Something went wrong";
                     $("#reset-messages").html(
-                        '<div class="alert alert-danger">' + msg + '</div>'
+                        '<div class="alert" style="color:red;">' + msg + '</div>'
                     );
                 },
                 complete: function() {

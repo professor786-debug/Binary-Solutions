@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/img/favicon.ico') }}" />
     <style>
-
+        .compact-table th,
+        .compact-table td {
+            padding: 6px 10px !important;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
@@ -28,7 +32,7 @@
             <div class="main-content">
                 <section class="section">
                     <div class="row ">
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-statistic-4">
                                     <div class="align-items-center justify-content-between">
@@ -38,8 +42,6 @@
                                                     <h5 class="font-15">Weekly Revenue</h5>
                                                     <h2 class="mb-3 font-18">${{ number_format($weeklyRevenue, 2) }}
                                                     </h2>
-
-
 
                                                 </div>
                                             </div>
@@ -53,62 +55,85 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-statistic-4">
-                                    <div class="align-items-center justify-content-between">
-                                        <div class="row ">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                <div class="card-content">
+                                    <div class="card-content">
 
-                                                    <h5 class="font-15">Registered Users</h5>
-                                                    <h2 class="mb-3 font-18">{{ $users }}</h2>
-
-                                                    <h5 class="font-15">Customers</h5>
-                                                    <h2 class="mb-3 font-18">{{ $customers }}</h2>
-
-
-
-                                                    <h5 class="font-15">Purchases</h5>
-                                                    <h2 class="mb-3 font-18">{{ $purchases }}</h2>
-
+                                        <div class="row align-items-center">
+                                            <!-- Table left -->
+                                            <div class="col-md-7">
+                                                <table class="table table-bordered table-sm compact-table mb-0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th class="font-15 text-start">Registered Users</th>
+                                                            <td class="font-18 text-center">{{ $users }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="font-15 text-start">Customers</th>
+                                                            <td class="font-18 text-center">{{ $customers }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="font-15 text-start">Purchases</th>
+                                                            <td class="font-18 text-center">{{ $purchases }}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!-- Image right -->
+                                            <div class="col-md-5 text-center mb-3 mb-md-0">
+                                                <div class="banner-img">
+                                                    <img src="{{ asset('admin/img/banner/2.png') }}" alt="stats image"
+                                                        class="img-fluid" style="max-height: 200px;">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                                                <div class="banner-img">
-                                                    <img src="{{ asset('admin/img/banner/2.png') }}" alt="">
-                                                </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-statistic-4 p-3">
+                                    <div class="row align-items-center">
+                                        <!-- Table on left -->
+                                        <div class="col-md-6" style="padding: 17px 10px;">
+                                            <table class="table table-bordered  table-sm compact-table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Type</th>
+                                                        <th>Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Solutions</td>
+                                                        <td>{{ $solutions }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Custom Solutions</td>
+                                                        <td>{{ $customSolutions }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Image on right -->
+                                        <div class="col-md-6 text-center">
+                                            <div class="banner-img">
+                                                <img src="{{ asset('admin/img/banner/3.png') }}" alt=""
+                                                    class="img-fluid" style="max-height:120px;">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="card">
-                                <div class="card-statistic-4">
-                                    <div class="align-items-center justify-content-between">
-                                        <div class="row ">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                <div class="card-content">
-                                                    <h5 class="font-15">Solutions</h5>
-                                                    <h2 class="mb-3 font-18">{{ $solutions }}</h2>
-                                                    <h5 class="font-15">Custom Solutions</h5>
-                                                    <h2 class="mb-3 font-18">{{ $customSolutions }}</h2>
 
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                                                <div class="banner-img">
-                                                    <img src="{{ asset('admin/img/banner/3.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-statistic-4">
                                     <div class="align-items-center justify-content-between">
@@ -117,7 +142,6 @@
                                                 <div class="card-content">
                                                     <h5 class="font-15">Revenue (Year)</h5>
                                                     <h2 class="mb-0 m-b-0">${{ number_format($yearlyRevenue, 2) }}</h2>
-
 
                                                 </div>
                                             </div>
@@ -188,7 +212,6 @@
                                                     <span
                                                         class="text-big">${{ number_format($totalIncome, 2) }}</span>
                                                 </div>
-
 
                                             </div>
                                         </div>
