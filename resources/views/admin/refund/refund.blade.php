@@ -61,23 +61,38 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <!-- Dummy Row 1 -->
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Ali Khan</td>
-                                                        <td>Blanditiis sunt nat</td>
-                                                        <td>Dolor libero excepte</td>
-                                                        <td><span class="badge">$20</span></td>
-                                                        <td><span class="badge bg-secondary">Pending</span></td>
-                                                        <td><span>4242</span></td>
-                                                        <td><span class="text-muted">
+                                                    @forelse ($refunds as $refund)
+                                                        <tr>
+                                                            <td>{{ $refund->id }}</td>
+                                                            <td>{{ $refund->student->name ?? 'N/A' }}</td>
+                                                            <td>{{ $refund->transaction_id }}</td>
+                                                            <td>{{ $refund->reason ?? 'N/A' }}</td>
+                                                            <td><span class="badge">${{ $refund->amount }}</span></td>
+                                                            <td>
+                                                                @if ($refund->status == 'completed')
+                                                                    <span class="badge bg-success">Completed</span>
+                                                                @else
+                                                                    <span
+                                                                        class="badge bg-secondary">{{ ucfirst($refund->status) }}</span>
+                                                                @endif
+                                                            </td>
+                                                            <td>{{ $refund->card_last4 ?? '----' }}</td>
+                                                            <td>
                                                                 <button class="btn btn-sm btn-success btn-upload"
-                                                                    data-toggle="modal" data-target="#priceModal-2">
+                                                                    data-toggle="modal"
+                                                                    data-target="#refundModal-{{ $refund->id }}">
                                                                     Refund
-                                                                </button></span></td>
-                                                    </tr>
-
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="8" class="text-center text-muted">No refund
+                                                                requests found</td>
+                                                        </tr>
+                                                    @endforelse
                                                 </tbody>
+
                                             </table>
 
                                         </div>
@@ -89,33 +104,7 @@
                 </section>
 
                 <!-- Dummy Modal -->
-                <div class="modal fade" id="priceModal-2" tabindex="-1" role="dialog"
-                    aria-labelledby="priceModalLabel-2" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <form>
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="priceModalLabel-2">Upload Solution
-                                        File for #2</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="solution_file">Solution File</label>
-                                        <input type="file" name="solution_file" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Upload</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
 
             </div>
             <footer class="main-footer">

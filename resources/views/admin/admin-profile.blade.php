@@ -156,20 +156,28 @@
                                     </li>
                                 </ul>
                                 {{-- Success Message --}}
-                                @if (session('success'))
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        {{ session('success') }}
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                    </div>
-                                @endif
+
 
                                 {{-- Error Message --}}
 
+<<<<<<< HEAD
                                 {{-- Validation Errors --}}
+=======
+
+
+>>>>>>> ace71b301c96a6c869ae0caff32b3032cefff122
 
                                 <div class="tab-content pt-2">
+
                                     <!-- Overview -->
                                     <div class="tab-pane fade show active" id="tab-overview">
+                                        @if (session('success'))
+                                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                {{ session('success') }}
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="alert"></button>
+                                            </div>
+                                        @endif
                                         <h5 class="card-title">About</h5>
                                         <p class="small fst-italic">
                                             {{ $user->about ?? 'No description added yet.' }}
@@ -210,6 +218,13 @@
 
                                     <!-- Edit Profile Tab -->
                                     <div class="tab-pane fade" id="tab-edit-profile">
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> ace71b301c96a6c869ae0caff32b3032cefff122
                                         <div class="row mb-3">
                                             <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                                 Image</label>

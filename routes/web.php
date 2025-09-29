@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\Subscription\SubscriptionController;
 use App\Http\Controllers\RefundController;
 use App\Mail\VerifyStudentMail;
 use App\Http\Controllers\Student\GoogleController;
+use App\Http\Controllers\Admin\AdminDashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +39,14 @@ Route::prefix('/panel/admin')->group(function () {
 use App\Http\Controllers\AdminController;
 
 
+
+
 Route::prefix('/panel/admin')
     ->middleware('auth')
     ->group(function () {
         // Existing routes
-        Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('admin_dashboard');
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
+
         Route::get('/edit', [AuthController::class, 'edit'])->name('admin_edit');
         Route::post('/edit/update', [AuthController::class, 'updateProfile'])->name('admin_update');
         Route::post('/edit/change-password', [AuthController::class, 'changePassword'])->name('admin_change_password');
@@ -105,10 +110,13 @@ Route::prefix('panel/admin/package')->group(function () {
     Route::delete('/package/{id}', [PackageController::class, 'destroy'])->name('package.destroy');
 });
 
-Route::prefix('panel/admin/refund')->group(function () {
 
-    Route::get('/requests', [RefundController::class, 'index'])->name('');
+
+Route::prefix('panel/admin/refund')->group(function () {
+    Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
+         ->name('admin_refund_requests');
 });
+
 
 
 Route::prefix('panel/admin/student_subscription')->group(function () {
