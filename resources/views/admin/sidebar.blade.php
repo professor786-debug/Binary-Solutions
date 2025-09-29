@@ -55,13 +55,11 @@
             </ul>
         </li>
         <li class="dropdown">
-            <a href="refund/requests" class="nav-link">
+            <a href="{{ route('admin_refund_requests') }}" class="nav-link">
                 <i data-feather="book"></i><span>Refund Requests</span>
             </a>
-            {{-- <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('package.index') }}">Package List</a></li>
-            </ul> --}}
         </li>
+
         <li><a class="nav-link" href=""><i data-feather="mail"></i><span>
                     Pages</span></a>
         </li>

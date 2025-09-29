@@ -34,14 +34,10 @@ $(function () {
             }
         });
     });
-
-
-
 });
 
-
-
 function chart1() {
+    // ✅ Use backend values injected into window.revenueData from Blade
     var options = {
         chart: {
             height: 230,
@@ -58,7 +54,7 @@ function chart1() {
                 show: false
             }
         },
-        colors: ["#786BED", "#999b9c"],
+        colors: ["#786BED"],
         dataLabels: {
             enabled: true
         },
@@ -66,18 +62,17 @@ function chart1() {
             curve: "smooth"
         },
         series: [{
-            name: "High - 2019",
-            data: [5, 15, 14, 36, 32, 32]
-        },
-        {
-            name: "Low - 2019",
-            data: [7, 11, 30, 18, 25, 13]
-        }
-        ],
+            name: "Revenue",
+            data: [
+                window.revenueData.weekly,
+                window.revenueData.monthly,
+                window.revenueData.yearly
+            ]
+        }],
         grid: {
             borderColor: "#e7e7e7",
             row: {
-                colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+                colors: ["#f3f3f3", "transparent"],
                 opacity: 0.0
             }
         },
@@ -85,8 +80,7 @@ function chart1() {
             size: 6
         },
         xaxis: {
-            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-
+            categories: ["Weekly", "Monthly", "Yearly"],
             labels: {
                 style: {
                     colors: "#9aa0ac"
@@ -95,15 +89,13 @@ function chart1() {
         },
         yaxis: {
             title: {
-                text: "Income"
+                text: "Revenue"
             },
             labels: {
                 style: {
                     color: "#9aa0ac"
                 }
-            },
-            min: 5,
-            max: 40
+            }
         },
         legend: {
             position: "top",
@@ -115,7 +107,6 @@ function chart1() {
     };
 
     var chart = new ApexCharts(document.querySelector("#chart1"), options);
-
     chart.render();
 }
 
@@ -278,9 +269,9 @@ function chart4() {
             },
 
         },
-        colors: ['#999b9c', '#4CC2B0'], // line color
+        colors: ['#999b9c', '#4CC2B0'],
         fill: {
-            colors: ['#999b9c', '#4CC2B0'] // fill color
+            colors: ['#999b9c', '#4CC2B0']
         },
         dataLabels: {
             enabled: false
@@ -289,7 +280,7 @@ function chart4() {
             curve: 'smooth'
         },
         markers: {
-            colors: ['#999b9c', '#4CC2B0'] // marker color
+            colors: ['#999b9c', '#4CC2B0']
         },
         series: [{
             name: 'series1',
