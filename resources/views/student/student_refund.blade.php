@@ -122,6 +122,7 @@
                                                 <th>Payment Status</th>
                                                 <th>Reason</th>
                                                 <th>Status</th>
+                                                <th>Rejection Reason</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -142,12 +143,14 @@
                                                     <td>
                                                         @if ($request->status === 'pending')
                                                             <span class="badge badge-warning">Pending</span>
-                                                        @elseif($request->status === 'approved')
+                                                        @elseif($request->status === 'completed')
                                                             <span class="badge badge-success">Approved</span>
                                                         @else
                                                             <span class="badge badge-danger">Rejected</span>
                                                         @endif
                                                     </td>
+                                                      <td>{{ $request->rejection_reason ?? '—' }}</td>
+
                                                 </tr>
                                             @endforeach
                                         </tbody>

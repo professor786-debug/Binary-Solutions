@@ -58,6 +58,7 @@
                                                         <th>Status</th>
                                                         <th>Card Last Digits</th>
                                                         <th>Action</th>
+                                                        <th>Rejection</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -78,12 +79,14 @@
                                                             </td>
                                                             <td>{{ $refund->card_last4 ?? '----' }}</td>
                                                             <td>
-                                                                <button class="btn btn-sm btn-success btn-upload"
-                                                                    data-toggle="modal"
-                                                                    data-target="#refundModal-{{ $refund->id }}">
-                                                                    Refund
-                                                                </button>
+                                                                {{-- ✅ Full Refund Button --}}
+
                                                             </td>
+                                                            <td>
+
+                                                            </td>
+
+
                                                         </tr>
                                                     @empty
                                                         <tr>

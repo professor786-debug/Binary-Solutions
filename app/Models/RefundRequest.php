@@ -19,6 +19,7 @@ class RefundRequest extends Model
         'payment_status',
         'reason',
         'status',
+        'rejection_reason',
     ];
 
     public function student()
