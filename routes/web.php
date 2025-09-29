@@ -111,12 +111,19 @@ Route::prefix('panel/admin/package')->group(function () {
 });
 
 
-
 Route::prefix('panel/admin/refund')->group(function () {
     Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
-         ->name('admin_refund_requests');
-});
+        ->name('admin_refund_requests');
 
+    Route::post('/full/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundFull'])
+        ->name('admin_refund_full');
+
+    Route::post('/partial/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundPartial'])
+        ->name('admin_refund_partial');
+        Route::post('/reject/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'reject'])
+    ->name('admin_refund_reject');
+
+});
 
 
 Route::prefix('panel/admin/student_subscription')->group(function () {
