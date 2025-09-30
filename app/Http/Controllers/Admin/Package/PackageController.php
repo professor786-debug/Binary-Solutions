@@ -18,34 +18,34 @@ class PackageController extends Controller
          return view('admin.Packeges.add_packege');
      }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:100',
-            'price' => 'required|numeric|min:0',
-            'duration_days' => 'required|integer|min:1',
-            'type' => 'required|in:monthly,yearly,single',
-            'download_limit' => 'nullable|integer|min:0',
-            'discount_percentage' => 'nullable|numeric|min:0|max:100',
-            'one_on_one_sessions' => 'required|boolean',
-            'description' => 'nullable|string|max:1000',
-            'status' => 'required|boolean',
-        ]);
+  public function store(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:100',
+        'price' => 'required|numeric|min:0',
+        'duration' => 'required|integer|min:1', // ✅ added
+        'download_limit' => 'nullable|integer|min:0',
+        'discount_percentage' => 'nullable|numeric|min:0|max:100',
+        'one_on_one_sessions' => 'required|boolean',
+        'description' => 'nullable|string|max:1000',
+        'status' => 'required|boolean',
+    ]);
 
-        SubscriptionPackage::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'duration_days' => $request->duration_days,
-            'type' => $request->type,
-            'download_limit' => $request->download_limit,
-            'discount_percentage' => $request->discount_percentage,
-            'one_on_one_sessions' => $request->one_on_one_sessions,
-            'description' => $request->description,
-            'status' => $request->status,
-        ]);
+    SubscriptionPackage::create([
+        'name' => $request->name,
+        'price' => $request->price,
+        'duration' => $request->duration, // ✅ added
+        'download_limit' => $request->download_limit,
+        'discount_percentage' => $request->discount_percentage,
+        'one_on_one_sessions' => $request->one_on_one_sessions,
+        'description' => $request->description,
+        'status' => $request->status,
+    ]);
 
-        return redirect()->route('package.index')->with('success', 'Package added successfully!');
-    }
+    return redirect()->route('package.index')->with('success', 'Package added successfully!');
+}
+
+
 
     public function edit($id)
     {
@@ -53,36 +53,34 @@ class PackageController extends Controller
         return view('admin.Packeges.edit_packege', compact('package'));
     }
 
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required|string|max:100',
-            'price' => 'required|numeric|min:0',
-            'duration_days' => 'required|integer|min:1',
-            'type' => 'required|in:monthly,yearly,single',
-            'download_limit' => 'nullable|integer|min:0',
-            'discount_percentage' => 'nullable|numeric|min:0|max:100',
-            'one_on_one_sessions' => 'required|boolean',
-            'description' => 'nullable|string|max:1000',
-            'status' => 'required|boolean',
-        ]);
+   public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:100',
+        'price' => 'required|numeric|min:0',
+        'duration' => 'required|integer|min:1', // ✅ updated
+        'download_limit' => 'nullable|integer|min:0',
+        'discount_percentage' => 'nullable|numeric|min:0|max:100',
+        'one_on_one_sessions' => 'required|boolean',
+        'description' => 'nullable|string|max:1000',
+        'status' => 'required|boolean',
+    ]);
 
-        $package = SubscriptionPackage::findOrFail($id);
+    $package = SubscriptionPackage::findOrFail($id);
 
-        $package->update([
-            'name' => $request->name,
-            'price' => $request->price,
-            'duration_days' => $request->duration_days,
-            'type' => $request->type,
-            'download_limit' => $request->download_limit,
-            'discount_percentage' => $request->discount_percentage,
-            'one_on_one_sessions' => $request->one_on_one_sessions,
-            'description' => $request->description,
-            'status' => $request->status,
-        ]);
+    $package->update([
+        'name' => $request->name,
+        'price' => $request->price,
+        'duration' => $request->duration, // ✅ updated
+        'download_limit' => $request->download_limit,
+        'discount_percentage' => $request->discount_percentage,
+        'one_on_one_sessions' => $request->one_on_one_sessions,
+        'description' => $request->description,
+        'status' => $request->status,
+    ]);
 
-        return redirect()->route('package.index')->with('success', 'Package updated successfully!');
-    }
+    return redirect()->route('package.index')->with('success', 'Package updated successfully!');
+}
 
     public function destroy($id)
     {

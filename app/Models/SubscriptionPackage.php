@@ -9,20 +9,51 @@ class SubscriptionPackage extends Model
 {
     use HasFactory;
 
-    protected $table = 'subscription_plans';
+    protected $table = 'subscription_plans'; // your existing table name
 
+    /**
+     * Mass assignable attributes
+     */
     protected $fillable = [
-        'name',                 // e.g. "Starter", "Pro", "Unlimited"
-        'price',                // e.g. 19.99, 39.99, 49.99
-        'download_limit',       // e.g. 3, 10, NULL (for unlimited)
-        'discount_percentage',  // e.g. 10 (only for Pro)
-        'one_on_one_sessions',  // e.g. 0 or 1
-        'description',          // e.g. "Access to 3 solution downloads/month"
-        'status'                // 1 = active, 0 = inactive
+        'name',
+        'price',
+        'duration',            // in days or months
+        'download_limit',      // NULL = unlimited
+        'discount_percentage', // default 0
+        'one_on_one_sessions', // default 0
+        'description',
+        'status',              // 1 = active, 0 = inactive
     ];
 
-    public function subscriptions() {
-        return $this->hasMany(StudentSubscription::class);
+    /**
+     * Attribute casting
+     */
+    protected $casts = [
+        'price' => 'decimal:2',
+        'duration' => 'integer',
+        'download_limit' => 'integer',
+        'discount_percentage' => 'integer',
+        'one_on_one_sessions' => 'integer',
+        'status' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    /**
+     * Default attribute values
+     */
+    protected $attributes = [
+        'discount_percentage' => 0,
+        'one_on_one_sessions' => 0,
+        'status' => 0,
+    ];
+
+    /**
+     * Relationships
+     */
+    public function subscriptions()
+    {
+        return $this->hasMany(StudentSubscription::class, 'package_id');
     }
 
     public function purchases()
