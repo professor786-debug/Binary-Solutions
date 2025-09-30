@@ -24,20 +24,19 @@
                     <i data-feather="maximize"></i>
                 </a></li>
             <li>
-                <form class="form-inline mr-auto">
+                {{-- <form class="form-inline mr-auto">
                     @if (request()->is('panel/admin/dashboard') || request()->is('panel/admin/edit'))
-                        {{-- Search bar hidden on dashboard and edit --}}
-                    @else
-                        <div class="search-element">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                                data-width="200">
-                            <button class="btn" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    @endif
+            @else
+                <div class="search-element">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                        data-width="200">
+                    <button class="btn" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                @endif
 
-                </form>
+                </form> --}}
             </li>
         </ul>
     </div>
@@ -67,8 +66,6 @@
                 <a href="{{ route('admin_edit') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
-
-
 
                 <div class="dropdown-divider"></div>
                 <form id="logout-form" action="{{ route('admin_logout') }}" method="POST" style="display: none;">
