@@ -23,6 +23,15 @@
         .btn-upload {
             width: 116px !important;
         }
+
+        td {
+            white-space: nowrap;
+            /* ek hi line me rakhega */
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
     </style>
 </head>
 
@@ -56,9 +65,8 @@
                                                         <th>Reason</th>
                                                         <th>Amount</th>
                                                         <th>Status</th>
-                                                        <th>Card Last Digits</th>
-                                                        <th>Action</th>
-                                                        <th>Rejection</th>
+                                                        <th style="min-width: 140px;">Card Last Digits</th>
+                                                        <th style="min-width: 250px;">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -79,13 +87,56 @@
                                                             </td>
                                                             <td>{{ $refund->card_last4 ?? '----' }}</td>
                                                             <td>
-                                                                {{-- ✅ Full Refund Button --}}
+                                                                <div class="refund-actions" style="padding: 4px">
+                                                                    <!-- Full Refund -->
+                                                                    <div class="action-item">
+                                                                        <input type="checkbox" class="action-checkbox"
+                                                                            id="full-{{ $refund->id }}">
+                                                                        <label for="full-{{ $refund->id }}">Full
+                                                                            Refund</label>
+                                                                        <div class="action-dropdown mt-2"
+                                                                            style="display: none;">
+                                                                            <input type="text" placeholder="Comment"
+                                                                                class="form-control d-inline-block w-50">
+                                                                            <button
+                                                                                class="btn btn-success btn-sm">Refund</button>
+                                                                        </div>
+                                                                    </div>
 
+                                                                    <!-- Partial Refund -->
+                                                                    <div class="action-item mt-2">
+                                                                        <input type="checkbox" class="action-checkbox"
+                                                                            id="partial-{{ $refund->id }}">
+                                                                        <label
+                                                                            for="partial-{{ $refund->id }}">Partial
+                                                                            Refund</label>
+                                                                        <div class="action-dropdown mt-2"
+                                                                            style="display: none;">
+                                                                            <input type="text" placeholder="%"
+                                                                                class="form-control d-inline-block w-25">
+                                                                            <input type="text" placeholder="Reason"
+                                                                                class="form-control d-inline-block w-50">
+                                                                            <button
+                                                                                class="btn btn-primary btn-sm">Confirm</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Rejection -->
+                                                                    <div class="action-item mt-2">
+                                                                        <input type="checkbox" class="action-checkbox"
+                                                                            id="reject-{{ $refund->id }}">
+                                                                        <label
+                                                                            for="reject-{{ $refund->id }}">Rejection</label>
+                                                                        <div class="action-dropdown mt-2"
+                                                                            style="display: none;">
+                                                                            <input type="text" placeholder="Reason"
+                                                                                class="form-control d-inline-block w-50">
+                                                                            <button
+                                                                                class="btn btn-danger btn-sm">Confirm</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </td>
-                                                            <td>
-
-                                                            </td>
-
 
                                                         </tr>
                                                     @empty
@@ -107,7 +158,6 @@
                 </section>
 
                 <!-- Dummy Modal -->
-
 
             </div>
             <footer class="main-footer">

@@ -728,3 +728,33 @@ $(document).ready(function () {
         $(this).find(".dropdownIcon").removeClass("rotate");
     });
 });
+// custom changes in refund page
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".action-checkbox").forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+            // same td ke andar sare checkboxes aur dropdowns handle karo
+            let parentTd = checkbox.closest("td");
+
+            parentTd
+                .querySelectorAll(".action-checkbox")
+                .forEach(function (cb) {
+                    if (cb !== checkbox) {
+                        cb.checked = false; // baaki sab uncheck
+                        cb
+                            .closest(".action-item")
+                            .querySelector(".action-dropdown").style.display =
+                            "none";
+                    }
+                });
+
+            let dropdown = checkbox
+                .closest(".action-item")
+                .querySelector(".action-dropdown");
+            if (checkbox.checked) {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        });
+    });
+});
