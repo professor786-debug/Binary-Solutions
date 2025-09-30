@@ -61,23 +61,24 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right pullDown">
-                <div class="dropdown-title">Hello Admin !</div>
+                <div class="dropdown-title">
+                    Hello {{ Auth::user()->name ?? 'Admin' }} !
+                </div>
                 <a href="{{ route('admin_edit') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
 
-                <a href="#" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
-                    Activities
 
-                    <div class="dropdown-divider"></div>
-                    <form id="logout-form" action="{{ route('admin_logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
 
-                    <a href="#" class="dropdown-item has-icon text-danger"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
+                <div class="dropdown-divider"></div>
+                <form id="logout-form" action="{{ route('admin_logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+
+                <a href="#" class="dropdown-item has-icon text-danger"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
             </div>
         </li>
     </ul>

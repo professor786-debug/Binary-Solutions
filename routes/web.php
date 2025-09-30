@@ -114,6 +114,8 @@ Route::prefix('panel/admin/package')->group(function () {
 Route::prefix('panel/admin/refund')->group(function () {
     Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
         ->name('admin_refund_requests');
+        Route::get('/action', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundaction'])
+        ->name('admin_refund_action');
 
     Route::post('/full/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundFull'])
         ->name('admin_refund_full');

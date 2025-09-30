@@ -16,6 +16,11 @@ class RefundController extends Controller
         $refunds = RefundRequest::with('student')->latest()->get();
         return view('admin.refund.refund', compact('refunds'));
     }
+     public function refundaction()
+    {
+
+        return view('admin.refund.refundaction');
+    }
 
     // ✅ Full refund
    public function refundFull($id)
