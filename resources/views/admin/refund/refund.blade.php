@@ -32,6 +32,10 @@
         .table-responsive {
             overflow-x: auto;
         }
+
+        .dropdown-toggle::after {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -65,8 +69,7 @@
                                                         <th>Reason</th>
                                                         <th>Amount</th>
                                                         <th>Status</th>
-                                                        <th style="min-width: 140px;">Card Last Digits</th>
-                                                        <th style="min-width: 250px;">Action</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -74,7 +77,9 @@
                                                         <tr>
                                                             <td>{{ $refund->id }}</td>
                                                             <td>{{ $refund->student->name ?? 'N/A' }}</td>
-                                                            <td>{{ $refund->transaction_id }}</td>
+                                                            <td
+                                                                style="max-width: 200px; white-space: normal; word-break: break-all;">
+                                                                {{ $refund->transaction_id }}</td>
                                                             <td>{{ $refund->reason ?? 'N/A' }}</td>
                                                             <td><span class="badge">${{ $refund->amount }}</span></td>
                                                             <td>
@@ -85,57 +90,11 @@
                                                                         class="badge bg-secondary">{{ ucfirst($refund->status) }}</span>
                                                                 @endif
                                                             </td>
-                                                            <td>{{ $refund->card_last4 ?? '----' }}</td>
                                                             <td>
-                                                                <div class="refund-actions" style="padding: 4px">
-                                                                    <!-- Full Refund -->
-                                                                    <div class="action-item">
-                                                                        <input type="checkbox" class="action-checkbox"
-                                                                            id="full-{{ $refund->id }}">
-                                                                        <label for="full-{{ $refund->id }}">Full
-                                                                            Refund</label>
-                                                                        <div class="action-dropdown mt-2"
-                                                                            style="display: none;">
-                                                                            <input type="text" placeholder="Comment"
-                                                                                class="form-control d-inline-block w-50">
-                                                                            <button
-                                                                                class="btn btn-success btn-sm">Refund</button>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <!-- Partial Refund -->
-                                                                    <div class="action-item mt-2">
-                                                                        <input type="checkbox" class="action-checkbox"
-                                                                            id="partial-{{ $refund->id }}">
-                                                                        <label
-                                                                            for="partial-{{ $refund->id }}">Partial
-                                                                            Refund</label>
-                                                                        <div class="action-dropdown mt-2"
-                                                                            style="display: none;">
-                                                                            <input type="text" placeholder="%"
-                                                                                class="form-control d-inline-block w-25">
-                                                                            <input type="text" placeholder="Reason"
-                                                                                class="form-control d-inline-block w-50">
-                                                                            <button
-                                                                                class="btn btn-primary btn-sm">Confirm</button>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <!-- Rejection -->
-                                                                    <div class="action-item mt-2">
-                                                                        <input type="checkbox" class="action-checkbox"
-                                                                            id="reject-{{ $refund->id }}">
-                                                                        <label
-                                                                            for="reject-{{ $refund->id }}">Rejection</label>
-                                                                        <div class="action-dropdown mt-2"
-                                                                            style="display: none;">
-                                                                            <input type="text" placeholder="Reason"
-                                                                                class="form-control d-inline-block w-50">
-                                                                            <button
-                                                                                class="btn btn-danger btn-sm">Confirm</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                <a href="{{ route('admin_refund_action', ['id' => $refund->id]) }} "
+                                                                    class="btn btn-primary btn-sm">
+                                                                    Take Action
+                                                                </a>
                                                             </td>
 
                                                         </tr>

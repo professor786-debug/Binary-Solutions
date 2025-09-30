@@ -162,7 +162,7 @@
                                     <button type="submit" class="bg-btn">Send Message</button>
                                 </div>
                                 @if (session('success'))
-                                    <div class="alert alert-success">
+                                    <div class="alert" style="color: green; text-align: center">
                                         {{ session('success') }}
                                     </div>
                                 @endif

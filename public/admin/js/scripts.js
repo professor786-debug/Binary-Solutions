@@ -729,32 +729,27 @@ $(document).ready(function () {
     });
 });
 // custom changes in refund page
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".action-checkbox").forEach(function (checkbox) {
-        checkbox.addEventListener("change", function () {
-            // same td ke andar sare checkboxes aur dropdowns handle karo
-            let parentTd = checkbox.closest("td");
 
-            parentTd
-                .querySelectorAll(".action-checkbox")
-                .forEach(function (cb) {
-                    if (cb !== checkbox) {
-                        cb.checked = false; // baaki sab uncheck
-                        cb
-                            .closest(".action-item")
-                            .querySelector(".action-dropdown").style.display =
-                            "none";
-                    }
-                });
-
-            let dropdown = checkbox
-                .closest(".action-item")
-                .querySelector(".action-dropdown");
-            if (checkbox.checked) {
-                dropdown.style.display = "block";
-            } else {
-                dropdown.style.display = "none";
-            }
-        });
+document.querySelectorAll('input[name="action_type"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+        document
+            .querySelectorAll(".action-fields")
+            .forEach((div) => (div.style.display = "none"));
+        if (this.value === "full") {
+            document.getElementById("fullRefundFields").style.display = "block";
+        } else if (this.value === "partial") {
+            document.getElementById("partialRefundFields").style.display =
+                "block";
+        } else if (this.value === "reject") {
+            document.getElementById("rejectRefundFields").style.display =
+                "block";
+        }
     });
 });
+
+// custom js for Transaction ID text
+function showFullId(id) {
+    document.getElementById("short-id-" + id).style.display = "none";
+    document.getElementById("full-id-" + id).style.display = "block";
+}
+//
