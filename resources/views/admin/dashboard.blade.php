@@ -43,11 +43,6 @@
                                                     <h2 class="mb-3 font-18">${{ number_format($weeklyRevenue, 2) }}
                                                     </h2>
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -63,8 +58,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-statistic-4">
-<<<<<<< Updated upstream
-                                    <div class="card-content">
+                                    <<<<<<< Updated upstream <div class="card-content">
 
                                         <div class="row align-items-center">
                                             <!-- Table left -->
@@ -91,204 +85,219 @@
                                                 <div class="banner-img">
                                                     <img src="{{ asset('admin/img/banner/2.png') }}" alt="stats image"
                                                         class="img-fluid" style="max-height: 200px;">
-=======
-                                    <div class="align-items-center justify-content-between">
-                                        <div class="row ">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                <div class="card-content">
+                                                    =======
+                                                    <div class="align-items-center justify-content-between">
+                                                        <div class="row ">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                                <div class="card-content">
+                                                                    <h5 class="font-15"> Customers</h5>
+                                                                    <h2 class="mb-3 font-18">1,287</h2>
+                                                                    <p class="mb-0"><span
+                                                                            class="col-orange">09%</span> Decrease</p>
+                                                                </div>
+                                                            </div>
 
-                                                    <h5 class="font-15">Registered Users</h5>
-                                                    <h2 class="mb-3 font-18">{{ $users }}</h2>
+                                                        </div>
 
-                                                    <h5 class="font-15">Customers</h5>
-                                                    <h2 class="mb-3 font-18">{{ $customers }}</h2>
-
-
-
-                                                    <h5 class="font-15">Purchases</h5>
-                                                    <h2 class="mb-3 font-18">{{ $purchases }}</h2>
-
->>>>>>> Stashed changes
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="card">
-                                <div class="card-statistic-4 p-3">
-                                    <div class="row align-items-center">
-                                        <!-- Table on left -->
-                                        <div class="col-md-6" style="padding: 17px 10px;">
-                                            <table class="table table-bordered  table-sm compact-table mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Type</th>
-                                                        <th>Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Solutions</td>
-                                                        <td>{{ $solutions }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Custom Solutions</td>
-                                                        <td>{{ $customSolutions }}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Image on right -->
-                                        <div class="col-md-6 text-center">
-                                            <div class="banner-img">
-                                                <img src="{{ asset('admin/img/banner/3.png') }}" alt=""
-                                                    class="img-fluid" style="max-height:120px;">
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="card">
+                                                <div class="card-statistic-4 p-3">
+                                                    <div class="row align-items-center">
+                                                        <!-- Table on left -->
+                                                        <div class="col-md-6" style="padding: 17px 10px;">
+                                                            <table
+                                                                class="table table-bordered  table-sm compact-table mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Type</th>
+                                                                        <th>Total</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Solutions</td>
+                                                                        <td>{{ $solutions }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Custom Solutions</td>
+                                                                        <td>{{ $customSolutions }}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
 
-                            </div>
-                        </div>
-<<<<<<< Updated upstream
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-=======
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="card">
-                                <div class="card-statistic-4">
-                                    <div class="align-items-center justify-content-between">
-                                        <div class="row ">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                <div class="card-content">
-                                                    <h5 class="font-15">Solutions</h5>
-                                                    <h2 class="mb-3 font-18">{{ $solutions }}</h2>
-                                                    <h5 class="font-15">Custom Solutions</h5>
-                                                    <h2 class="mb-3 font-18">{{ $customSolutions }}</h2>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                                                <div class="banner-img">
-                                                    <img src="{{ asset('admin/img/banner/3.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
->>>>>>> Stashed changes
-                            <div class="card">
-                                <div class="card-statistic-4">
-                                    <div class="align-items-center justify-content-between">
-                                        <div class="row ">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                                                <div class="card-content">
-                                                    <h5 class="font-15">Revenue (Year)</h5>
-                                                    <h2 class="mb-0 m-b-0">${{ number_format($yearlyRevenue, 2) }}</h2>
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                                                <div class="banner-img">
-                                                    <img src="{{ asset('admin/img/banner/4.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-lg-12">
-                            <div class="card ">
-                                <div class="card-header">
-                                    <h4>Revenue chart</h4>
-
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-9">
-                                            <div id="chart1"></div>
-                                            <div class="row mb-0">
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                    <div class="list-inline text-center">
-                                                        <div class="list-inline-item p-r-30"><i
-                                                                data-feather="arrow-up-circle" class="col-green"></i>
-                                                            <h5 class="m-b-0">${{ number_format($weeklyRevenue, 2) }}
-                                                            </h5>
-                                                            <p class="text-muted font-14 m-b-0">Weekly Earnings</p>
+                                                        <!-- Image on right -->
+                                                        <div class="col-md-6 text-center">
+                                                            <div class="banner-img">
+                                                                <img src="{{ asset('admin/img/banner/3.png') }}"
+                                                                    alt="" class="img-fluid"
+                                                                    style="max-height:120px;">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                    <div class="list-inline text-center">
-                                                        <div class="list-inline-item p-r-30"><i
-                                                                data-feather="arrow-down-circle"
-                                                                class="col-orange"></i>
-                                                            <h5 class="m-b-0">
-                                                                ${{ number_format($monthlyRevenue, 2) }}</h5>
-                                                            <p class="text-muted font-14 m-b-0">Monthly Earnings</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                    <div class="list-inline text-center">
-                                                        <div class="list-inline-item p-r-30"><i
-                                                                data-feather="arrow-up-circle" class="col-green"></i>
-                                                            <h5 class="mb-0 m-b-0">
-                                                                ${{ number_format($yearlyRevenue, 2) }}</h5>
-                                                            <p class="text-muted font-14 m-b-0">Yearly Earnings</p>
+
+                                            </div>
+                                        </div>
+                                        <<<<<<< Updated upstream <div
+                                            class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            =======
+                                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="card">
+                                                    <div class="card-statistic-4">
+                                                        <div class="align-items-center justify-content-between">
+                                                            <div class="row ">
+                                                                <div
+                                                                    class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                                    <div class="card-content">
+                                                                        <h5 class="font-15">Solutions</h5>
+                                                                        <h2 class="mb-3 font-18">{{ $solutions }}
+                                                                        </h2>
+                                                                        <h5 class="font-15">Custom Solutions</h5>
+                                                                        <h2 class="mb-3 font-18">{{ $customSolutions }}
+                                                                        </h2>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                                                                    <div class="banner-img">
+                                                                        <img src="{{ asset('admin/img/banner/3.png') }}"
+                                                                            alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="row mt-5">
-                                                <div class="col-7 col-xl-7 mb-3">Total customers</div>
-                                                <div class="col-5 col-xl-5 mb-3">
-                                                    <span class="text-big">{{ $totalCustomers }}</span>
+                                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                >>>>>>> Stashed changes
+                                                <div class="card">
+                                                    <div class="card-statistic-4">
+                                                        <div class="align-items-center justify-content-between">
+                                                            <div class="row ">
+                                                                <div
+                                                                    class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                                    <div class="card-content">
+                                                                        <h5 class="font-15">Revenue (Year)</h5>
+                                                                        <h2 class="mb-3 font-18">$48,697</h2>
+                                                                        <p class="mb-0"><span
+                                                                                class="col-green">42%</span> Increase
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                                                                    <div class="banner-img">
+                                                                        <img src="{{ asset('admin/img/banner/4.png') }}"
+                                                                            alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-7 col-xl-7 mb-3">Total Income</div>
-                                                <div class="col-5 col-xl-5 mb-3">
-                                                    <span
-                                                        class="text-big">${{ number_format($totalIncome, 2) }}</span>
+                                            </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-lg-12">
+                                        <div class="card ">
+                                            <div class="card-header">
+                                                <h4>Revenue chart</h4>
+
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-9">
+                                                        <div id="chart1"></div>
+                                                        <div class="row mb-0">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                <div class="list-inline text-center">
+                                                                    <div class="list-inline-item p-r-30"><i
+                                                                            data-feather="arrow-up-circle"
+                                                                            class="col-green"></i>
+                                                                        <h5 class="m-b-0">
+                                                                            ${{ number_format($weeklyRevenue, 2) }}
+                                                                        </h5>
+                                                                        <p class="text-muted font-14 m-b-0">Weekly
+                                                                            Earnings</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                <div class="list-inline text-center">
+                                                                    <div class="list-inline-item p-r-30"><i
+                                                                            data-feather="arrow-down-circle"
+                                                                            class="col-orange"></i>
+                                                                        <h5 class="m-b-0">
+                                                                            ${{ number_format($monthlyRevenue, 2) }}
+                                                                        </h5>
+                                                                        <p class="text-muted font-14 m-b-0">Monthly
+                                                                            Earnings</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                <div class="list-inline text-center">
+                                                                    <div class="list-inline-item p-r-30"><i
+                                                                            data-feather="arrow-up-circle"
+                                                                            class="col-green"></i>
+                                                                        <h5 class="mb-0 m-b-0">
+                                                                            ${{ number_format($yearlyRevenue, 2) }}
+                                                                        </h5>
+                                                                        <p class="text-muted font-14 m-b-0">Yearly
+                                                                            Earnings</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="row mt-5">
+                                                            <div class="col-7 col-xl-7 mb-3">Total customers</div>
+                                                            <div class="col-5 col-xl-5 mb-3">
+                                                                <span class="text-big">{{ $totalCustomers }}</span>
+                                                            </div>
+                                                            <div class="col-7 col-xl-7 mb-3">Total Income</div>
+                                                            <div class="col-5 col-xl-5 mb-3">
+                                                                <span
+                                                                    class="text-big">${{ number_format($totalIncome, 2) }}</span>
+                                                            </div>
+                                                            <div class="col-7 col-xl-7 mb-3">Project completed</div>
+                                                            <div class="col-5 col-xl-5 mb-3">
+                                                                <span class="text-big">28</span>
+                                                                <sup class="col-green">+16%</sup>
+                                                            </div>
+                                                            <div class="col-7 col-xl-7 mb-3">Total expense</div>
+                                                            <div class="col-5 col-xl-5 mb-3">
+                                                                <span class="text-big">$6,287</span>
+                                                                <sup class="col-green">+09%</sup>
+                                                            </div>
+                                                            <div class="col-7 col-xl-7 mb-3">New Customers</div>
+                                                            <div class="col-5 col-xl-5 mb-3">
+                                                                <span class="text-big">684</span>
+                                                                <sup class="col-green">+22%</sup>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        window.revenueData = {
-                            weekly: {{ $weeklyRevenue }},
-                            monthly: {{ $monthlyRevenue }},
-                            yearly: {{ $yearlyRevenue }}
-                        };
-                    </script>
+                                <script>
+                                    window.revenueData = {
+                                        weekly: {{ $weeklyRevenue }},
+                                        monthly: {{ $monthlyRevenue }},
+                                        yearly: {{ $yearlyRevenue }}
+                                    };
+                                </script>
 
-                    <div class="row">
+                                <div class="row">
 
                 </section>
                 <div class="settingSidebar">

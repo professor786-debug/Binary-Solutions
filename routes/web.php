@@ -17,6 +17,8 @@ use App\Mail\VerifyStudentMail;
 use App\Http\Controllers\Student\GoogleController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 
+use App\Http\Controllers\Admin\AdminDashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,10 +43,14 @@ use App\Http\Controllers\AdminController;
 
 
 
+
+
 Route::prefix('/panel/admin')
     ->middleware('auth')
     ->group(function () {
         // Existing routes
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
+
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
 
         Route::get('/edit', [AuthController::class, 'edit'])->name('admin_edit');
@@ -111,8 +117,16 @@ Route::prefix('panel/admin/package')->group(function () {
 });
 
 
+
+
+
+
 <<<<<<< Updated upstream
 Route::prefix('panel/admin/refund')->group(function () {
+    Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
+         ->name('admin_refund_requests');
+});
+
     // Show all requests
     Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
         ->name('admin_refund_requests');
