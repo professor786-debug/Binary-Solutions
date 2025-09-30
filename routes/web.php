@@ -111,6 +111,7 @@ Route::prefix('panel/admin/package')->group(function () {
 });
 
 
+<<<<<<< Updated upstream
 Route::prefix('panel/admin/refund')->group(function () {
     // Show all requests
     Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
@@ -139,6 +140,12 @@ Route::prefix('panel/admin/refund')->group(function () {
     // Reject refund
     Route::post('/reject/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'reject'])
         ->name('admin_refund_reject');
+=======
+
+Route::prefix('panel/admin/refund')->group(function () {
+    Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
+         ->name('admin_refund_requests');
+>>>>>>> Stashed changes
 });
 
 

@@ -227,7 +227,18 @@
                                     <!-- Edit Profile -->
 
                                     <!-- Edit Profile Tab -->
+<<<<<<< Updated upstream
                                    <div class="tab-pane fade" id="tab-edit-profile">
+=======
+                                    <div class="tab-pane fade" id="tab-edit-profile">
+
+                                        <div class="row mb-3">
+                                            <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
+                                                Image</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <img src="{{ $user->profile_image ? asset('storage/' . $user->profile_image) : asset('assets/img/profile-img.jpg') }}"
+                                                    alt="Profile" width="120" class="rounded-circle">
+>>>>>>> Stashed changes
 
     <div class="row mb-3">
         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>

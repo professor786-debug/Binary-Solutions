@@ -43,6 +43,11 @@
                                                     <h2 class="mb-3 font-18">${{ number_format($weeklyRevenue, 2) }}
                                                     </h2>
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -58,6 +63,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-statistic-4">
+<<<<<<< Updated upstream
                                     <div class="card-content">
 
                                         <div class="row align-items-center">
@@ -85,6 +91,24 @@
                                                 <div class="banner-img">
                                                     <img src="{{ asset('admin/img/banner/2.png') }}" alt="stats image"
                                                         class="img-fluid" style="max-height: 200px;">
+=======
+                                    <div class="align-items-center justify-content-between">
+                                        <div class="row ">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                <div class="card-content">
+
+                                                    <h5 class="font-15">Registered Users</h5>
+                                                    <h2 class="mb-3 font-18">{{ $users }}</h2>
+
+                                                    <h5 class="font-15">Customers</h5>
+                                                    <h2 class="mb-3 font-18">{{ $customers }}</h2>
+
+
+
+                                                    <h5 class="font-15">Purchases</h5>
+                                                    <h2 class="mb-3 font-18">{{ $purchases }}</h2>
+
+>>>>>>> Stashed changes
                                                 </div>
                                             </div>
 
@@ -133,7 +157,35 @@
 
                             </div>
                         </div>
+<<<<<<< Updated upstream
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+=======
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-statistic-4">
+                                    <div class="align-items-center justify-content-between">
+                                        <div class="row ">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                                <div class="card-content">
+                                                    <h5 class="font-15">Solutions</h5>
+                                                    <h2 class="mb-3 font-18">{{ $solutions }}</h2>
+                                                    <h5 class="font-15">Custom Solutions</h5>
+                                                    <h2 class="mb-3 font-18">{{ $customSolutions }}</h2>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                                                <div class="banner-img">
+                                                    <img src="{{ asset('admin/img/banner/3.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+>>>>>>> Stashed changes
                             <div class="card">
                                 <div class="card-statistic-4">
                                     <div class="align-items-center justify-content-between">
@@ -143,6 +195,10 @@
                                                     <h5 class="font-15">Revenue (Year)</h5>
                                                     <h2 class="mb-0 m-b-0">${{ number_format($yearlyRevenue, 2) }}</h2>
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -213,6 +269,10 @@
                                                         class="text-big">${{ number_format($totalIncome, 2) }}</span>
                                                 </div>
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </div>

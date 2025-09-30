@@ -77,9 +77,13 @@
                                                         <tr>
                                                             <td>{{ $refund->id }}</td>
                                                             <td>{{ $refund->student->name ?? 'N/A' }}</td>
+<<<<<<< Updated upstream
                                                             <td
                                                                 style="max-width: 200px; white-space: normal; word-break: break-all;">
                                                                 {{ $refund->transaction_id }}</td>
+=======
+                                                            <td>{{ $refund->transaction_id }}</td>
+>>>>>>> Stashed changes
                                                             <td>{{ $refund->reason ?? 'N/A' }}</td>
                                                             <td><span class="badge">${{ $refund->amount }}</span></td>
                                                             <td>
@@ -90,6 +94,7 @@
                                                                         class="badge bg-secondary">{{ ucfirst($refund->status) }}</span>
                                                                 @endif
                                                             </td>
+<<<<<<< Updated upstream
                                                             <td>
                                                                 <a href="{{ route('admin_refund_action', ['id' => $refund->id]) }} "
                                                                     class="btn btn-primary btn-sm">
@@ -97,6 +102,16 @@
                                                                 </a>
                                                             </td>
 
+=======
+                                                            <td>{{ $refund->card_last4 ?? '----' }}</td>
+                                                            <td>
+                                                                <button class="btn btn-sm btn-success btn-upload"
+                                                                    data-toggle="modal"
+                                                                    data-target="#refundModal-{{ $refund->id }}">
+                                                                    Refund
+                                                                </button>
+                                                            </td>
+>>>>>>> Stashed changes
                                                         </tr>
                                                     @empty
                                                         <tr>
@@ -117,6 +132,10 @@
                 </section>
 
                 <!-- Dummy Modal -->
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
             </div>
             <footer class="main-footer">

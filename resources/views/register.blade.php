@@ -60,6 +60,7 @@
                             <div class="form-group">
                                 <label for="username">Username<span>*</span></label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 
@@ -67,6 +68,15 @@
                                 @error('name')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
+=======
+                                <<<<<<< Updated upstream <<<<<<< HEAD=======>>>>>>>
+                                    fce7a7f22d289a7e127155b366eb01c40daedf1c
+                                    =======
+                                    >>>>>>> Stashed changes
+                                    @error('name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+>>>>>>> Stashed changes
                             </div>
 
                             <div class="form-group">
@@ -86,6 +96,7 @@
                             <div class="form-group">
                                 <label for="email">Email<span>*</span></label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 
@@ -98,6 +109,13 @@
 
 
 >>>>>>> ace71b301c96a6c869ae0caff32b3032cefff122
+=======
+
+                                @error('email')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                                <<<<<<< HEAD=======>>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
+>>>>>>> Stashed changes
                             </div>
 
                             <div class="form-group">
@@ -111,6 +129,7 @@
                         <div id="form-messages" class="mt-3"></div>
 
                         <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
                         <div class="text-center mb-3 mt-3">
@@ -122,6 +141,10 @@
 
                         <div class="text-center mb-3 mt-3">
 
+=======
+                        <<<<<<< Updated upstream <<<<<<< HEAD <div class="text-center mb-3 mt-3">
+
+>>>>>>> Stashed changes
                             <div class="text-center mb-3     mt-3">
 
                                 <a href="{{ route('google.login') }}"
@@ -129,6 +152,7 @@
                                     <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
                                 </a>
                             </div>
+<<<<<<< Updated upstream
 
 
 
@@ -146,6 +170,33 @@
 =======
 
 >>>>>>> ace71b301c96a6c869ae0caff32b3032cefff122
+=======
+                            =======
+
+                            <div class="text-center mb-3 mt-3">
+
+                                <div class="text-center mb-3     mt-3">
+
+                                    =======
+                                    <div class="text-center mb-3     mt-3">
+                                        >>>>>>> Stashed changes
+                                        <a href="{{ route('google.login') }}"
+                                            class="btn btn-danger btn-block d-flex align-items-center justify-content-center">
+                                            <i class="fab fa-google" style="margin-right: 7px"></i> Signup with Google
+                                        </a>
+                                        <<<<<<< Updated upstream>>>>>>> fce7a7f22d289a7e127155b366eb01c40daedf1c
+                                    </div>
+                                </div><!--- END COL -->
+                            </div><!--- END ROW -->
+                    </div><!--- END CONTAINER -->
+                    =======
+                </div>
+            </div>
+        </div><!--- END COL -->
+        </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->
+        >>>>>>> Stashed changes
+>>>>>>> Stashed changes
     </section>
     <!-- END LOGIN AND REGISTER -->
     @include('main_footer')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Refund;
 
 use App\Http\Controllers\Controller;
 use App\Models\RefundRequest;
+<<<<<<< Updated upstream
 use App\Models\StudentSubscription;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
@@ -198,3 +199,19 @@ class RefundController extends Controller
         return back()->with('success', 'Refund request rejected with reason.');
     }
 }
+=======
+
+class RefundController extends Controller
+{
+
+   public function index()
+    {
+
+        $refunds = RefundRequest::with('student')->latest()->get();
+
+        return view('admin.refund.refund', compact('refunds'));
+    }
+
+}
+
+>>>>>>> Stashed changes
