@@ -112,20 +112,35 @@ Route::prefix('panel/admin/package')->group(function () {
 
 
 Route::prefix('panel/admin/refund')->group(function () {
+    // Show all requests
     Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
         ->name('admin_refund_requests');
-        Route::get('/action', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundaction'])
+
+    // Show action form
+    Route::get('/action/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundAction'])
         ->name('admin_refund_action');
 
+    // Handle action form
+    Route::post('/action/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'handleAction'])
+        ->name('admin_refund_handle');
+
+    // Full refund
     Route::post('/full/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundFull'])
         ->name('admin_refund_full');
 
+    // Partial refund
     Route::post('/partial/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'refundPartial'])
         ->name('admin_refund_partial');
-        Route::post('/reject/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'reject'])
-    ->name('admin_refund_reject');
 
+    // ✅ Fetch paid amount for AJAX validation
+    Route::get('/paid-amount/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'getPaidAmount'])
+        ->name('admin_refund_paid_amount');
+
+    // Reject refund
+    Route::post('/reject/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'reject'])
+        ->name('admin_refund_reject');
 });
+
 
 
 Route::prefix('panel/admin/student_subscription')->group(function () {
@@ -165,7 +180,32 @@ Route::post('/custom-solutions/store', [CustomSolutionController::class, 'store'
 
 
 
-Route::get('/student/dashboard', [StudentAuthController::class, 'index'])->name('student.dashboard');
+
+use App\Http\Controllers\Student\StudentProfileController;
+
+// Student routes protected by student guard
+Route::middleware('auth:student')->group(function () {
+    // dashboard
+    Route::get('/student/dashboard', [StudentAuthController::class, 'index'])
+        ->name('student.dashboard');
+
+    // profile pages (mirror admin style)
+    Route::get('/student/profile', [StudentProfileController::class, 'profile'])
+        ->name('student.profile');
+
+    Route::post('/student/profile/update', [StudentProfileController::class, 'updateProfile'])
+        ->name('student.update_profile');
+
+    Route::post('/student/profile/image', [StudentProfileController::class, 'updateProfileImage'])
+        ->name('student.update_profile_image');
+
+    Route::delete('/student/profile/image', [StudentProfileController::class, 'deleteProfileImage'])
+        ->name('student.delete_profile_image');
+
+    Route::post('/student/profile/password', [StudentProfileController::class, 'changePassword'])
+        ->name('student.change_password');
+});
+
 Route::get('/student/subscription', [StudentAuthController::class, 'subscription'])->name('student.subscription');
 Route::get('/student/solutions', [StudentAuthController::class, 'student_solutions'])->name('student.solutions');
 Route::get('/student/refund', [StudentAuthController::class, 'student_refund_show'])->name('student.refund.show');

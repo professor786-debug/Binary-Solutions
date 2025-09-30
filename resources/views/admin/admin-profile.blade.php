@@ -227,117 +227,103 @@
                                     <!-- Edit Profile -->
 
                                     <!-- Edit Profile Tab -->
-                                    <div class="tab-pane fade" id="tab-edit-profile">
+                                   <div class="tab-pane fade" id="tab-edit-profile">
 
-                                        <div class="row mb-3">
-                                            <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
-                                                Image</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <img src="{{ $user->profile_image ? asset('storage/' . $user->profile_image) : asset('assets/img/profile-img.jpg') }}"
-                                                    alt="Profile" width="120" class="rounded-circle">
+    <div class="row mb-3">
+        <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+        <div class="col-md-8 col-lg-9">
+            <img src="{{ $student->profile_image ? asset('storage/' . $student->profile_image) : asset('assets/img/profile-img.jpg') }}"
+                 alt="Profile" width="120" class="rounded-circle">
 
-                                                <div class="pt-2">
-                                                    <!-- Upload Form (separate) -->
-                                                    <form action="{{ route('admin_update_profile_image') }}"
-                                                        method="POST" enctype="multipart/form-data"
-                                                        style="display:inline;">
-                                                        @csrf
-                                                        <label class="btn btn-primary btn-sm mb-0"
-                                                            title="Upload new profile image">
-                                                            <i class="bi bi-upload"></i>
-                                                            <input type="file" name="profile_image" class="d-none"
-                                                                onchange="this.form.submit()">
-                                                        </label>
-                                                    </form>
+            <div class="pt-2">
+                <!-- Upload Form (separate) -->
+                <form action="{{ route('student.update_profile_image') }}" method="POST" enctype="multipart/form-data" style="display:inline;">
+                    @csrf
+                    <label class="btn btn-primary btn-sm mb-0" title="Upload new profile image">
+                        <i class="bi bi-upload"></i>
+                        <input type="file" name="profile_image" class="d-none" onchange="this.form.submit()">
+                    </label>
+                </form>
 
-                                                    <!-- Delete Form -->
-                                                    @if ($user->profile_image)
-                                                        <form action="{{ route('admin_delete_profile_image') }}"
-                                                            method="POST" style="display:inline;">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                                title="Remove my profile image">
-                                                                <i class="bi bi-trash"></i>
-                                                            </button>
-                                                        </form>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </div>
+                <!-- Delete Form -->
+                @if ($student->profile_image)
+                    <form action="{{ route('student.delete_profile_image') }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm" title="Remove my profile image">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </form>
+                @endif
+            </div>
+        </div>
+    </div>
 
-                                        <!-- Main Profile Update Form -->
-                                        <form method="POST" action="{{ route('admin_update') }}">
-                                            @csrf
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input type="text" name="name" class="form-control"
-                                                        value="{{ old('name', $user->name) }}">
-                                                </div>
-                                            </div>
+    <!-- Main Profile Update Form -->
+    <form method="POST" action="{{ route('student.update_profile') }}">
+        @csrf
 
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">Company</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input type="text" name="company" class="form-control"
-                                                        value="{{ old('company', $user->company) }}">
-                                                </div>
-                                            </div>
+        <div class="mb-3 row">
+            <label class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+            <div class="col-md-8 col-lg-9">
+                <input type="text" name="full_name" class="form-control"
+                       value="{{ old('full_name', $student->full_name) }}">
+            </div>
+        </div>
 
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">Job</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input type="text" name="job" class="form-control"
-                                                        value="{{ old('job', $user->job) }}">
-                                                </div>
-                                            </div>
+        <div class="mb-3 row">
+            <label class="col-md-4 col-lg-3 col-form-label">University</label>
+            <div class="col-md-8 col-lg-9">
+                <input type="text" name="university" class="form-control"
+                       value="{{ old('university', $student->university) }}">
+            </div>
+        </div>
 
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">Country</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input type="text" name="country" class="form-control"
-                                                        value="{{ old('country', $user->country) }}">
-                                                </div>
-                                            </div>
+        <div class="mb-3 row">
+            <label class="col-md-4 col-lg-3 col-form-label">Country</label>
+            <div class="col-md-8 col-lg-9">
+                <input type="text" name="country" class="form-control"
+                       value="{{ old('country', $student->country) }}">
+            </div>
+        </div>
 
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">Address</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input type="text" name="address" class="form-control"
-                                                        value="{{ old('address', $user->address) }}">
-                                                </div>
-                                            </div>
+        <div class="mb-3 row">
+            <label class="col-md-4 col-lg-3 col-form-label">Address</label>
+            <div class="col-md-8 col-lg-9">
+                <input type="text" name="address" class="form-control"
+                       value="{{ old('address', $student->address) }}">
+            </div>
+        </div>
 
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input type="text" name="phone" class="form-control"
-                                                        value="{{ old('phone', $user->phone) }}">
-                                                </div>
-                                            </div>
+        <div class="mb-3 row">
+            <label class="col-md-4 col-lg-3 col-form-label">Phone</label>
+            <div class="col-md-8 col-lg-9">
+                <input type="text" name="contact_no" class="form-control"
+                       value="{{ old('contact_no', $student->contact_no) }}">
+            </div>
+        </div>
 
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">Email</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input type="email" name="email" class="form-control"
-                                                        value="{{ old('email', $user->email) }}">
-                                                </div>
-                                            </div>
+        <div class="mb-3 row">
+            <label class="col-md-4 col-lg-3 col-form-label">Email</label>
+            <div class="col-md-8 col-lg-9">
+                <input type="email" name="email" class="form-control"
+                       value="{{ old('email', $student->email) }}">
+            </div>
+        </div>
 
-                                            <div class="mb-3 row">
-                                                <label class="col-md-4 col-lg-3 col-form-label">About</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <textarea name="about" class="form-control" rows="3">{{ old('about', $user->about) }}</textarea>
-                                                </div>
-                                            </div>
+        <div class="mb-3 row">
+            <label class="col-md-4 col-lg-3 col-form-label">About</label>
+            <div class="col-md-8 col-lg-9">
+                <textarea name="about" class="form-control" rows="3">{{ old('about', $student->about) }}</textarea>
+            </div>
+        </div>
 
-                                            <div class="text-center">
-                                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                                            </div>
-                                        </form>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+    </form>
+</div>
 
-                                    </div>
 
                                     <!-- Change Password -->
                                     <div class="tab-pane fade" id="tab-change-password">

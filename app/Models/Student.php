@@ -18,7 +18,13 @@ class Student extends Authenticatable
         'verification_token',
         'is_verified',
         'google_id',        // ✅ Added for Google OAuth
-         // ✅ Optional, for Google avatar
+
+        // ✅ Newly added fields (for edit profile functionality)
+        'university',
+        'country',
+        'address',
+        'profile_image',
+        'about',
     ];
 
     protected $hidden = ['password', 'remember_token'];

@@ -13,16 +13,17 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentAuthController extends Controller
 {
-    public function index()
-    {
-        $student = Auth::guard('student')->user();
+  public function index()
+{
+    $student = Auth::guard('student')->user();
 
-        $purchases = Purchase::with(['solution', 'package'])
-            ->where('student_id', $student->id)
-            ->get();
+    $purchases = Purchase::with(['solution', 'package'])
+        ->where('student_id', $student->id)
+        ->get();
 
-        return view('student.dashboard', compact('purchases'));
-    }
+    return view('student.dashboard', compact('student', 'purchases'));
+}
+
 
     public function subscription()
     {
@@ -77,12 +78,12 @@ class StudentAuthController extends Controller
 
     public function student_solution_req(){
         $student = Auth::guard('student')->user();
-    
+
         $solutions = CustomSolution::where('student_id', $student->id)
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('student.student_custom_solution', compact('solutions'));    
+        return view('student.student_custom_solution', compact('solutions'));
     }
 
     public function viewSolution($id)

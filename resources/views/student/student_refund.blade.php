@@ -122,7 +122,7 @@
                                                 <th>Payment Status</th>
                                                 <th>Reason</th>
                                                 <th>Status</th>
-                                                <th>Rejection Reason</th>
+                                                <th>Decision Reason (Approved / Partial / Rejected)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
