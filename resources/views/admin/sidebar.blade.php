@@ -60,9 +60,7 @@
             </a>
         </li>
 
-        <li><a class="nav-link" href=""><i data-feather="mail"></i><span>
-                    Pages</span></a>
-        </li>
+
 
     </ul>
     </li>

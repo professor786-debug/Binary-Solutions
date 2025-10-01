@@ -13,16 +13,54 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentAuthController extends Controller
 {
-  public function index()
+public function index()
 {
     $student = Auth::guard('student')->user();
 
+    // Purchases
     $purchases = Purchase::with(['solution', 'package'])
         ->where('student_id', $student->id)
         ->get();
 
-    return view('student.dashboard', compact('student', 'purchases'));
+    // Solutions Bought
+    $solutionsBought = Purchase::where('student_id', $student->id)->count();
+
+    // Latest Subscription (Active/Inactive based on is_active column)
+    $latestSubscription = \App\Models\StudentSubscription::where('student_id', $student->id)
+        ->latest('id')
+        ->first();
+
+    $activeSubscription = ($latestSubscription && $latestSubscription->is_active == 1)
+        ? 'Active'
+        : 'Inactive';
+
+    // All subscriptions with package info
+    $subscriptions = \App\Models\StudentSubscription::where('student_id', $student->id)
+        ->with('package')
+        ->get();
+
+    $expiryInfo = [];
+    $packagesCount = $subscriptions->count();
+
+    if ($packagesCount > 0) {
+        foreach ($subscriptions as $sub) {
+            $packageName = $sub->package ? $sub->package->name : 'Unknown Package';
+            $expiryInfo[] = $packageName . ' - ' . \Carbon\Carbon::parse($sub->end_date)->format('d M, Y');
+        }
+    } else {
+        $expiryInfo[] = 'No Subscription';
+    }
+
+    return view('student.dashboard', compact(
+        'student',
+        'purchases',
+        'solutionsBought',
+        'activeSubscription',
+        'packagesCount',
+        'expiryInfo'
+    ));
 }
+
 
 
     public function subscription()

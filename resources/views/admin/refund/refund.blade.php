@@ -91,11 +91,23 @@
                                                                 @endif
                                                             </td>
                                                             <td>
-                                                                <a href="{{ route('admin_refund_action', ['id' => $refund->id]) }} "
-                                                                    class="btn btn-primary btn-sm">
-                                                                    Take Action
-                                                                </a>
+                                                                @if ($refund->status === 'completed')
+                                                                    <button class="btn btn-primary btn-sm" disabled>
+                                                                        Take Action
+                                                                    </button>
+                                                                @elseif ($refund->status === 'rejected')
+                                                                    <button class="btn btn-primary btn-sm" disabled>
+                                                                        Take Action
+                                                                    </button>
+                                                                @else
+                                                                    <a href="{{ route('admin_refund_action', ['id' => $refund->id]) }}"
+                                                                        class="btn btn-primary btn-sm">
+                                                                        Take Action
+                                                                    </a>
+                                                                @endif
                                                             </td>
+
+
 
                                                         </tr>
                                                     @empty

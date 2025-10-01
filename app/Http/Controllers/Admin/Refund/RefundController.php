@@ -8,6 +8,8 @@ use App\Models\StudentSubscription;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Refund;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RefundStatusMail;
 
 class RefundController extends Controller
 {
@@ -50,6 +52,8 @@ class RefundController extends Controller
                 'rejection_reason' => $request->full_reason,
             ]);
 
+            $this->sendRefundEmail($refundRequest, 'full');
+
             StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();
 
             return redirect()->route('admin_refund_requests')
@@ -85,15 +89,16 @@ class RefundController extends Controller
             $refundRequest->update([
                 'status' => 'completed',
                 'refund_amount' => $request->amount,
-                'refund_reason' => $request->reason,
+                'rejection_reason' => $request->reason,
             ]);
+
+            $this->sendRefundEmail($refundRequest, 'partial');
 
             StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();
 
             return redirect()->route('admin_refund_requests')
                 ->with('success', "Refund of \${$request->amount} processed successfully.");
         }
-
 
         if ($action === 'reject') {
             // ✅ Reject refund
@@ -105,6 +110,8 @@ class RefundController extends Controller
                 'status' => 'rejected',
                 'rejection_reason' => $request->reject_reason,
             ]);
+
+            $this->sendRefundEmail($refundRequest, 'reject');
 
             return redirect()->route('admin_refund_requests')
                 ->with('success', 'Refund request rejected with reason.');
@@ -128,6 +135,9 @@ class RefundController extends Controller
         ]);
 
         $refundRequest->update(['status' => 'completed']);
+
+        // ✅ Send email after updating refund status
+        $this->sendRefundEmail($refundRequest, 'full');
 
         StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();
 
@@ -173,14 +183,16 @@ class RefundController extends Controller
         $refundRequest->update([
             'status' => 'completed',
             'refund_amount' => $request->amount,
-            'refund_reason' => $request->reason,
+            'rejection_reason' => $request->reason,
         ]);
+
+        // ✅ Send partial refund email to student
+        $this->sendRefundEmail($refundRequest, 'partial');
 
         StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();
 
         return back()->with('success', "Refund of {$request->amount} processed successfully and subscription removed.");
     }
-
 
     public function reject(Request $request, $id)
     {
@@ -195,6 +207,17 @@ class RefundController extends Controller
             'rejection_reason' => $request->rejection_reason,
         ]);
 
+        // ✅ Send rejection email to student
+        $this->sendRefundEmail($refundRequest, 'reject');
+
         return back()->with('success', 'Refund request rejected with reason.');
+    }
+
+    private function sendRefundEmail($refundRequest, $type)
+    {
+        if ($refundRequest->student && $refundRequest->student->email) {
+            Mail::to($refundRequest->student->email)
+                ->send(new RefundStatusMail($refundRequest, $type));
+        }
     }
 }

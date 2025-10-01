@@ -99,9 +99,10 @@
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
                                             <p class="card-category">Solutions Bought</p>
-                                            <p class="card-title">12</p>
+                                            <p class="card-title">{{ $solutionsBought }}</p>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -126,9 +127,10 @@
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
                                             <p class="card-category">Subscription</p>
-                                            <p class="card-title">Active</p>
+                                            <p class="card-title">{{ $activeSubscription }}</p>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -180,9 +182,24 @@
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
                                             <p class="card-category">Expiry Date</p>
-                                            <p class="card-title">31 Dec, 2025</p>
+
+                                            @if ($packagesCount > 1)
+                                                <p style="font-size: 19px" class="card-title mb-1">Packages =
+                                                    {{ $packagesCount }}</p>
+                                                <ul class="list-unstyled mb-0"
+                                                    style="font-size: 13px; color: #6c757d;">
+                                                    @foreach ($expiryInfo as $info)
+                                                        <li>• {{ $info }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @else
+                                                <p style="font-size: 19px" class="card-title">{{ $expiryInfo[0] }}
+                                                </p>
+                                            @endif
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -193,53 +210,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="card-title">Solution Access Stats</h5>
-                                    <p class="card-category">Last 7 Days Overview</p>
-                                </div>
-                                <div class="card-body">
-                                    <canvas id="chartSolutionAccess"></canvas>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-primary"></i> Viewed
-                                        <i class="fa fa-circle text-warning"></i> Partially Viewed
-                                        <i class="fa fa-circle text-danger"></i> Ignored
-                                        <i class="fa fa-circle text-gray"></i> Not Opened
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-calendar"></i> Total accessed this week
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-8">
-                            <div class="card card-chart">
-                                <div class="card-header">
-                                    <h5 class="card-title">Subscription Usage</h5>
-                                    <p class="card-category">Weekly Active Sessions</p>
-                                </div>
-                                <div class="card-body">
-                                    <canvas id="subscriptionUsageChart" width="400" height="100"></canvas>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="chart-legend">
-                                        <i class="fa fa-circle text-info"></i> Sessions
-                                        <i class="fa fa-circle text-warning"></i> Renewals
-                                    </div>
-                                    <hr />
-                                    <div class="card-stats">
-                                        <i class="fa fa-check"></i> Based on subscription data
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
 
                     <div class="col-lg-12">
                         <div class="card">
