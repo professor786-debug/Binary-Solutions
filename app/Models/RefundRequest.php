@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RefundRequest extends Model
 {
     use HasFactory;
-        protected $fillable = [
+    protected $fillable = [
         'student_id',
         'transaction_id',
         'package_name',
@@ -19,6 +19,7 @@ class RefundRequest extends Model
         'payment_status',
         'reason',
         'status',
+        'refund_amount',
         'rejection_reason',
     ];
 
