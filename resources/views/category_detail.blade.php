@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<x-head />	
+	<x-head />
 	<body>
 
 	<div id="loader"></div>
@@ -21,16 +21,16 @@
                             </button>
                         </div>
                     </div>
-                    <div class="mobile-menu fix mb-3"></div>                   
+                    <div class="mobile-menu fix mb-3"></div>
                 </div>
             </div>
         </div>
     </div>
-	
+
     <div class="offcanvas__overlay"></div>
-	
+
        @include('header')
-			
+
 		<!-- Start Home Banner -->
 		<section class="home-banner position-relative" style="background-image: url(assets/img/bg/bg2.jpg);">
 			<div class="container">
@@ -48,16 +48,16 @@
 							<h4><span class="count">14</span>K</h4>
 							<p>Successful Trained</p>
 						</div>
-					</div><!-- End Col -->					
-					
+					</div><!-- End Col -->
+
 					<div class="col-lg-3 col-md-6 col-12 wow fadeInUp">
 						<div class="counter-item" style="background-color:#674CEF !important;">
 							<svg fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 512 512"><path d="M67.5 63.5c39.668-.167 79.335 0 119 .5 24.31 2.616 47.143 9.783 68.5 21.5 21.434-11.589 44.267-18.755 68.5-21.5 40-.667 80-.667 120 0 1.833.5 3 1.667 3.5 3.5.5 9.327.666 18.66.5 28 12.005-.166 24.005 0 36 .5 1.833.5 3 1.667 3.5 3.5.996 110.081.662 220.081-1 330a9.454 9.454 0 01-2.5 1.5c-152 .667-304 .667-456 0a9.457 9.457 0 01-2.5-1.5 13654.534 13654.534 0 01-1-330c.5-1.833 1.667-3 3.5-3.5 11.995-.5 23.995-.666 36-.5-.166-9.34 0-18.673.5-28 .69-1.85 1.856-3.184 3.5-4zm12 16h32c-.167 57.334 0 114.668.5 172 1.529 3.016 4.029 4.349 7.5 4a12.862 12.862 0 006-1.5 259.636 259.636 0 0118-11.5 315.397 315.397 0 0120 12.5c2.667.667 5.333.667 8 0 1.833-.5 3-1.667 3.5-3.5.5-56.999.667-113.999.5-171 25.263.976 48.93 7.643 71 20a9594.023 9594.023 0 010 277c-18.592-9.399-38.259-15.232-59-17.5-35.998-.5-71.998-.667-108-.5v-280zm48 0h32c.167 50.668 0 101.334-.5 152-4.563-4.068-9.73-7.068-15.5-9-5.77 1.932-10.937 4.932-15.5 9-.5-50.666-.667-101.332-.5-152zm213 0h91v280c-35.335-.167-70.668 0-106 .5-21.461 1.948-41.795 7.782-61 17.5a9594.023 9594.023 0 010-277c23.83-12.954 49.164-19.954 76-21zm-301 32h24c-.495 87.415.005 174.749 1.5 262a9.457 9.457 0 002.5 1.5c40.014.11 80.014.777 120 2 22.839 2.946 44.172 10.28 64 22 2.667.667 5.333.667 8 0 20.161-11.79 41.827-19.123 65-22a4192.236 4192.236 0 01119-2 9.454 9.454 0 002.5-1.5 11493.671 11493.671 0 001.5-262h24v304h-432v-304z" opacity=".99"/><path d="M303.5 175.5h96v16h-96v-16z"/><path d="M303.5 207.5h66v16h-66v-16z" opacity=".985"/><path d="M303.5 239.5h96v16h-96v-16z"/><path d="M303.5 271.5h66v16h-66v-16z" opacity=".985"/><path d="M303.5 303.5h96v16h-96v-16z"/></svg>
 							<h4><span class="count">10</span>K</h4>
 							<p>Courses Completed</p>
 						</div>
-					</div><!-- End Col -->					
-													
+					</div><!-- End Col -->
+
 					<div class="col-lg-3 col-md-6 col-12 wow fadeInUp">
 						<div class="counter-item" style="background-color:#674CEF !important;">
 							<svg fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 512 512"><path d="M251.5-.5h8c2.538 2.04 4.371 4.706 5.5 8a1510.898 1510.898 0 0120.5 49 1888.63 1888.63 0 0161 6.5c4.469 3.916 5.136 8.416 2 13.5a2281.089 2281.089 0 00-42.5 38 774.999 774.999 0 0011 54c1.947 6.889-.553 11.222-7.5 13a28.043 28.043 0 00-5-1.5 898.154 898.154 0 00-49-28.5 898.154 898.154 0 00-49 28.5c-5.001 2.114-9.168.947-12.5-3.5a16.242 16.242 0 010-8 774.999 774.999 0 0011-54 1155.407 1155.407 0 00-43-38c-3.885-8.276-1.385-13.11 7.5-14.5l52-5a10.255 10.255 0 004-1.5 4292.84 4292.84 0 0120.5-48c1.129-3.294 2.962-5.96 5.5-8zm3 31c.876-.13 1.543.203 2 1a762.077 762.077 0 0114.5 34c.883 2.602 2.383 4.77 4.5 6.5a1287.084 1287.084 0 0045 5.5 1356.91 1356.91 0 00-32.5 30 237.81 237.81 0 008.5 46.5 341.926 341.926 0 01-30-17 39.376 39.376 0 00-11-4.5 250.675 250.675 0 00-37 20.5c-1.259.982-2.592 1.315-4 1a237.81 237.81 0 008.5-46.5 1356.91 1356.91 0 00-32.5-30 1287.084 1287.084 0 0045-5.5c2.117-1.73 3.617-3.898 4.5-6.5a70840.93 70840.93 0 0014.5-35z" opacity=".934"/><path d="M86.5 63.5a40.936 40.936 0 019 .5l2.5 2.5a957.648 957.648 0 0116.5 38 722.82 722.82 0 0041 4.5c6.66 2.49 8.493 6.99 5.5 13.5a648.967 648.967 0 00-31.5 29 867.707 867.707 0 019 40c-1.41 7.633-5.743 10.133-13 7.5A1780.967 1780.967 0 0191 178.5a561.758 561.758 0 01-39 22c-6.673-1.348-9.34-5.348-8-12a1221.073 1221.073 0 018.5-37 2376.574 2376.574 0 01-31.5-29c-3.296-6.67-1.463-11.17 5.5-13.5a711.914 711.914 0 0041-4.5 382.716 382.716 0 0119-41zm4 30a479.48 479.48 0 0013 26.5 180.112 180.112 0 0030 4 313.572 313.572 0 00-21.5 20.5 119.765 119.765 0 005.5 28.5l-1 .5c-8.114-5.306-16.614-9.639-25.5-13-7.887 2.861-15.387 6.694-22.5 11.5-1.259.982-2.592 1.315-4 1a119.74 119.74 0 005.5-28.5A313.48 313.48 0 0048.5 124a180.11 180.11 0 0030-4 147.84 147.84 0 0012-26.5z" opacity=".935"/><path d="M415.5 63.5a40.939 40.939 0 019 .5l2.5 2.5a496.388 496.388 0 0116.5 39c13.684.896 27.351 2.062 41 3.5 6.963 2.33 8.796 6.83 5.5 13.5a2370.331 2370.331 0 01-31.5 29 1220.771 1220.771 0 018.5 37c.648 9.358-3.519 12.858-12.5 10.5a1780.967 1780.967 0 01-34.5-20.5 561.804 561.804 0 01-39 22c-5.075-.908-7.909-3.908-8.5-9a867.707 867.707 0 019-40 648.967 648.967 0 00-31.5-29c-2.993-6.51-1.16-11.01 5.5-13.5a711.904 711.904 0 0041-4.5 382.736 382.736 0 0119-41zm4 30a479.338 479.338 0 0013 26.5 180.112 180.112 0 0030 4 313.572 313.572 0 00-21.5 20.5 119.765 119.765 0 005.5 28.5c-7.473-3.41-14.807-7.41-22-12-3-.667-6-.667-9 0l-18 11c-1.259.982-2.592 1.315-4 1a119.765 119.765 0 005.5-28.5 313.572 313.572 0 00-21.5-20.5 180.112 180.112 0 0030-4 147.867 147.867 0 0012-26.5z" opacity=".934"/><path d="M361.5 511.5h-147a106.037 106.037 0 01-12-6.5c-13.614-13.473-29.947-21.64-49-24.5-.95 9.119-5.95 14.619-15 16.5a1979.51 1979.51 0 01-89 0c-5.289-1.224-9.455-4.058-12.5-8.5a2172.745 2172.745 0 01-1.5-92.5l.5-89.5c2.167-4.833 5.667-8.333 10.5-10.5 31.667-.667 63.333-.667 95 0 7.346 2.491 11.513 7.657 12.5 15.5 15.454-16.137 32.621-29.971 51.5-41.5 10.975-11.109 18.475-24.276 22.5-39.5a2115.954 2115.954 0 004-41c9.243-16.862 23.077-22.362 41.5-16.5 9.491 3.803 15.657 10.636 18.5 20.5 10.39 33.188 9.89 66.188-1.5 99 34.335-.167 68.668 0 103 .5 24.668 6.152 33.834 21.652 27.5 46.5-3.637 8.803-9.803 15.137-18.5 19 9.648 19.74 5.648 36.073-12 49 10.903 19.782 7.236 36.282-11 49.5 10.074 16.043 9.074 31.376-3 46-4.478 3.902-9.478 6.735-15 8.5zm-104-324c6.804-.678 12.304 1.655 16.5 7 13.1 36.597 10.934 72.264-6.5 107 .552 3.279 2.219 5.779 5 7.5l119 1c10.547 2.264 15.38 8.764 14.5 19.5-1.833 7.167-6.333 11.667-13.5 13.5l-34 1c-4.569 2.541-6.069 6.375-4.5 11.5 1.109 2.315 2.943 3.815 5.5 4.5 7.411.108 14.745.775 22 2 8.476 5.428 10.976 12.928 7.5 22.5-6.744 10.137-15.911 13.304-27.5 9.5-6.66 2.49-8.493 6.99-5.5 13.5l2.5 2.5c15.984.957 22.484 9.124 19.5 24.5-6.992 10-16.492 13.5-28.5 10.5-4.569 2.541-6.069 6.375-4.5 11.5a6.978 6.978 0 002.5 3.5c6.155.64 11.822 2.64 17 6 7.169 9.303 6.503 17.97-2 26-3.069 1.846-6.402 2.846-10 3-43.333.667-86.667.667-130 0a22.508 22.508 0 01-7-2c-17.28-16.806-37.947-26.973-62-30.5-.167-42.335 0-84.668.5-127l34.5-32.5a159.88 159.88 0 0125-17c18.006-15.841 28.84-35.674 32.5-59.5a351.761 351.761 0 013-32 6.978 6.978 0 012.5-3.5c2.227-.941 4.227-2.108 6-3.5zm-205 125h84v168h-84v-168z" opacity=".942"/><path d="M98.5 329.5c10.557.105 13.89 5.105 10 15-5.588 4.313-10.422 3.646-14.5-2-1.62-5.577-.12-9.911 4.5-13z" opacity=".861"/></svg>
@@ -65,19 +65,19 @@
 							<p>Satisfaction Rate</p>
 						</div>
 					</div><!-- End Col -->
-					
+
 					<div class="col-lg-3 col-md-6 col-12 wow fadeInUp">
 						<div class="counter-item" style="background-color:#674CEF !important;">
 							<svg fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 512 512"><path d="M110.5-.5h37c38.222 4.85 74.555 16.182 109 34 34.156-17.61 70.156-28.943 108-34h39c60.31 8.31 96.31 42.31 108 102v54c-5.76 34.948-16.76 68.281-33 100 16.242 31.724 27.242 65.057 33 100v53c-11.249 60.248-47.249 94.581-108 103h-39c-37.846-5.058-73.846-16.391-108-34-34.445 17.818-70.778 29.151-109 34h-37C37.556 500.037.89 457.204.5 383c.27-30.681 5.936-60.347 17-89-8.204-7.905-13.704-17.405-16.5-28.5-2.394-13.3-.06-25.633 7-37 3.18-3.845 6.347-7.678 9.5-11.5C3.925 182.051-1.575 145.885 1 108.5 6.643 54.34 35.476 19.506 87.5 4a432.83 432.83 0 0123-4.5zm1 16c44.691-1.744 87.025 7.423 127 27.5C166.181 84.314 107.015 139.814 61 209.5c-9.782-2.518-19.615-2.518-29.5 0-9.308-26.539-14.641-53.872-16-82 1.015-64.323 33.015-101.656 96-112zm255 0c25.262-2.605 49.596.895 73 10.5 31.608 16.299 50.108 42.132 55.5 77.5 4.176 47.122-4.491 91.789-26 134a572.06 572.06 0 00-51.5-75c11.363-18.352 11.863-37.019 1.5-56l-3-3a272.332 272.332 0 01-12.5 9.5c11.167 17.649 8.833 33.315-7 47-22.093 10.415-38.259 4.581-48.5-17.5-3.689-20.805 4.478-34.305 24.5-40.5 7.898-1.316 15.398-.15 22.5 3.5a66.1 66.1 0 008.5-13c-11.84-7.016-24.507-8.85-38-5.5a58.545 58.545 0 00-16 7.5 572.002 572.002 0 00-75-51.5c29.301-14.153 59.968-23.32 92-27.5zm-111 36a462.537 462.537 0 0183 55.5c-10.971 18.742-10.471 37.242 1.5 55.5 18.839 20.435 40.506 24.101 65 11a527.745 527.745 0 0155.5 82c-26.159 48.007-59.325 90.674-99.5 128-20.039-14.453-40.205-14.62-60.5-.5a255.756 255.756 0 0010 12.5c17.452-10.811 32.952-8.477 46.5 7 8.689 15.591 6.856 29.758-5.5 42.5-16.113 10.932-31.28 9.766-45.5-3.5-8.818-12.003-9.651-24.503-2.5-37.5a267.365 267.365 0 00-13.5-7.5c-3.877 4.95-6.211 10.616-7 17-1.257 9.48-.091 18.646 3.5 27.5a228.106 228.106 0 01-30 18.5c-72.618-40.112-132.451-94.445-179.5-163-.667-.667-.667-1.333 0-2 13.976-11.281 20.142-25.781 18.5-43.5-4.623.146-9.29.48-14 1-.983 12.97-6.65 23.303-17 31-15.723 7.776-29.556 5.276-41.5-7.5-10.134-16.647-8.3-31.814 5.5-45.5 19.861-11.118 36.195-7.284 49 11.5a140.729 140.729 0 0014-7.5 79.748 79.748 0 00-15-18.5c47.022-68.698 106.688-123.364 179-164zm-6 71c29.302-.531 43.802 13.803 43.5 43a354.308 354.308 0 01-13.5-18 812.822 812.822 0 00-57-1c4.683-12.844 13.683-20.844 27-24zm-30 40c17.003-.167 34.003 0 51 .5l20.5 26.5c.163 4.704-1.17 9.037-4 13-14.614 17.056-31.78 20.223-51.5 9.5-7.129-5.142-11.962-11.975-14.5-20.5a157.673 157.673 0 01-1.5-29zm23 70c8.976 2.616 17.976 2.616 27 0 4.874 15.619-.793 22.786-17 21.5-3.664-1.002-6.831-2.836-9.5-5.5a128.507 128.507 0 01-.5-16zm226 41c20.521 39.427 29.687 81.427 27.5 126-7.049 56.049-38.549 87.882-94.5 95.5-44.704 2.241-87.038-6.759-127-27a697.03 697.03 0 0121.5-12.5c19.258 15.155 39.758 16.988 61.5 5.5 18.758-14.61 24.925-33.443 18.5-56.5a24.017 24.017 0 00-4.5-8.5c38.983-35.788 71.316-76.622 97-122.5zm-437 28c9.885 2.518 19.718 2.518 29.5 0 46.015 69.686 105.181 125.186 177.5 166.5-39.646 20.079-81.646 29.079-126 27-55.127-6.794-86.96-37.627-95.5-92.5-2.124-22.923-.458-45.589 5-68a624.589 624.589 0 019.5-33z" opacity=".928"/><path d="M247.5 106.5c26.188-2.328 45.354 8.005 57.5 31a49.963 49.963 0 014 15 241.257 241.257 0 01-1 42c-3.521 12.339-10.355 22.339-20.5 30a50.512 50.512 0 000 20 504.999 504.999 0 0130 9 95.032 95.032 0 00-4 15 441.436 441.436 0 01-31.5-9c-17 14.667-34 14.667-51 0-18.484 5.494-36.984 10.994-55.5 16.5-5.567 3.287-9.067 8.121-10.5 14.5a881.746 881.746 0 00-.5 42h26v-20h16v20h18v16h-92v-16h16c-.167-15.004 0-30.004.5-45 2.889-12.947 10.389-22.113 22.5-27.5l54-15.5a60.713 60.713 0 00.5-19c-10.725-7.776-17.725-18.11-21-31a248.073 248.073 0 01-1-43c4.9-24.399 19.4-39.399 43.5-45zm2 16c-13.317 3.156-22.317 11.156-27 24 19.012-.333 38.012 0 57 1a354.308 354.308 0 0013.5 18c.302-29.197-14.198-43.531-43.5-43zm-30 40c-.391 9.733.109 19.4 1.5 29 2.538 8.525 7.371 15.358 14.5 20.5 19.72 10.723 36.886 7.556 51.5-9.5 2.83-3.963 4.163-8.296 4-13L270.5 163c-16.997-.5-33.997-.667-51-.5zm23 70c-.166 5.344.001 10.677.5 16 2.669 2.664 5.836 4.498 9.5 5.5 16.207 1.286 21.874-5.881 17-21.5-9.024 2.616-18.024 2.616-27 0z" opacity=".935"/><path d="M370.5 125.5h16v16h-16v-16zM40.5 247.5h16v16h-16v-16z" opacity=".882"/><path d="M330.5 257.5c18.365 2.531 29.532 12.864 33.5 31 .5 14.663.667 29.33.5 44h16v16h-142v-16h68v-20h16v20h26c.167-14.004 0-28.004-.5-42-1.267-4.369-3.433-8.203-6.5-11.5a78.854 78.854 0 00-15-7.5c1.336-4.679 2.669-9.346 4-14z" opacity=".934"/><path d="M278.5 273.5a225.254 225.254 0 0120 5.5c.928.388 1.595 1.055 2 2a147.099 147.099 0 01-4 13 253.343 253.343 0 01-22-4.5 214.8 214.8 0 014-16z" opacity=".888"/><path d="M314.5 283.5c5.419.97 10.419 2.803 15 5.5a182.758 182.758 0 01-4.5 14.5 71.83 71.83 0 00-14.5-4 70.313 70.313 0 014-16z" opacity=".862"/><path d="M322.5 412.5h16v16h-16v-16z" opacity=".882"/></svg>
 							<h4><span class="count">25</span>+</h4>
 							<p>Years Exprerience</p>
 						</div>
-					</div><!-- End Col -->						
+					</div><!-- End Col -->
 				</div>
 			</div>
 		</section>
 		<!-- End Home Banner -->
-		
+
 		<!-- Start About -->
 		<section class="about pb-120 position-relative mt-5">
 			<div class="container">
@@ -94,12 +94,12 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="abs_dots">
 								<svg fill="none" viewBox="0 0 256 256"><mask style="mask-type:alpha" width="256" height="256" x="0" y="0" maskUnits="userSpaceOnUse"><circle cx="128" cy="128" r="128" fill="#444"/></mask><g fill="#222" fill-opacity=".41" mask="url(#a)"><circle cx="1.817" cy="3.11" r="3.11"/><circle cx="1.817" cy="34.33" r="3.11"/><circle cx="1.817" cy="65.55" r="3.11"/><circle cx="1.817" cy="96.771" r="3.11"/><circle cx="1.817" cy="127.991" r="3.11"/><circle cx="1.817" cy="159.211" r="3.11"/><circle cx="1.817" cy="190.431" r="3.11"/><circle cx="1.817" cy="221.652" r="3.11"/><circle cx="33.037" cy="3.11" r="3.11"/><circle cx="33.037" cy="34.33" r="3.11"/><circle cx="33.037" cy="65.55" r="3.11"/><circle cx="33.037" cy="96.771" r="3.11"/><circle cx="33.037" cy="127.991" r="3.11"/><circle cx="33.037" cy="159.211" r="3.11"/><circle cx="33.037" cy="190.431" r="3.11"/><circle cx="33.037" cy="221.652" r="3.11"/><circle cx="64.257" cy="3.11" r="3.11"/><circle cx="64.257" cy="34.33" r="3.11"/><circle cx="64.257" cy="65.55" r="3.11"/><circle cx="64.257" cy="96.771" r="3.11"/><circle cx="64.257" cy="127.991" r="3.11"/><circle cx="64.257" cy="159.211" r="3.11"/><circle cx="64.257" cy="190.431" r="3.11"/><circle cx="64.257" cy="221.652" r="3.11"/><circle cx="95.477" cy="3.11" r="3.11"/><circle cx="95.477" cy="34.33" r="3.11"/><circle cx="95.477" cy="65.55" r="3.11"/><circle cx="95.477" cy="96.771" r="3.11"/><circle cx="95.477" cy="127.991" r="3.11"/><circle cx="95.477" cy="159.211" r="3.11"/><circle cx="95.477" cy="190.431" r="3.11"/><circle cx="95.477" cy="221.652" r="3.11"/><circle cx="126.697" cy="3.11" r="3.11"/><circle cx="126.697" cy="34.33" r="3.11"/><circle cx="126.697" cy="65.55" r="3.11"/><circle cx="126.697" cy="96.771" r="3.11"/><circle cx="126.697" cy="127.991" r="3.11"/><circle cx="126.697" cy="159.211" r="3.11"/><circle cx="126.697" cy="190.431" r="3.11"/><circle cx="126.697" cy="221.652" r="3.11"/><circle cx="157.917" cy="3.11" r="3.11"/><circle cx="157.917" cy="34.33" r="3.11"/><circle cx="157.917" cy="65.55" r="3.11"/><circle cx="157.917" cy="96.771" r="3.11"/><circle cx="157.917" cy="127.991" r="3.11"/><circle cx="157.917" cy="159.211" r="3.11"/><circle cx="157.917" cy="190.431" r="3.11"/><circle cx="157.917" cy="221.652" r="3.11"/><circle cx="189.137" cy="3.11" r="3.11"/><circle cx="189.137" cy="34.33" r="3.11"/><circle cx="189.137" cy="65.55" r="3.11"/><circle cx="189.137" cy="96.771" r="3.11"/><circle cx="189.137" cy="127.991" r="3.11"/><circle cx="189.137" cy="159.211" r="3.11"/><circle cx="189.137" cy="190.431" r="3.11"/><circle cx="189.137" cy="221.652" r="3.11"/><circle cx="220.357" cy="3.11" r="3.11"/><circle cx="220.357" cy="34.33" r="3.11"/><circle cx="220.357" cy="65.55" r="3.11"/><circle cx="220.357" cy="96.771" r="3.11"/><circle cx="220.357" cy="127.991" r="3.11"/><circle cx="220.357" cy="159.211" r="3.11"/><circle cx="220.357" cy="190.431" r="3.11"/><circle cx="220.357" cy="221.652" r="3.11"/><circle cx="251.577" cy="3.11" r="3.11"/><circle cx="251.577" cy="34.33" r="3.11"/><circle cx="251.577" cy="65.55" r="3.11"/><circle cx="251.577" cy="96.771" r="3.11"/><circle cx="251.577" cy="127.991" r="3.11"/><circle cx="251.577" cy="159.211" r="3.11"/><circle cx="251.577" cy="190.431" r="3.11"/><circle cx="251.577" cy="221.652" r="3.11"/></g></svg>
 							</div>
 						</div>
-					</div><!-- End Col -->	
+					</div><!-- End Col -->
 
 					<div class="col-xl-6 col-12 pl-30 wow fadeIn">
 						<div class="section-title about-title">
@@ -113,10 +113,10 @@
                                knowledge gap, restricted time frame, and other challenges that stop them from achieving academic
                                 success. Therefore, students are becoming independent enough to seek expert assignment help services.
                                  Thanks to EdTech, students are becoming conscious of their educational demands. They know when they
-                                  need help in assignments to understand the academic requirements.
+                                  need help in assignments to understand the academic requirements etc.
 							</p>
 						</div>
-						
+
 						<a href="#" class="bg-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
 					</div><!-- End Col -->
 				</div>
@@ -124,16 +124,16 @@
 			<div class="about_shape"></div>
 		</section>
 		<!-- End About -->
-				
+
 		<!-- Start Why Choose Us -->
 		<section class="why-choose-us pb-120">
 			<div class="container">
-				<div class="row align-items-center">					
+				<div class="row align-items-center">
 					<div class="col-lg-6 align-self-center wow fadeInLeft">
 						<div class="section-title mb-50">
 							<span>Why Choose Us</span>
 							<h2>
-								Transform education your Life,<br> 
+								Transform education your Life,<br>
 								Change the World
 							</h2>
 						</div>
@@ -147,10 +147,10 @@
 									</div>
 									<h4>World Class Instructors</h4>
 									<p>
-										We are passionate about education and dedicated 
+										We are passionate about education and dedicated
 									</p>
 								</div>
-							</div><!-- End why-item -->	
+							</div><!-- End why-item -->
 
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="why-item">
@@ -160,10 +160,10 @@
 									</div>
 									<h4>Video Classes</h4>
 									<p>
-										We are passionate about education and dedicated 
+										We are passionate about education and dedicated
 									</p>
 								</div>
-							</div><!-- End why-item -->	
+							</div><!-- End why-item -->
 
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="why-item">
@@ -173,7 +173,7 @@
 									</div>
 									<h4>Online Courses</h4>
 									<p>
-										We are passionate about education and dedicated 
+										We are passionate about education and dedicated
 									</p>
 								</div>
 							</div><!-- End why-item -->
@@ -186,12 +186,12 @@
 									</div>
 									<h4>24/7 Support </h4>
 									<p>
-										We are passionate about education and dedicated 
+										We are passionate about education and dedicated
 									</p>
 								</div>
 							</div><!-- End why-item -->
 						</div>
-					</div><!-- End Col -->	
+					</div><!-- End Col -->
 
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="why-img position-relative">
@@ -220,7 +220,7 @@
 							<h2 class="text-white">Join our Newsletter</h2>
 							<p class="text-white mb-0">Subscribe to our Newsletter to get our Latest News</p>
 						</div>
-			
+
 						<form class="col-xl-5 ms-xl-auto position-relative">
 							<input class="form-control" type="email" placeholder="Enter your email address">
 							<button type="submit"><i class="fa-solid fa-arrow-right-long"></i></button>
@@ -230,7 +230,7 @@
 			</div>
 		</section>
 		<!-- End Newsletter -->
-		
+
 		<!-- Start Partners -->
 		<section class="partners wow fadeIn" style="background-image: url(assets/img/bg/course-bg.jpg);">
 			<div class="container">
@@ -238,49 +238,49 @@
 					<h2>
 						12k+ Companies Taken Our Courses
 						<img src="assets/img/shapes/partners/circle.svg" class="pleft-shape" alt="image">
-						<img src="assets/img/shapes/partners/highlight.svg" class="pright-shape" alt="image">			
-					
+						<img src="assets/img/shapes/partners/highlight.svg" class="pright-shape" alt="image">
+
 					</h2>
-					
+
 				</div>
-				
+
 				<div class="partner-slider owl-carousel">
 					<div class="part-item">
 						<a href="#">
 							<img src="assets/img/partners/1.svg" alt="img">
 						</a>
-					</div>					
-					
+					</div>
+
 					<div class="part-item">
 						<a href="#">
 							<img src="assets/img/partners/2.svg" alt="img">
 						</a>
-					</div>					
-					
+					</div>
+
 					<div class="part-item">
 						<a href="#">
 							<img src="assets/img/partners/3.svg" alt="img">
 						</a>
-					</div>					
-					
+					</div>
+
 					<div class="part-item">
 						<a href="#">
 							<img src="assets/img/partners/4.svg" alt="img">
 						</a>
-					</div>					
-					
+					</div>
+
 					<div class="part-item">
 						<a href="#">
 							<img src="assets/img/partners/5.svg" alt="img">
 						</a>
-					</div>					
-					
+					</div>
+
 					<div class="part-item">
 						<a href="#">
 							<img src="assets/img/partners/6.svg" alt="img">
 						</a>
-					</div>					
-					
+					</div>
+
 					<div class="part-item">
 						<a href="#">
 							<img src="assets/img/partners/1.svg" alt="img">
@@ -290,7 +290,7 @@
 			</div>
 		</section>
 		<!-- End Partners -->
-		
+
 		<!-- Start Review -->
 		<section class="review section-padding position-relative">
 			<div class="container">
@@ -299,26 +299,26 @@
 						<div class="rev_title section-title">
 							<span>Testimonials</span>
 							<h2>
-								What Our Students Have<br> 
+								What Our Students Have<br>
 								To Say
 							</h2>
 							<p>
-								Lorem ipsum dolor sit amet consectur adipiscing elit sed 
-								eiusmod temporincididunt labore dolore magna 
+								Lorem ipsum dolor sit amet consectur adipiscing elit sed
+								eiusmod temporincididunt labore dolore magna
 								aliquaenim minim ve.
 							</p>
-						</div>	
+						</div>
 
 						<div class="rev_arrow">
 							<span class="rev-left">
 								<i class="fa-solid fa-arrow-left-long"></i>
 							</span>
-							
+
 							<span class="rev-right">
 								<i class="fa-solid fa-arrow-right-long"></i>
 							</span>
-						</div>	
-					</div><!-- End Col -->	
+						</div>
+					</div><!-- End Col -->
 
 					<div class="col-lg-8 align-self-center wow fadeInRight">
 						<div class="review-slider ">
@@ -333,14 +333,14 @@
 												</span>
 											</div>
 										</div>
-										
+
 										<div class="rev-content">
-											<h4>Masum Billah</h4>	
+											<h4>Masum Billah</h4>
 											<span>Ceo @ Themesvila</span>
 											<p>
-												Lorem ipsum dolor amet consec tur 
-												elit adicing sed do usmod zx tempor 
-												enim minim veniam quis nostrud exer 
+												Lorem ipsum dolor amet consec tur
+												elit adicing sed do usmod zx tempor
+												enim minim veniam quis nostrud exer
 											</p>
 											<div class="rrating">
 												<i class="fa-solid fa-star"></i>
@@ -348,11 +348,11 @@
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
-											</div>	
-										</div>							
-									</div>							
-								</div>							
-								
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div class="swiper-slide">
 									<div class="review-item">
 										<div class="rev-image">
@@ -363,14 +363,14 @@
 												</span>
 											</div>
 										</div>
-										
+
 										<div class="rev-content">
-											<h4>Monaym Billah</h4>	
+											<h4>Monaym Billah</h4>
 											<span>Executive @ Themesvila</span>
 											<p>
-												Lorem ipsum dolor amet consec tur 
-												elit adicing sed do usmod zx tempor 
-												enim minim veniam quis nostrud exer 
+												Lorem ipsum dolor amet consec tur
+												elit adicing sed do usmod zx tempor
+												enim minim veniam quis nostrud exer
 											</p>
 											<div class="rrating">
 												<i class="fa-solid fa-star"></i>
@@ -378,11 +378,11 @@
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
-											</div>	
-										</div>		
-									</div>							
-								</div>							
-								
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div class="swiper-slide">
 									<div class="review-item">
 										<div class="rev-image">
@@ -393,14 +393,14 @@
 												</span>
 											</div>
 										</div>
-										
+
 										<div class="rev-content">
-											<h4>Motasim Billah</h4>	
+											<h4>Motasim Billah</h4>
 											<span>Developer @ Themesvila</span>
 											<p>
-												Lorem ipsum dolor amet consec tur 
-												elit adicing sed do usmod zx tempor 
-												enim minim veniam quis nostrud exer 
+												Lorem ipsum dolor amet consec tur
+												elit adicing sed do usmod zx tempor
+												enim minim veniam quis nostrud exer
 											</p>
 											<div class="rrating">
 												<i class="fa-solid fa-star"></i>
@@ -408,11 +408,11 @@
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
-											</div>	
+											</div>
 										</div>
-									</div>									
-								</div>									
-								
+									</div>
+								</div>
+
 								<div class="swiper-slide">
 									<div class="review-item">
 										<div class="rev-image">
@@ -423,14 +423,14 @@
 												</span>
 											</div>
 										</div>
-										
+
 										<div class="rev-content">
-											<h4>Ekram Hossain</h4>	
+											<h4>Ekram Hossain</h4>
 											<span>Ceo @ Themesvila</span>
 											<p>
-												Lorem ipsum dolor amet consec tur 
-												elit adicing sed do usmod zx tempor 
-												enim minim veniam quis nostrud exer 
+												Lorem ipsum dolor amet consec tur
+												elit adicing sed do usmod zx tempor
+												enim minim veniam quis nostrud exer
 											</p>
 											<div class="rrating">
 												<i class="fa-solid fa-star"></i>
@@ -438,21 +438,21 @@
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
 												<i class="fa-solid fa-star"></i>
-											</div>	
-										</div>	
-									</div>	
-								</div>	
-							
+											</div>
+										</div>
+									</div>
+								</div>
+
 							</div>
 						</div>
-						
+
 					</div><!-- End Col -->
 				</div>
 			</div>
 			<div class="rev_shape"></div>
 		</section>
 		<!-- End Review -->
-		
+
 		<!-- Start Instructors -->
 		<section class="instructors">
 			<div class="container">
@@ -462,7 +462,7 @@
 						Our Expert Instructors
 					</h2>
 				</div>
-				
+
 				<div class="row">
 					<div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
 						<div class="instructor">
@@ -477,14 +477,14 @@
 									</ul>
 								</div>
 							</div>
-							
+
 							<div class="ins-content">
 								<h4><a href="#">Jenny Wilson</a></h4>
 								<span class="designation">Digital Marketer</span>
 								<div class="ins-meta">
 									<span>
 										<i class="fa-solid fa-file-circle-check"></i> 106 Courses
-									</span>	
+									</span>
 
 									<span>
 										<i class="fa-solid fa-graduation-cap"></i> 2k Students
@@ -492,8 +492,8 @@
 								</div>
 							</div>
 						</div>
-					</div><!-- End Instructor -->					
-					
+					</div><!-- End Instructor -->
+
 					<div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
 						<div class="instructor">
 							<div class="ins-img">
@@ -513,7 +513,7 @@
 								<div class="ins-meta">
 									<span>
 										<i class="fa-solid fa-file-circle-check"></i> 106 Courses
-									</span>	
+									</span>
 
 									<span>
 										<i class="fa-solid fa-graduation-cap"></i> 2k Students
@@ -521,8 +521,8 @@
 								</div>
 							</div>
 						</div>
-					</div><!-- End Instructor -->					
-					
+					</div><!-- End Instructor -->
+
 					<div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
 						<div class="instructor">
 							<div class="ins-img">
@@ -542,7 +542,7 @@
 								<div class="ins-meta">
 									<span>
 										<i class="fa-solid fa-file-circle-check"></i> 106 Courses
-									</span>	
+									</span>
 
 									<span>
 										<i class="fa-solid fa-graduation-cap"></i> 2k Students
@@ -550,8 +550,8 @@
 								</div>
 							</div>
 						</div>
-					</div><!-- End Instructor -->					
-					
+					</div><!-- End Instructor -->
+
 					<div class="col-xl-3 col-lg-4 col-xl-3 col-md-6 col-12 wow fadeIn">
 						<div class="instructor">
 							<div class="ins-img">
@@ -571,7 +571,7 @@
 								<div class="ins-meta">
 									<span>
 										<i class="fa-solid fa-file-circle-check"></i> 106 Courses
-									</span>	
+									</span>
 
 									<span>
 										<i class="fa-solid fa-graduation-cap"></i> 2k Students
@@ -579,15 +579,15 @@
 								</div>
 							</div>
 						</div>
-					</div><!-- End Instructor -->	
-				
+					</div><!-- End Instructor -->
+
 				</div>
 			</div>
 		</section>
 		<!-- End Instructors -->
-		
+
 		<!-- Start Counter Up -->
-		<section class="counter-up" style="background-image: url(assets/img/bg/counter.svg);">	
+		<section class="counter-up" style="background-image: url(assets/img/bg/counter.svg);">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 col-12 wow fadeInUp">
@@ -596,16 +596,16 @@
 							<h4><span class="count">14</span>K</h4>
 							<p>Successful Trained</p>
 						</div>
-					</div><!-- End Col -->					
-					
+					</div><!-- End Col -->
+
 					<div class="col-lg-3 col-md-6 col-12 wow fadeInUp">
 						<div class="counter-item">
 							<svg fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 512 512"><path d="M67.5 63.5c39.668-.167 79.335 0 119 .5 24.31 2.616 47.143 9.783 68.5 21.5 21.434-11.589 44.267-18.755 68.5-21.5 40-.667 80-.667 120 0 1.833.5 3 1.667 3.5 3.5.5 9.327.666 18.66.5 28 12.005-.166 24.005 0 36 .5 1.833.5 3 1.667 3.5 3.5.996 110.081.662 220.081-1 330a9.454 9.454 0 01-2.5 1.5c-152 .667-304 .667-456 0a9.457 9.457 0 01-2.5-1.5 13654.534 13654.534 0 01-1-330c.5-1.833 1.667-3 3.5-3.5 11.995-.5 23.995-.666 36-.5-.166-9.34 0-18.673.5-28 .69-1.85 1.856-3.184 3.5-4zm12 16h32c-.167 57.334 0 114.668.5 172 1.529 3.016 4.029 4.349 7.5 4a12.862 12.862 0 006-1.5 259.636 259.636 0 0118-11.5 315.397 315.397 0 0120 12.5c2.667.667 5.333.667 8 0 1.833-.5 3-1.667 3.5-3.5.5-56.999.667-113.999.5-171 25.263.976 48.93 7.643 71 20a9594.023 9594.023 0 010 277c-18.592-9.399-38.259-15.232-59-17.5-35.998-.5-71.998-.667-108-.5v-280zm48 0h32c.167 50.668 0 101.334-.5 152-4.563-4.068-9.73-7.068-15.5-9-5.77 1.932-10.937 4.932-15.5 9-.5-50.666-.667-101.332-.5-152zm213 0h91v280c-35.335-.167-70.668 0-106 .5-21.461 1.948-41.795 7.782-61 17.5a9594.023 9594.023 0 010-277c23.83-12.954 49.164-19.954 76-21zm-301 32h24c-.495 87.415.005 174.749 1.5 262a9.457 9.457 0 002.5 1.5c40.014.11 80.014.777 120 2 22.839 2.946 44.172 10.28 64 22 2.667.667 5.333.667 8 0 20.161-11.79 41.827-19.123 65-22a4192.236 4192.236 0 01119-2 9.454 9.454 0 002.5-1.5 11493.671 11493.671 0 001.5-262h24v304h-432v-304z" opacity=".99"/><path d="M303.5 175.5h96v16h-96v-16z"/><path d="M303.5 207.5h66v16h-66v-16z" opacity=".985"/><path d="M303.5 239.5h96v16h-96v-16z"/><path d="M303.5 271.5h66v16h-66v-16z" opacity=".985"/><path d="M303.5 303.5h96v16h-96v-16z"/></svg>
 							<h4><span class="count">10</span>K</h4>
 							<p>Courses Completed</p>
 						</div>
-					</div><!-- End Col -->					
-													
+					</div><!-- End Col -->
+
 					<div class="col-lg-3 col-md-6 col-12 wow fadeInUp">
 						<div class="counter-item">
 							<svg fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 512 512"><path d="M251.5-.5h8c2.538 2.04 4.371 4.706 5.5 8a1510.898 1510.898 0 0120.5 49 1888.63 1888.63 0 0161 6.5c4.469 3.916 5.136 8.416 2 13.5a2281.089 2281.089 0 00-42.5 38 774.999 774.999 0 0011 54c1.947 6.889-.553 11.222-7.5 13a28.043 28.043 0 00-5-1.5 898.154 898.154 0 00-49-28.5 898.154 898.154 0 00-49 28.5c-5.001 2.114-9.168.947-12.5-3.5a16.242 16.242 0 010-8 774.999 774.999 0 0011-54 1155.407 1155.407 0 00-43-38c-3.885-8.276-1.385-13.11 7.5-14.5l52-5a10.255 10.255 0 004-1.5 4292.84 4292.84 0 0120.5-48c1.129-3.294 2.962-5.96 5.5-8zm3 31c.876-.13 1.543.203 2 1a762.077 762.077 0 0114.5 34c.883 2.602 2.383 4.77 4.5 6.5a1287.084 1287.084 0 0045 5.5 1356.91 1356.91 0 00-32.5 30 237.81 237.81 0 008.5 46.5 341.926 341.926 0 01-30-17 39.376 39.376 0 00-11-4.5 250.675 250.675 0 00-37 20.5c-1.259.982-2.592 1.315-4 1a237.81 237.81 0 008.5-46.5 1356.91 1356.91 0 00-32.5-30 1287.084 1287.084 0 0045-5.5c2.117-1.73 3.617-3.898 4.5-6.5a70840.93 70840.93 0 0014.5-35z" opacity=".934"/><path d="M86.5 63.5a40.936 40.936 0 019 .5l2.5 2.5a957.648 957.648 0 0116.5 38 722.82 722.82 0 0041 4.5c6.66 2.49 8.493 6.99 5.5 13.5a648.967 648.967 0 00-31.5 29 867.707 867.707 0 019 40c-1.41 7.633-5.743 10.133-13 7.5A1780.967 1780.967 0 0191 178.5a561.758 561.758 0 01-39 22c-6.673-1.348-9.34-5.348-8-12a1221.073 1221.073 0 018.5-37 2376.574 2376.574 0 01-31.5-29c-3.296-6.67-1.463-11.17 5.5-13.5a711.914 711.914 0 0041-4.5 382.716 382.716 0 0119-41zm4 30a479.48 479.48 0 0013 26.5 180.112 180.112 0 0030 4 313.572 313.572 0 00-21.5 20.5 119.765 119.765 0 005.5 28.5l-1 .5c-8.114-5.306-16.614-9.639-25.5-13-7.887 2.861-15.387 6.694-22.5 11.5-1.259.982-2.592 1.315-4 1a119.74 119.74 0 005.5-28.5A313.48 313.48 0 0048.5 124a180.11 180.11 0 0030-4 147.84 147.84 0 0012-26.5z" opacity=".935"/><path d="M415.5 63.5a40.939 40.939 0 019 .5l2.5 2.5a496.388 496.388 0 0116.5 39c13.684.896 27.351 2.062 41 3.5 6.963 2.33 8.796 6.83 5.5 13.5a2370.331 2370.331 0 01-31.5 29 1220.771 1220.771 0 018.5 37c.648 9.358-3.519 12.858-12.5 10.5a1780.967 1780.967 0 01-34.5-20.5 561.804 561.804 0 01-39 22c-5.075-.908-7.909-3.908-8.5-9a867.707 867.707 0 019-40 648.967 648.967 0 00-31.5-29c-2.993-6.51-1.16-11.01 5.5-13.5a711.904 711.904 0 0041-4.5 382.736 382.736 0 0119-41zm4 30a479.338 479.338 0 0013 26.5 180.112 180.112 0 0030 4 313.572 313.572 0 00-21.5 20.5 119.765 119.765 0 005.5 28.5c-7.473-3.41-14.807-7.41-22-12-3-.667-6-.667-9 0l-18 11c-1.259.982-2.592 1.315-4 1a119.765 119.765 0 005.5-28.5 313.572 313.572 0 00-21.5-20.5 180.112 180.112 0 0030-4 147.867 147.867 0 0012-26.5z" opacity=".934"/><path d="M361.5 511.5h-147a106.037 106.037 0 01-12-6.5c-13.614-13.473-29.947-21.64-49-24.5-.95 9.119-5.95 14.619-15 16.5a1979.51 1979.51 0 01-89 0c-5.289-1.224-9.455-4.058-12.5-8.5a2172.745 2172.745 0 01-1.5-92.5l.5-89.5c2.167-4.833 5.667-8.333 10.5-10.5 31.667-.667 63.333-.667 95 0 7.346 2.491 11.513 7.657 12.5 15.5 15.454-16.137 32.621-29.971 51.5-41.5 10.975-11.109 18.475-24.276 22.5-39.5a2115.954 2115.954 0 004-41c9.243-16.862 23.077-22.362 41.5-16.5 9.491 3.803 15.657 10.636 18.5 20.5 10.39 33.188 9.89 66.188-1.5 99 34.335-.167 68.668 0 103 .5 24.668 6.152 33.834 21.652 27.5 46.5-3.637 8.803-9.803 15.137-18.5 19 9.648 19.74 5.648 36.073-12 49 10.903 19.782 7.236 36.282-11 49.5 10.074 16.043 9.074 31.376-3 46-4.478 3.902-9.478 6.735-15 8.5zm-104-324c6.804-.678 12.304 1.655 16.5 7 13.1 36.597 10.934 72.264-6.5 107 .552 3.279 2.219 5.779 5 7.5l119 1c10.547 2.264 15.38 8.764 14.5 19.5-1.833 7.167-6.333 11.667-13.5 13.5l-34 1c-4.569 2.541-6.069 6.375-4.5 11.5 1.109 2.315 2.943 3.815 5.5 4.5 7.411.108 14.745.775 22 2 8.476 5.428 10.976 12.928 7.5 22.5-6.744 10.137-15.911 13.304-27.5 9.5-6.66 2.49-8.493 6.99-5.5 13.5l2.5 2.5c15.984.957 22.484 9.124 19.5 24.5-6.992 10-16.492 13.5-28.5 10.5-4.569 2.541-6.069 6.375-4.5 11.5a6.978 6.978 0 002.5 3.5c6.155.64 11.822 2.64 17 6 7.169 9.303 6.503 17.97-2 26-3.069 1.846-6.402 2.846-10 3-43.333.667-86.667.667-130 0a22.508 22.508 0 01-7-2c-17.28-16.806-37.947-26.973-62-30.5-.167-42.335 0-84.668.5-127l34.5-32.5a159.88 159.88 0 0125-17c18.006-15.841 28.84-35.674 32.5-59.5a351.761 351.761 0 013-32 6.978 6.978 0 012.5-3.5c2.227-.941 4.227-2.108 6-3.5zm-205 125h84v168h-84v-168z" opacity=".942"/><path d="M98.5 329.5c10.557.105 13.89 5.105 10 15-5.588 4.313-10.422 3.646-14.5-2-1.62-5.577-.12-9.911 4.5-13z" opacity=".861"/></svg>
@@ -613,19 +613,19 @@
 							<p>Satisfaction Rate</p>
 						</div>
 					</div><!-- End Col -->
-					
+
 					<div class="col-lg-3 col-md-6 col-12 wow fadeInUp">
 						<div class="counter-item">
 							<svg fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 512 512"><path d="M110.5-.5h37c38.222 4.85 74.555 16.182 109 34 34.156-17.61 70.156-28.943 108-34h39c60.31 8.31 96.31 42.31 108 102v54c-5.76 34.948-16.76 68.281-33 100 16.242 31.724 27.242 65.057 33 100v53c-11.249 60.248-47.249 94.581-108 103h-39c-37.846-5.058-73.846-16.391-108-34-34.445 17.818-70.778 29.151-109 34h-37C37.556 500.037.89 457.204.5 383c.27-30.681 5.936-60.347 17-89-8.204-7.905-13.704-17.405-16.5-28.5-2.394-13.3-.06-25.633 7-37 3.18-3.845 6.347-7.678 9.5-11.5C3.925 182.051-1.575 145.885 1 108.5 6.643 54.34 35.476 19.506 87.5 4a432.83 432.83 0 0123-4.5zm1 16c44.691-1.744 87.025 7.423 127 27.5C166.181 84.314 107.015 139.814 61 209.5c-9.782-2.518-19.615-2.518-29.5 0-9.308-26.539-14.641-53.872-16-82 1.015-64.323 33.015-101.656 96-112zm255 0c25.262-2.605 49.596.895 73 10.5 31.608 16.299 50.108 42.132 55.5 77.5 4.176 47.122-4.491 91.789-26 134a572.06 572.06 0 00-51.5-75c11.363-18.352 11.863-37.019 1.5-56l-3-3a272.332 272.332 0 01-12.5 9.5c11.167 17.649 8.833 33.315-7 47-22.093 10.415-38.259 4.581-48.5-17.5-3.689-20.805 4.478-34.305 24.5-40.5 7.898-1.316 15.398-.15 22.5 3.5a66.1 66.1 0 008.5-13c-11.84-7.016-24.507-8.85-38-5.5a58.545 58.545 0 00-16 7.5 572.002 572.002 0 00-75-51.5c29.301-14.153 59.968-23.32 92-27.5zm-111 36a462.537 462.537 0 0183 55.5c-10.971 18.742-10.471 37.242 1.5 55.5 18.839 20.435 40.506 24.101 65 11a527.745 527.745 0 0155.5 82c-26.159 48.007-59.325 90.674-99.5 128-20.039-14.453-40.205-14.62-60.5-.5a255.756 255.756 0 0010 12.5c17.452-10.811 32.952-8.477 46.5 7 8.689 15.591 6.856 29.758-5.5 42.5-16.113 10.932-31.28 9.766-45.5-3.5-8.818-12.003-9.651-24.503-2.5-37.5a267.365 267.365 0 00-13.5-7.5c-3.877 4.95-6.211 10.616-7 17-1.257 9.48-.091 18.646 3.5 27.5a228.106 228.106 0 01-30 18.5c-72.618-40.112-132.451-94.445-179.5-163-.667-.667-.667-1.333 0-2 13.976-11.281 20.142-25.781 18.5-43.5-4.623.146-9.29.48-14 1-.983 12.97-6.65 23.303-17 31-15.723 7.776-29.556 5.276-41.5-7.5-10.134-16.647-8.3-31.814 5.5-45.5 19.861-11.118 36.195-7.284 49 11.5a140.729 140.729 0 0014-7.5 79.748 79.748 0 00-15-18.5c47.022-68.698 106.688-123.364 179-164zm-6 71c29.302-.531 43.802 13.803 43.5 43a354.308 354.308 0 01-13.5-18 812.822 812.822 0 00-57-1c4.683-12.844 13.683-20.844 27-24zm-30 40c17.003-.167 34.003 0 51 .5l20.5 26.5c.163 4.704-1.17 9.037-4 13-14.614 17.056-31.78 20.223-51.5 9.5-7.129-5.142-11.962-11.975-14.5-20.5a157.673 157.673 0 01-1.5-29zm23 70c8.976 2.616 17.976 2.616 27 0 4.874 15.619-.793 22.786-17 21.5-3.664-1.002-6.831-2.836-9.5-5.5a128.507 128.507 0 01-.5-16zm226 41c20.521 39.427 29.687 81.427 27.5 126-7.049 56.049-38.549 87.882-94.5 95.5-44.704 2.241-87.038-6.759-127-27a697.03 697.03 0 0121.5-12.5c19.258 15.155 39.758 16.988 61.5 5.5 18.758-14.61 24.925-33.443 18.5-56.5a24.017 24.017 0 00-4.5-8.5c38.983-35.788 71.316-76.622 97-122.5zm-437 28c9.885 2.518 19.718 2.518 29.5 0 46.015 69.686 105.181 125.186 177.5 166.5-39.646 20.079-81.646 29.079-126 27-55.127-6.794-86.96-37.627-95.5-92.5-2.124-22.923-.458-45.589 5-68a624.589 624.589 0 019.5-33z" opacity=".928"/><path d="M247.5 106.5c26.188-2.328 45.354 8.005 57.5 31a49.963 49.963 0 014 15 241.257 241.257 0 01-1 42c-3.521 12.339-10.355 22.339-20.5 30a50.512 50.512 0 000 20 504.999 504.999 0 0130 9 95.032 95.032 0 00-4 15 441.436 441.436 0 01-31.5-9c-17 14.667-34 14.667-51 0-18.484 5.494-36.984 10.994-55.5 16.5-5.567 3.287-9.067 8.121-10.5 14.5a881.746 881.746 0 00-.5 42h26v-20h16v20h18v16h-92v-16h16c-.167-15.004 0-30.004.5-45 2.889-12.947 10.389-22.113 22.5-27.5l54-15.5a60.713 60.713 0 00.5-19c-10.725-7.776-17.725-18.11-21-31a248.073 248.073 0 01-1-43c4.9-24.399 19.4-39.399 43.5-45zm2 16c-13.317 3.156-22.317 11.156-27 24 19.012-.333 38.012 0 57 1a354.308 354.308 0 0013.5 18c.302-29.197-14.198-43.531-43.5-43zm-30 40c-.391 9.733.109 19.4 1.5 29 2.538 8.525 7.371 15.358 14.5 20.5 19.72 10.723 36.886 7.556 51.5-9.5 2.83-3.963 4.163-8.296 4-13L270.5 163c-16.997-.5-33.997-.667-51-.5zm23 70c-.166 5.344.001 10.677.5 16 2.669 2.664 5.836 4.498 9.5 5.5 16.207 1.286 21.874-5.881 17-21.5-9.024 2.616-18.024 2.616-27 0z" opacity=".935"/><path d="M370.5 125.5h16v16h-16v-16zM40.5 247.5h16v16h-16v-16z" opacity=".882"/><path d="M330.5 257.5c18.365 2.531 29.532 12.864 33.5 31 .5 14.663.667 29.33.5 44h16v16h-142v-16h68v-20h16v20h26c.167-14.004 0-28.004-.5-42-1.267-4.369-3.433-8.203-6.5-11.5a78.854 78.854 0 00-15-7.5c1.336-4.679 2.669-9.346 4-14z" opacity=".934"/><path d="M278.5 273.5a225.254 225.254 0 0120 5.5c.928.388 1.595 1.055 2 2a147.099 147.099 0 01-4 13 253.343 253.343 0 01-22-4.5 214.8 214.8 0 014-16z" opacity=".888"/><path d="M314.5 283.5c5.419.97 10.419 2.803 15 5.5a182.758 182.758 0 01-4.5 14.5 71.83 71.83 0 00-14.5-4 70.313 70.313 0 014-16z" opacity=".862"/><path d="M322.5 412.5h16v16h-16v-16z" opacity=".882"/></svg>
 							<h4><span class="count">25</span>+</h4>
 							<p>Years Exprerience</p>
 						</div>
-					</div><!-- End Col -->						
+					</div><!-- End Col -->
 				</div>
 			</div>
-		</section>		
+		</section>
 		<!-- End Counter Up -->
-		
+
 		<!-- Start Events -->
 		<section class="events section-padding">
 			<div class="container">
@@ -638,12 +638,12 @@
 							</h2>
 						</div>
 					</div>
-					
+
 					<div class="col-md-4 text-end evbtn wow fadeIn">
 						<a href="#" class="bg-btn">See All Events</a>
 					</div>
 				</div>
-				
+
 				<div class="row align-items-center">
 					<div class="col-lg-8 wow fadeInUp">
 						<div class="event-list">
@@ -654,7 +654,7 @@
 											<div class="day">25</div>
 											<span class="myear">May , 2025</span>
 										</div>
-									</div>		
+									</div>
 
 									<div class="col-lg-6 align-self-center">
 										<div class="ev-content">
@@ -662,7 +662,7 @@
 											<div class="evtime-loc">
 												<span>
 													<i class='bx bx-time' ></i> 05:30 am to 8:25 pm
-												</span>	
+												</span>
 
 												<span>
 													<i class="fa-solid fa-location-dot"></i> Jeddah
@@ -688,7 +688,7 @@
 											<div class="day">45</div>
 											<span class="myear">Aprill , 2025</span>
 										</div>
-									</div>		
+									</div>
 
 									<div class="col-lg-6 align-self-center">
 										<div class="ev-content">
@@ -696,47 +696,13 @@
 											<div class="evtime-loc">
 												<span>
 													<i class='bx bx-time' ></i> 05:30 am to 8:25 pm
-												</span>	
+												</span>
 
 												<span>
 													<i class="fa-solid fa-location-dot"></i> Jeddah
 												</span>
 											</div>
-											<img src="assets/img/events/1.png" alt="evimage">											
-										</div>
-									</div>
-
-									<div class="col-lg-3 align-self-center">
-										<a href="#" class="ev-btn evrb">
-											Join Now
-											<svg fill="none" viewBox="0 0 33 8"><path fill="#444" d="M32.083 4.34a.5.5 0 000-.708L28.901.45a.5.5 0 10-.707.707l2.829 2.829-2.829 2.828a.5.5 0 00.707.707l3.182-3.182zM.91 4.485h30.82v-1H.91v1z"/></svg>
-										</a>
-									</div>
-								</div>
-							</div><!-- End event-item -->	
-
-							<div class="event-item">
-								<div class="row">
-									<div class="col-lg-3 align-self-center">
-										<div class="date evlb">
-											<div class="day">27</div>
-											<span class="myear">June , 2025</span>
-										</div>
-									</div>		
-
-									<div class="col-lg-6 align-self-center">
-										<div class="ev-content">
-											<h4><a href="#">World Famous Talented Teachers</a></h4>
-											<div class="evtime-loc">
-												<span>
-													<i class='bx bx-time' ></i> 05:30 am to 8:25 pm
-												</span>	
-
-												<span>
-													<i class="fa-solid fa-location-dot"></i> Jeddah
-												</span>
-											</div>
-											<img src="assets/img/events/1.png" alt="evimage">											
+											<img src="assets/img/events/1.png" alt="evimage">
 										</div>
 									</div>
 
@@ -749,25 +715,59 @@
 								</div>
 							</div><!-- End event-item -->
 
-	
+							<div class="event-item">
+								<div class="row">
+									<div class="col-lg-3 align-self-center">
+										<div class="date evlb">
+											<div class="day">27</div>
+											<span class="myear">June , 2025</span>
+										</div>
+									</div>
+
+									<div class="col-lg-6 align-self-center">
+										<div class="ev-content">
+											<h4><a href="#">World Famous Talented Teachers</a></h4>
+											<div class="evtime-loc">
+												<span>
+													<i class='bx bx-time' ></i> 05:30 am to 8:25 pm
+												</span>
+
+												<span>
+													<i class="fa-solid fa-location-dot"></i> Jeddah
+												</span>
+											</div>
+											<img src="assets/img/events/1.png" alt="evimage">
+										</div>
+									</div>
+
+									<div class="col-lg-3 align-self-center">
+										<a href="#" class="ev-btn evrb">
+											Join Now
+											<svg fill="none" viewBox="0 0 33 8"><path fill="#444" d="M32.083 4.34a.5.5 0 000-.708L28.901.45a.5.5 0 10-.707.707l2.829 2.829-2.829 2.828a.5.5 0 00.707.707l3.182-3.182zM.91 4.485h30.82v-1H.91v1z"/></svg>
+										</a>
+									</div>
+								</div>
+							</div><!-- End event-item -->
+
+
 						</div>
-					</div><!-- End Col -->		
+					</div><!-- End Col -->
 
 					<div class="col-lg-4 wow fadeInRight">
 						<div class="ev-video">
 							<img src="assets/img/events/video-bg.jpg" alt="video image">
-							<a href="https://www.youtube.com/watch?v=AnQ7XZHnxvk" class="evideo-btn vbtn z-1">								
-								<i class="fa-solid fa-play"></i>							
+							<a href="https://www.youtube.com/watch?v=AnQ7XZHnxvk" class="evideo-btn vbtn z-1">
+								<i class="fa-solid fa-play"></i>
 							</a>
 						</div>
-					</div><!-- End Col -->	
+					</div><!-- End Col -->
 				</div>
 			</div>
-		</section>	
+		</section>
 		<!-- End Events -->
-		
+
 		<!-- Start Blog -->
-		<section class="blog">	
+		<section class="blog">
 			<div class="container">
 				<div class="section-title text-center wow fadeInUp">
 					<span>Blog</span>
@@ -775,7 +775,7 @@
 						Get Latest News with <br>Edutec
 					</h2>
 				</div>
-				
+
 				<div class="row">
 					<div class="col-xl-4 col-md-6 col-12 wow fadeIn">
 						<div class="blog-item">
@@ -785,19 +785,19 @@
 									<a href="#">Education</a>
 								</span>
 							</div>
-							
+
 							<div class="blog-content">
 								<div class="blog-meta grid">
 									<span><i class='fa-regular fa-calendar-check' ></i> May 20, 2025 </span>
 									<span><i class='fa-regular fa-comments'></i> 5 Comments </span>
 								</div>
-								
+
 								<h2><a href="#">Become a Better Blogger Content Planning</a></h2>
 								<a href="#" class="blog-btn">Read More</a>
 							</div>
 						</div>
-					</div><!-- End Col -->					
-					
+					</div><!-- End Col -->
+
 					<div class="col-xl-4 col-md-6 col-12 wow fadeIn">
 						<div class="blog-item">
 							<div class="blog-image">
@@ -806,19 +806,19 @@
 									<a href="#">Workouts</a>
 								</span>
 							</div>
-							
+
 							<div class="blog-content">
 								<div class="blog-meta grid">
 									<span><i class='fa-regular fa-calendar-check' ></i> May 20, 2025 </span>
 									<span><i class='fa-regular fa-comments'></i> 5 Comments </span>
 								</div>
-								
+
 								<h2><a href="#">How to Keep Workouts Fresh in the Morning</a></h2>
 								<a href="#" class="blog-btn">Read More</a>
 							</div>
 						</div>
-					</div><!-- End Col -->					
-					
+					</div><!-- End Col -->
+
 					<div class="col-xl-4 col-md-6 col-12 wow fadeIn">
 						<div class="blog-item">
 							<div class="blog-image">
@@ -827,13 +827,13 @@
 									<a href="#">Health</a>
 								</span>
 							</div>
-							
+
 							<div class="blog-content">
 								<div class="blog-meta grid">
 									<span><i class='fa-regular fa-calendar-check' ></i> May 20, 2025 </span>
 									<span><i class='fa-regular fa-comments'></i> 5 Comments </span>
 								</div>
-								
+
 								<h2><a href="#">Four Ways to Keep Your Workout Routine Fresh</a></h2>
 								<a href="#" class="blog-btn">Read More</a>
 							</div>
@@ -841,9 +841,9 @@
 					</div><!-- End Col -->
 				</div>
 			</div>
-		</section>	
+		</section>
 		<!-- End Blog -->
-		
+
 		<!-- Start CTA Subscription -->
 		<section class="cta-subscription section-padding">
 			<div class="container">
@@ -851,7 +851,7 @@
 					<div class="col-xl-6 col-12 wow fadeInUp">
 						<div class="cta-area align-self-center" style="background-image: url(assets/img/bg/cta.svg);">
 							<h2>
-								Expert <span>Instructor</span> Live<br> Classes Here 
+								Expert <span>Instructor</span> Live<br> Classes Here
 							</h2>
 							<p>
 								Top instructors from around <br>
@@ -859,13 +859,13 @@
 							</p>
 							<a href="#" class="white-btn">Become A Teacher</a>
 							<img src="assets/img/cta/instructor.png" class="cta-img" alt="img">
-						</div>					
-					</div><!-- End Col -->					
-					
+						</div>
+					</div><!-- End Col -->
+
 					<div class="col-xl-6 col-12 wow fadeInUp">
 						<div class="cta-area align-self-center" style="background-image: url(assets/img/bg/cta.svg);">
 							<h2>
-								Free Online Courses <br>from  <span>Binary</span> 
+								Free Online Courses <br>from  <span>Binary</span>
 							</h2>
 							<p>
 								Top instructors from around <br>
@@ -873,13 +873,13 @@
 							</p>
 							<a href="#" class="white-btn">Become A Student</a>
 							<img src="assets/img/cta/cta.png" class="cta-img" alt="img">
-						</div>						
-					</div><!-- End Col -->		
+						</div>
+					</div><!-- End Col -->
 				</div>
 			</div>
-		</section>	
+		</section>
 		<!-- End CTA Subscription -->
-		
-@include('main_footer')		
+
+@include('main_footer')
 	</body>
 </html>
