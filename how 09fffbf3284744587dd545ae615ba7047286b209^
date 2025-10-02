@@ -1,0 +1,177 @@
+[33mcommit 51c47e18ef4fbae72e4fac429a214e0e1c894ea1[m
+Author: Yousaf <mtariqgul786@gmail.com.com>
+Date:   Tue Sep 30 06:50:36 2025 -0700
+
+    Refund without mail and others like stu edit
+
+[1mdiff --git a/app/Http/Controllers/Admin/Refund/RefundController.php b/app/Http/Controllers/Admin/Refund/RefundController.php[m
+[1mindex 85f72e1..95aba2c 100644[m
+[1m--- a/app/Http/Controllers/Admin/Refund/RefundController.php[m
+[1m+++ b/app/Http/Controllers/Admin/Refund/RefundController.php[m
+[36m@@ -11,76 +11,190 @@[m
+ [m
+ class RefundController extends Controller[m
+ {[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Show all refund requests.[m
+[32m+[m[32m     */[m
+     public function index()[m
+     {[m
+         $refunds = RefundRequest::with('student')->latest()->get();[m
+         return view('admin.refund.refund', compact('refunds'));[m
+     }[m
+[31m-     public function refundaction()[m
+[31m-    {[m
+ [m
+[31m-        return view('admin.refund.refundaction');[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Show refund action form for a specific request.[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function refundaction($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $refund = RefundRequest::findOrFail($id);[m
+[32m+[m[32m        return view('admin.refund.refundaction', compact('refund'));[m
+     }[m
+ [m
+[31m-    // ✅ Full refund[m
+[31m-   public function refundFull($id)[m
+[31m-{[m
+[31m-    $refundRequest = RefundRequest::findOrFail($id);[m
+[31m-[m
+[31m-    Stripe::setApiKey(config('services.stripe.secret'));[m
+[31m-[m
+[31m-    Refund::create([[m
+[31m-        'charge' => $refundRequest->transaction_id, // charge id[m
+[31m-    ]);[m
+[31m-[m
+[31m-    // update refund request[m
+[31m-    $refundRequest->update(['status' => 'completed']);[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Handle refund actions (full, partial, reject) from the new unified form.[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function handleAction(Request $request, $id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $refundRequest = RefundRequest::findOrFail($id);[m
+[32m+[m[32m        $action = $request->input('action_type');[m
+[32m+[m
+[32m+[m[32m        if ($action === 'full') {[m
+[32m+[m[32m            // ✅ Full refund[m
+[32m+[m[32m            Stripe::setApiKey(config('services.stripe.secret'));[m
+[32m+[m
+[32m+[m[32m            Refund::create([[m
+[32m+[m[32m                'charge' => $refundRequest->transaction_id,[m
+[32m+[m[32m            ]);[m
+[32m+[m
+[32m+[m[32m            $refundRequest->update([[m
+[32m+[m[32m                'status' => 'completed',[m
+[32m+[m[32m                'rejection_reason' => $request->full_reason,[m
+[32m+[m[32m            ]);[m
+[32m+[m
+[32m+[m[32m            StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();[m
+[32m+[m
+[32m+[m[32m            return redirect()->route('admin_refund_requests')[m
+[32m+[m[32m                ->with('success', 'Full refund processed successfully and subscription removed.');[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        if ($action === 'partial') {[m
+[32m+[m[32m            // ✅ Validate partial amount instead of percentage[m
+[32m+[m[32m            $request->validate([[m
+[32m+[m[32m                'amount' => [[m
+[32m+[m[32m                    'required',[m
+[32m+[m[32m                    'numeric',[m
+[32m+[m[32m                    'min:0.01',[m
+[32m+[m[32m                    function ($attribute, $value, $fail) use ($refundRequest) {[m
+[32m+[m[32m                        if ($value > $refundRequest->amount) {[m
+[32m+[m[32m                            $fail("The refund amount cannot exceed the paid amount of {$refundRequest->amount}.");[m
+[32m+[m[32m                        }[m
+[32m+[m[32m                    },[m
+[32m+[m[32m                ],[m
+[32m+[m[32m                'reason' => 'nullable|string|max:255',[m
+[32m+[m[32m            ]);[m
+[32m+[m
+[32m+[m[32m            Stripe::setApiKey(config('services.stripe.secret'));[m
+[32m+[m
+[32m+[m[32m            // Stripe refund requires cents[m
+[32m+[m[32m            $amountToRefund = intval(round($request->amount * 100));[m
+[32m+[m
+[32m+[m[32m            Refund::create([[m
+[32m+[m[32m                'charge' => $refundRequest->transaction_id,[m
+[32m+[m[32m                'amount' => $amountToRefund,[m
+[32m+[m[32m            ]);[m
+[32m+[m
+[32m+[m[32m            $refundRequest->update([[m
+[32m+[m[32m                'status' => 'completed',[m
+[32m+[m[32m                'refund_amount' => $request->amount,[m
+[32m+[m[32m                'refund_reason' => $request->reason,[m
+[32m+[m[32m            ]);[m
+[32m+[m
+[32m+[m[32m            StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();[m
+[32m+[m
+[32m+[m[32m            return redirect()->route('admin_refund_requests')[m
+[32m+[m[32m                ->with('success', "Refund of \${$request->amount} processed successfully.");[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        if ($action === 'reject') {[m
+[32m+[m[32m            // ✅ Reject refund[m
+[32m+[m[32m            $request->validate([[m
+[32m+[m[32m                'reject_reason' => 'required|string|max:500',[m
+[32m+[m[32m            ]);[m
+[32m+[m
+[32m+[m[32m            $refundRequest->update([[m
+[32m+[m[32m                'status' => 'rejected',[m
+[32m+[m[32m                'rejection_reason' => $request->reject_reason,[m
+[32m+[m[32m            ]);[m
+[32m+[m
+[32m+[m[32m            return redirect()->route('admin_refund_requests')[m
+[32m+[m[32m                ->with('success', 'Refund request rejected with reason.');[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return redirect()->route('admin_refund_requests')[m
+[32m+[m[32m            ->with('error', 'Invalid action selected.');[m
+[32m+[m[32m    }[m
+ [m
+[31m-    // ✅ delete student subscription[m
+[31m-    StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Old methods (kept for backward compatibility).[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function refundFull($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $refundRequest = RefundRequest::findOrFail($id);[m
+ [m
+[31m-    return back()->with('success', 'Full refund processed successfully and subscription removed.');[m
+[31m-}[m
+[32m+[m[32m        Stripe::setApiKey(config('services.stripe.secret'));[m
+ [m
+[31m-// ✅ Partial refund[m
+[31m-public function refundPartial(Request $request, $id)[m
+[31m-{[m
+[31m-    $request->validate([[m
+[31m-        'percentage' => 'required|integer|min:1|max:100',[m
+[31m-    ]);[m
+[32m+[m[32m        Refund::create([[m
+[32m+[m[32m            'charge' => $refundRequest->transaction_id,[m
+[32m+[m[32m        ]);[m
+ [m
+[31m-    $refundRequest = RefundRequest::findOrFail($id);[m
+[32m+[m[32m        $refundRequest->update(['status' => 'completed']);[m
+ [m
+[31m-    Stripe::setApiKey(config('services.stripe.secret'));[m
+[32m+[m[32m        StudentSubscription::where('stripe_charge_id', $refundRequest->transaction_id)->delete();[m
+ [m
+[31m-    $amountToRefund = intval(($refundRequest->amount * $request->percentage) / 100 * 100);[m
+[32m+[m[32m        return back()->with('success', 'Full refund processed successfully and subscription removed.');[m
+[32m+[m[32m    }[m
+ [m
+[31m-    Refund::create([[m
+[31m-        'charge' => $refundRequest->transaction_id,[m
+[31m-        'amount' => $amountToRefund,[m
+[31m-    ]);[m
+[32m+[m[32m    public function getPaidAmount($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $refundRequest = RefundRequest::findOrFail($id);[m
+[32m+[m[32m        return response()->json(['amount' => $refundRequest->amount]);[m
+[32m+[m[32m    }[m
+ [m
+[31m-    $refundRequest->update(['status' => 'completed'])
