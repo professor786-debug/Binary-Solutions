@@ -13,14 +13,16 @@ use App\Mail\RefundStatusMail;
 
 class RefundController extends Controller
 {
-    /**
-     * Show all refund requests.
-     */
-    public function index()
+
+   public function index()
     {
+
         $refunds = RefundRequest::with('student')->latest()->get();
+
         return view('admin.refund.refund', compact('refunds'));
     }
+
+}
 
     /**
      * Show refund action form for a specific request.

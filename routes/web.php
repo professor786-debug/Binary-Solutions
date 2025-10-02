@@ -18,6 +18,7 @@ use App\Http\Controllers\Student\GoogleController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,10 +42,14 @@ use App\Http\Controllers\AdminController;
 
 
 
+
+
 Route::prefix('/panel/admin')
     ->middleware('auth')
     ->group(function () {
         // Existing routes
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
+
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
 
         Route::get('/edit', [AuthController::class, 'edit'])->name('admin_edit');
@@ -112,6 +117,10 @@ Route::prefix('panel/admin/package')->group(function () {
 
 
 Route::prefix('panel/admin/refund')->group(function () {
+    Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
+         ->name('admin_refund_requests');
+});
+
     // Show all requests
     Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
         ->name('admin_refund_requests');
@@ -139,6 +148,11 @@ Route::prefix('panel/admin/refund')->group(function () {
     // Reject refund
     Route::post('/reject/{id}', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'reject'])
         ->name('admin_refund_reject');
+
+Route::prefix('panel/admin/refund')->group(function () {
+    Route::get('/requests', [\App\Http\Controllers\Admin\Refund\RefundController::class, 'index'])
+         ->name('admin_refund_requests');
+
 });
 
 
