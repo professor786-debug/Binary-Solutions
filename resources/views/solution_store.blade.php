@@ -111,10 +111,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="text-center">
-                                        <a href="#" class="bg-btn">Get Solution <i
-                                                class="fa-solid fa-arrow-right-long"></i></a>
-                                    </div>
+                                 <div class="text-center">
+    <a href="{{ route('solution.detail', ['solution_id' => $solution->id]) }}" class="solution-btn">
+        Get Solution <i class="fa-solid fa-arrow-right-long"></i>
+    </a>
+</div>
+
                                 </div>
                             </div>
                         </div>
