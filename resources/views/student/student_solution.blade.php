@@ -119,7 +119,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table table-striped" id="table-1">
                                         <thead class="text-primary">
                                             <tr>
                                                 <th>Solution Name</th>

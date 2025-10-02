@@ -9,6 +9,12 @@
     .dropdown-features .dropdown-body.show {
         display: block !important;
     }
+    .main-banner {
+            padding: 110px 0 24px 0px;
+    }
+    .section-padding{
+        padding: 43px 0px;
+    }
 </style>
 
 <body>

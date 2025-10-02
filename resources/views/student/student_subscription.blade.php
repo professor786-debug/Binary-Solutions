@@ -101,7 +101,7 @@
                             </div>
                             <div class="card-body" style="text-align: center">
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table table-striped" id="table-1">
                                         <thead class="text-primary">
                                             <tr>
                                                 <th>Transaction ID</th>
