@@ -113,7 +113,7 @@
                                knowledge gap, restricted time frame, and other challenges that stop them from achieving academic
                                 success. Therefore, students are becoming independent enough to seek expert assignment help services.
                                  Thanks to EdTech, students are becoming conscious of their educational demands. They know when they
-                                  need help in assignments to understand the academic requirements etc.
+                                  need help in assignments to understand the academic requirements.
 							</p>
 						</div>
 
