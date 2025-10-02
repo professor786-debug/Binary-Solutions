@@ -195,6 +195,6 @@ class RefundController extends Controller
             'rejection_reason' => $request->rejection_reason,
         ]);
 
-        return back()->with('success', 'Refund request rejected with reason.');
+        return back()->with('success', 'Refund request rejected with reasons.');
     }
 }
