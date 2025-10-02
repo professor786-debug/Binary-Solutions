@@ -228,9 +228,8 @@ Route::get('/test-email', function () {
     Mail::to('your@email.com')->send(new VerifyStudentMail($token));
     return 'Email sent!';
 });
-Route::get('/solution_store', function () {
-    return view('solution_store');
-})->name('solution_store');
+
+
 Route::get('/about_us', function () {
     return view('about_us');
 })->name('about_us');
@@ -251,3 +250,6 @@ use App\Http\Controllers\Auth\PasswordResetController;
 Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
 Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.reset');
 // Show create admin form
+use App\Http\Controllers\SolController;
+
+Route::get('/solution_store', [SolController::class, 'index'])->name('solution_store');
